@@ -25,7 +25,7 @@ const PropertyViewMap: React.FC = () => {
   const history = useHistory();
 
   const goToList = () => {
-    history.push('/list');
+    history.push('/');
   };
 
 

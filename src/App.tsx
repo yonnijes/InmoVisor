@@ -34,7 +34,7 @@ const App: React.FC = () => (
      <Router>
       <IonRouterOutlet>
         <Switch>
-          <Route exact path="/list" component={PropertyView} />
+          <Route exact path="/" component={PropertyView} />
           <Route path="/mapa" component={PropertyViewMap} />
         </Switch>
       </IonRouterOutlet>

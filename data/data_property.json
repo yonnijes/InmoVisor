@@ -39,6 +39,10 @@
       "https://picsum.photos/300/200?random=81"
     ],
     "transaction": "Alquiler",
+    "coordinate": {
+      "lat": 10.349781,
+      "lng": -67.041267
+    },
     "amenities": [
       "Pileta",
       "Gimnasio",
@@ -61,8 +65,8 @@
     ],
     "transaction": "Alquiler",
     "coordinate": {
-      "lat": 10.358756,
-      "lng": -67.042684
+      "lat": 10.349781,
+      "lng": -67.033267
     },
     "amenities": [
       "Pileta",
@@ -118,7 +122,11 @@
       "Gimnasio",
       "Piscina",
       "Estacionamiento"
-    ]
+    ],
+    "coordinate": {
+      "lat": 10.349781,
+      "lng": -67.045267
+    }
   },
   {
     "id": "6",
@@ -137,7 +145,7 @@
     "transaction": "Venta",
     "coordinate": {
       "lat": 10.349781,
-      "lng": -67.031267
+      "lng": -67.034567
     },
     "amenities": [
       "Piscina",
@@ -164,7 +172,11 @@
       "Gimnasio",
       "Piscina",
       "Seguridad 24 horas"
-    ]
+    ],
+    "coordinate": {
+      "lat": 10.349781,
+      "lng": -67.033267
+    }
   },
   {
     "id": "8",
@@ -185,7 +197,11 @@
       "Patio",
       "Cochera doble",
       "Terraza"
-    ]
+    ],
+    "coordinate": {
+      "lat": 10.349781,
+      "lng": -67.021267
+    }
   },
   {
     "id": "9",
@@ -231,7 +247,11 @@
       "Piscina",
       "Cancha de tenis",
       "Jardín"
-    ]
+    ],
+    "coordinate": {
+      "lat": 10.349781,
+      "lng": -67.031268
+    }
   },
   {
     "id": "11",
@@ -252,7 +272,11 @@
       "Piscina",
       "Gimnasio",
       "Estacionamiento"
-    ]
+    ],
+    "coordinate": {
+      "lat": 10.349781,
+      "lng": -67.031263
+    }
   },
   {
     "id": "12",
@@ -273,7 +297,11 @@
       "Piscina",
       "Área de parrilla",
       "Jardín"
-    ]
+    ],
+    "coordinate": {
+      "lat": 10.349781,
+      "lng": -67.031235
+    }
   },
   {
     "id": "13",
@@ -294,7 +322,11 @@
       "Piscina",
       "Gimnasio",
       "Seguridad 24 horas"
-    ]
+    ],
+    "coordinate": {
+      "lat": 10.349781,
+      "lng": -67.031275
+    }
   },
   {
     "id": "14",
@@ -315,6 +347,10 @@
       "Piscina",
       "Jardín",
       "Terraza"
-    ]
+    ],
+    "coordinate": {
+      "lat": 10.349781,
+      "lng": -67.031247
+    }
   }
 ]
