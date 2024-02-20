@@ -1,0 +1,77 @@
+[
+  {
+    "id": "1",
+    "type": "Casa",
+    "address": "1234 Main St ",
+    "squareMeters": 100,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "money": "Bs",
+    "price": 200000,
+    "image": [
+      "https://picsum.photos/300/200?random=21",
+      "https://picsum.photos/300/200?random=51",
+      "https://picsum.photos/300/200?random=81"
+    ],
+    "transaction": "Venta",
+    "coordinate": {
+      "lat": 40.4138,
+      "lng": -74.0380
+    },
+    "amenities": [
+      "Pileta",
+      "Gimnasio",
+      "Cochera"
+    ]
+  },
+  {
+    "id": "2",
+    "type": "Departamento",
+    "address": "456 Elm St",
+    "squareMeters": 80,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "money": "$",
+    "price": 150000,
+    "image": [
+      "https://picsum.photos/300/200?random=13",
+      "https://picsum.photos/300/200?random=14",
+      "https://picsum.photos/300/200?random=81"
+    ],
+    "transaction": "Alquiler",
+    "amenities": [
+      "Pileta",
+      "Gimnasio",
+      "Cochera"
+    ]
+  },
+  {
+    "id": "3",
+    "type": "Departamento",
+    "address": "456 Elm St",
+    "squareMeters": 80,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "money": "$",
+    "price": 150000,
+    "image": [
+      "https://picsum.photos/300/200?random=13",
+      "https://picsum.photos/300/200?random=14",
+      "https://drive.google.com/uc?export=view&id=1RLZsOK5v9ecve7CsVcuARtapeR_pjI_f"
+    ],
+    "transaction": "Alquiler",
+    "coordinate": {
+      "lat": 40.7128,
+      "lng": -74.0060
+    },
+    "amenities": [
+      "Pileta",
+      "Gimnasio",
+      "Cochera"
+    ],
+    "parkingSpaces": 1,
+    "description": "Departamento en alquiler en Palermo, 2 dormitorios, 1 baño, 80 m2, cochera, pileta, gimnasio, seguridad 24hs, expensas $5000, precio $150.000, disponible a partir de marzo 2021",
+    "constructionYear": 2010,
+    "condition": "Nueva"
+  }
+]
