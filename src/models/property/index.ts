@@ -1,0 +1,1 @@
+export * as Property from './property';
