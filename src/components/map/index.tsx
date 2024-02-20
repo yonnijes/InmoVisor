@@ -47,6 +47,13 @@ const Map: React.FC<MapProps> = ({ coordinates }) => {
             });
         });
 
+
+        // Calcula los límites del área visible en el mapa
+        const bounds = L.latLngBounds(coordinates.map(coord => [coord.lat, coord.lng]));
+
+        // Ajusta el nivel de zoom para que todos los marcadores sean visibles
+        map.fitBounds(bounds);
+
         const getProperty = (id: string) => {
             const savedData = localStorage.getItem('propertys');
             const propertys: Property.Property[] = savedData ? JSON.parse(savedData) : [];
@@ -64,7 +71,7 @@ const Map: React.FC<MapProps> = ({ coordinates }) => {
 
     return <>
         <div ref={mapRef} style={{ width: "100%", height: "95%" }} />
-        <IonModal  className="viewMapProperty" isOpen={showModal} initialBreakpoint={1} breakpoints={[0, 1]} onDidDismiss={() => setShowModal(false)}>
+        <IonModal className="viewMapProperty" isOpen={showModal} initialBreakpoint={1} breakpoints={[0, 1]} onDidDismiss={() => setShowModal(false)}>
             {selectedProperty && <PropertyComponent property={selectedProperty} />}
         </IonModal>
     </>

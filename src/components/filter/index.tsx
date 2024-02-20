@@ -13,7 +13,7 @@ const Filter: React.FC<FilterProps> = ({ label, options, selectedValue, onChange
   return (
     <IonItem>
       <IonLabel>{label}</IonLabel>
-      <IonSelect value={selectedValue} onIonChange={e => onChange(e.detail.value)}>
+      <IonSelect value={selectedValue} onIonChange={e => onChange(e.detail.value)} label="seleccione una opción" >
         {options.map(option => (
           <IonSelectOption key={option} value={option}>
             {option}

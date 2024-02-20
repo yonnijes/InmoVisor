@@ -78,18 +78,17 @@ const PropertyView: React.FC = () => {
         const response = await axios({
           url,
           method: "GET",
-          responseType: 'json', 
+          responseType: 'json',
         });
 
-       const data = await response.data;
+        const data = await response.data;
         setPropertys(data);
 
         // Guardar los datos en localStorage
-        localStorage.setItem('propertys', JSON.stringify(data)); 
+        localStorage.setItem('propertys', JSON.stringify(data));
       } catch (error) {
-
         if (error instanceof AxiosError)
-          alert(`Error fetching data: ${error.status} - ${error.message}`);
+          console.log(`Error fetching data: ${error.status} - ${error.message}`);
 
         setPropertys(jsonDataMOK as Property.Property[]);
         localStorage.setItem('propertys', JSON.stringify(jsonDataMOK));
@@ -112,8 +111,6 @@ const PropertyView: React.FC = () => {
         property.type.toLowerCase().includes(searchText.toLowerCase())
       )
       : propertys;
-
-    console.log('filteredPropertys:', filteredPropertys);
 
     setPropertys(filteredPropertys);
   }, [searchText]);

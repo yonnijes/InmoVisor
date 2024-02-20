@@ -46,7 +46,7 @@ const PropertyComponent: React.FC<PropertyComponentProps> = ({ property }) => {
                   </IonText>
                   <ul>
                     {property.amenities?.map((amenity, index) => (
-                      <li>
+                      <li key={index}>
                         <IonLabel>{amenity}</IonLabel>
                       </li>
 

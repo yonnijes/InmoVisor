@@ -2,7 +2,7 @@
   {
     "id": "1",
     "type": "Casa",
-    "address": "1234 Main St ",
+    "address": "1234 Calle Principal",
     "squareMeters": 100,
     "bedrooms": 3,
     "bathrooms": 2,
@@ -15,8 +15,8 @@
     ],
     "transaction": "Venta",
     "coordinate": {
-      "lat": 40.4138,
-      "lng": -74.0380
+      "lat": 10.363070,
+      "lng": -67.038447
     },
     "amenities": [
       "Pileta",
@@ -27,7 +27,7 @@
   {
     "id": "2",
     "type": "Departamento",
-    "address": "456 Elm St",
+    "address": "456 Calle Elm",
     "squareMeters": 80,
     "bedrooms": 2,
     "bathrooms": 1,
@@ -48,7 +48,7 @@
   {
     "id": "3",
     "type": "Departamento",
-    "address": "456 Elm St",
+    "address": "456 Calle Elm",
     "squareMeters": 80,
     "bedrooms": 2,
     "bathrooms": 1,
@@ -61,8 +61,8 @@
     ],
     "transaction": "Alquiler",
     "coordinate": {
-      "lat": 40.7128,
-      "lng": -74.0060
+      "lat": 10.358756,
+      "lng": -67.042684
     },
     "amenities": [
       "Pileta",
@@ -73,5 +73,248 @@
     "description": "Departamento en alquiler en Palermo, 2 dormitorios, 1 baño, 80 m2, cochera, pileta, gimnasio, seguridad 24hs, expensas $5000, precio $150.000, disponible a partir de marzo 2021",
     "constructionYear": 2010,
     "condition": "Nueva"
+  },
+  {
+    "id": "4",
+    "type": "Casa",
+    "address": "5678 Calle Oak",
+    "squareMeters": 150,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "money": "$",
+    "price": 350000,
+    "image": [
+      "https://picsum.photos/300/200?random=32",
+      "https://picsum.photos/300/200?random=33",
+      "https://picsum.photos/300/200?random=34"
+    ],
+    "transaction": "Venta",
+    "coordinate": {
+      "lat": 10.349211,
+      "lng": -67.032432
+    },
+    "amenities": [
+      "Jardín",
+      "Terraza",
+      "Quincho"
+    ]
+  },
+  {
+    "id": "5",
+    "type": "Departamento",
+    "address": "789 Calle Maple",
+    "squareMeters": 90,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "money": "€",
+    "price": 250000,
+    "image": [
+      "https://picsum.photos/300/200?random=45",
+      "https://picsum.photos/300/200?random=46",
+      "https://picsum.photos/300/200?random=47"
+    ],
+    "transaction": "Venta",
+    "amenities": [
+      "Gimnasio",
+      "Piscina",
+      "Estacionamiento"
+    ]
+  },
+  {
+    "id": "6",
+    "type": "Casa",
+    "address": "1011 Calle Pine",
+    "squareMeters": 200,
+    "bedrooms": 5,
+    "bathrooms": 4,
+    "money": "$",
+    "price": 500000,
+    "image": [
+      "https://picsum.photos/300/200?random=56",
+      "https://picsum.photos/300/200?random=57",
+      "https://picsum.photos/300/200?random=58"
+    ],
+    "transaction": "Venta",
+    "coordinate": {
+      "lat": 10.349781,
+      "lng": -67.031267
+    },
+    "amenities": [
+      "Piscina",
+      "Área de juegos",
+      "Sauna"
+    ]
+  },
+  {
+    "id": "7",
+    "type": "Departamento",
+    "address": "1213 Calle Cedar",
+    "squareMeters": 75,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "money": "$",
+    "price": 120000,
+    "image": [
+      "https://picsum.photos/300/200?random=65",
+      "https://picsum.photos/300/200?random=66",
+      "https://picsum.photos/300/200?random=67"
+    ],
+    "transaction": "Alquiler",
+    "amenities": [
+      "Gimnasio",
+      "Piscina",
+      "Seguridad 24 horas"
+    ]
+  },
+  {
+    "id": "8",
+    "type": "Casa",
+    "address": "1415 Calle Walnut",
+    "squareMeters": 180,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "money": "$",
+    "price": 400000,
+    "image": [
+      "https://picsum.photos/300/200?random=74",
+      "https://picsum.photos/300/200?random=75",
+      "https://picsum.photos/300/200?random=76"
+    ],
+    "transaction": "Venta",
+    "amenities": [
+      "Patio",
+      "Cochera doble",
+      "Terraza"
+    ]
+  },
+  {
+    "id": "9",
+    "type": "Departamento",
+    "address": "1617 Calle Ash",
+    "squareMeters": 85,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "money": "$",
+    "price": 180000,
+    "image": [
+      "https://picsum.photos/300/200?random=83",
+      "https://picsum.photos/300/200?random=84",
+      "https://picsum.photos/300/200?random=85"
+    ],
+    "transaction": "Venta",
+    "coordinate": {
+      "lat": 10.340358,
+      "lng": -67.023794
+    },
+    "amenities": [
+      "Gimnasio",
+      "Piscina",
+      "Área de juegos para niños"
+    ]
+  },
+  {
+    "id": "10",
+    "type": "Casa",
+    "address": "1819 Calle Chestnut",
+    "squareMeters": 220,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "money": "$",
+    "price": 550000,
+    "image": [
+      "https://picsum.photos/300/200?random=92",
+      "https://picsum.photos/300/200?random=93",
+      "https://picsum.photos/300/200?random=94"
+    ],
+    "transaction": "Venta",
+    "amenities": [
+      "Piscina",
+      "Cancha de tenis",
+      "Jardín"
+    ]
+  },
+  {
+    "id": "11",
+    "type": "Departamento",
+    "address": "2021 Calle Birch",
+    "squareMeters": 95,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "money": "$",
+    "price": 220000,
+    "image": [
+      "https://picsum.photos/300/200?random=101",
+      "https://picsum.photos/300/200?random=102",
+      "https://picsum.photos/300/200?random=103"
+    ],
+    "transaction": "Venta",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Estacionamiento"
+    ]
+  },
+  {
+    "id": "12",
+    "type": "Casa",
+    "address": "2223 Calle Spruce",
+    "squareMeters": 180,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "money": "$",
+    "price": 380000,
+    "image": [
+      "https://picsum.photos/300/200?random=112",
+      "https://picsum.photos/300/200?random=113",
+      "https://picsum.photos/300/200?random=114"
+    ],
+    "transaction": "Venta",
+    "amenities": [
+      "Piscina",
+      "Área de parrilla",
+      "Jardín"
+    ]
+  },
+  {
+    "id": "13",
+    "type": "Departamento",
+    "address": "2325 Calle Fir",
+    "squareMeters": 85,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "money": "$",
+    "price": 170000,
+    "image": [
+      "https://picsum.photos/300/200?random=122",
+      "https://picsum.photos/300/200?random=123",
+      "https://picsum.photos/300/200?random=124"
+    ],
+    "transaction": "Venta",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24 horas"
+    ]
+  },
+  {
+    "id": "14",
+    "type": "Casa",
+    "address": "2427 Calle Cedar",
+    "squareMeters": 160,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "money": "$",
+    "price": 420000,
+    "image": [
+      "https://picsum.photos/300/200?random=132",
+      "https://picsum.photos/300/200?random=133",
+      "https://picsum.photos/300/200?random=134"
+    ],
+    "transaction": "Venta",
+    "amenities": [
+      "Piscina",
+      "Jardín",
+      "Terraza"
+    ]
   }
 ]
