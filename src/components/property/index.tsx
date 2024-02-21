@@ -66,7 +66,7 @@ const PropertyComponent: React.FC<PropertyComponentProps> = ({ property }) => {
             </div>
           </>
         )}
-        <IonButton expand="block" fill="clear" onClick={handleShowMore}>
+        <IonButton expand="block" fill="clear" onClick={handleShowMore} color="secondary">
           {showMore ? 'Ver menos' : 'Ver más'}
         </IonButton>
       </IonCardContent>

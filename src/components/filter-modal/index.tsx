@@ -65,12 +65,12 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, applyFilters
       </IonContent>
       <IonFooter>
         <IonToolbar>
-          <IonGrid>
+          <IonGrid >
             <IonRow>
-              <IonCol>
-                <IonButton color="warning" onClick={handleClearFilters}>Limpiar</IonButton>
+              <IonCol size="8">
+                <IonButton color="medium" onClick={handleClearFilters}>Limpiar</IonButton>
               </IonCol>
-              <IonCol>
+              <IonCol size="2">
                 <IonButton color="primary" onClick={handleApplyFilters}>Aplicar</IonButton>
               </IonCol>
             </IonRow>

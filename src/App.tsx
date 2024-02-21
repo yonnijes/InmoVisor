@@ -5,6 +5,7 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { SplashScreen } from '@capacitor/splash-screen';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -26,20 +27,30 @@ import '@ionic/react/css/text-transformation.css';
 import './theme/variables.css';
 import PropertyView from './pages/PropertyView';
 import PropertyViewMap from './pages/PropertyViewMap';
+import { useEffect } from 'react';
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
-     <Router>
-      <IonRouterOutlet>
-        <Switch>
-          <Route exact path="/" component={PropertyView} />
-          <Route path="/mapa" component={PropertyViewMap} />
-        </Switch>
-      </IonRouterOutlet>
-    </Router>
-  </IonApp>
-);
+
+const App: React.FC = () => {
+
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
+
+
+  return (
+    <IonApp>
+      <Router>
+        <IonRouterOutlet>
+          <Switch>
+            <Route exact path="/" component={PropertyView} />
+            <Route path="/mapa" component={PropertyViewMap} />
+          </Switch>
+        </IonRouterOutlet>
+      </Router>
+    </IonApp>
+  )
+};
 
 export default App;
