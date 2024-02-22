@@ -107,7 +107,6 @@ const gitAddCommitPush = async () => {
 
     async function checkForChanges() {
         const { stdout } = await runCommand('git status --porcelain ./data');
-        console.log('stdout', stdout);
         return stdout.trim() !== '';
     }
 };
