@@ -84,7 +84,7 @@ const gitAddCommitPush = async () => {
     try {
         await runGitCommand('git add data');
         await runGitCommand('git commit -m "Actualizar data_property.json"');
-        await runGitCommand('git push');
+        await runGitCommand('git push origin main');
         console.log('Git add, commit y push completados exitosamente.');
     } catch (error) {
         console.error('Error al ejecutar los comandos de Git:', error);
