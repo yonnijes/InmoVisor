@@ -1,9 +1,12 @@
 import { writeFile, readdirSync } from 'fs';
 import XLSX from 'xlsx';
 import { exec } from 'child_process';
+import axios from 'axios';
+import fs from 'fs';
+import path from 'path';
 
 // Función para ejecutar un comando git
-const runGitCommand = (command) => {
+const runCommand = (command) => {
     return new Promise((resolve, reject) => {
         exec(command, (error, stdout, stderr) => {
             if (error) {
@@ -42,24 +45,29 @@ function excelToJson(filePath) {
 }
 
 
-async function  transformData(data) {
+async function transformData(data) {
+
+
     const urlImgGit = 'https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/'
     try {
-        return data.map((item) => {
+        return data?.map((item) => {
+
+            const { images, ...resto } = item;
+
             return {
-                ...item,
+                ...resto,
                 coordinate: {
                     id: item.id,
                     lat: parseFloat(item.lat),
                     lng: parseFloat(item.lng)
                 },
                 amenities: item.amenities.split(',').map((amenity) => amenity.trim()),
-                image:  searchImage(`data/img/${item.id}`).map((image) => `${urlImgGit}/${item.id}/${image.name}`)
-                
+                image: searchImage(`data/img/${item.id}`).map((image) => `${urlImgGit}/${item.id}/${image.name}`)
+
             }
         });
     } catch (error) {
-        
+
     }
 }
 
@@ -82,21 +90,110 @@ function createFile(nameFile, data) {
 
 const gitAddCommitPush = async () => {
     try {
-        await runGitCommand('ssh-add --apple-use-keychain -q ~/.ssh/id_ed25519');
-        await runGitCommand('git add data');
-        await runGitCommand('git commit -m "Actualizar data_property.json"');
-        await runGitCommand('git push origin main');
+        await runCommand('ssh-add --apple-use-keychain -q ~/.ssh/id_ed25519');
+        await runCommand('git add data');
+        await runCommand('git commit -m "Actualizar data_property.json"');
+        await runCommand('git push origin main');
         console.log('Git add, commit y push completados exitosamente.');
     } catch (error) {
         console.error('Error al ejecutar los comandos de Git:', error);
     }
 };
 
+
+async function donwloadXlsx(url) {
+    const response = await axios.get(url, { responseType: 'arraybuffer' })
+    const data = new Uint8Array(response.data);
+    const workbook = XLSX.read(data, { type: 'array' });
+    // Obtener la primera hoja de cálculo
+    const sheetName = workbook.SheetNames[0];
+    const worksheet = workbook.Sheets[sheetName];
+    // Convertir la hoja de cálculo a JSON
+    const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 })
+    // Extraer las claves de la primera fila
+    const keys = jsonData.shift()
+
+    // Construir el objeto JSON utilizando las claves y los valores
+    const jsonObj = jsonData.map((row) => {
+        const obj = {};
+        keys.forEach((key, index) => {
+            obj[key] = row[index];
+        });
+        return obj;
+    });
+
+    // Devolver el JSON resultante
+    return jsonObj.filter((item) => item.id !== undefined);
+
+}
+
+
+async function descargarImagen(idArray, idCapetaDestino) {
+
+    idArray.forEach(async (id) => {
+
+
+        // URL de descarga directa de la imagen
+        const url = `https://drive.google.com/uc?id=${id}`;
+        const carpetaDestino = `data/img/${idCapetaDestino}`;
+        try {
+            const response = await axios({
+                method: 'get',
+                url: url,
+                responseType: 'stream'
+            });
+
+
+            // Asegúrate de que la carpeta exista, si no, créala
+            if (!fs.existsSync(carpetaDestino)) {
+                fs.mkdirSync(carpetaDestino);
+            }
+            const rutaArchivo = path.join(carpetaDestino, `${id}.jpg`);
+
+
+            response.data.pipe(fs.createWriteStream(rutaArchivo));
+          // console.log('Imagen descargada:', rutaArchivo);
+
+
+        } catch (error) {
+            console.log('Error al descargar la imagen:', error);
+        }
+    });
+    console.log('Imagenes descargadas');
+}
+
+function obtenerID(url) {
+    // Expresión regular para encontrar el ID del archivo en la URL de Google Drive
+    const regex = /\/file\/d\/([a-zA-Z0-9_-]+)\//;
+    const match = url.match(regex);
+
+    // El ID del archivo estará en la segunda posición del array de coincidencias
+    if (match && match.length >= 2) {
+        return match[1];
+    } else {
+        // Si no se encuentra un ID válido, devuelve null o lanza un error según lo desees
+        return null;
+    }
+}
+
+
+
 (async () => {
-    // Ruta del archivo excel
-    const excelFilePath = 'data/data_keytock.xlsx';
-    const jsonResult = excelToJson(excelFilePath);
+    const jsonResult = await donwloadXlsx('https://docs.google.com/spreadsheets/d/1Xbg9AZeIFAa1nweJKAXNY3Bu9bNC4KUm/export?format=xlsx');
+    const infoImagenes = jsonResult.map((item) => {
+        return {
+            id: item.images.split(',').map((image) => obtenerID(image)),
+            idCapetaDestino: item.id,
+        }
+    });
+
+    infoImagenes.map(async (item) => {
+        await descargarImagen(item.id, item.idCapetaDestino);
+    });
+
+
     const data = await transformData(jsonResult);
     createFile('data/data_property.json', data);
-    gitAddCommitPush();
+    await gitAddCommitPush();
+  
 })();
