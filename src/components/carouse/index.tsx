@@ -1,6 +1,12 @@
-import React, { useRef, useEffect } from 'react';
-import Swiper from 'swiper';
-import 'swiper/swiper-bundle.css';
+import React from 'react';
+import { Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import { IonButton, IonButtons, IonContent, IonHeader, IonModal, IonTitle, IonToolbar } from '@ionic/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
 import './index.css';
 
 
@@ -9,35 +15,51 @@ interface CarouselProps {
 }
 
 const Carousel: React.FC<CarouselProps> = ({ images }) => {
-  const swiperRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (swiperRef.current) {
-      new Swiper(swiperRef.current, {
-        loop: true,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      });
-    }
-  }, []);
+  const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
 
   return (
-    <div className="swiper-container" ref={swiperRef}>
-      <div className="swiper-wrapper">
-        {images.map((image, index) => (
-          <div className="swiper-slide" key={index}>
-            <img loading='lazy'  src={image} alt={`Slide ${index}`} className='carousel-image' />
-          </div>
-        ))}
-      </div>
-      <div className="swiper-pagination"></div>
-    </div>
+    <>
+    <Swiper 
+      grabCursor={true}
+      pagination={true} 
+      modules={[Pagination]} 
+      className="mySwiper">
+      {images.map((image, index) => (
+        <SwiperSlide key={index}>
+          <img loading='lazy' src={image} alt={`Slide ${index}`} className='carousel-image' onClick={handleOpenModal} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+        <IonModal isOpen={isModalOpen} onDidDismiss={() => setIsModalOpen(false)} onWillDismiss={() => setIsModalOpen(false)} className="custom-modal">
+        <IonHeader>
+            <IonToolbar>
+              <IonTitle>Fotos</IonTitle>
+              <IonButtons slot="end">
+                <IonButton onClick={() => setIsModalOpen(false)}>X</IonButton>
+              </IonButtons>
+            </IonToolbar>
+          </IonHeader>
+          <IonContent className="ion-padding">
+          <Swiper 
+            grabCursor={true}
+            pagination={true} 
+            modules={[Pagination]} 
+            className="expandedSwiper">
+            {images.map((image, index) => (
+              <SwiperSlide key={index} className=''>
+                <img loading='lazy' src={image} alt={`Slide ${index}`} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          </IonContent>
+        </IonModal>
+
+    </>
   );
 };
 

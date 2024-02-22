@@ -4,7 +4,7 @@ import { IonSelect, IonSelectOption, IonItem, IonLabel } from '@ionic/react';
 
 interface FilterProps {
   label: string;
-  options: number[];
+  options: number[] | string[];
   selectedValue: number;
   onChange: (value: number) => void;
 }

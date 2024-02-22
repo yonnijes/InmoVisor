@@ -2,6 +2,8 @@
 import React from 'react';
 import { IonModal, IonButton, IonContent, IonHeader, IonTitle, IonToolbar, IonFooter, IonGrid, IonRow, IonCol } from '@ionic/react';
 import Filter from '../filter';
+import PriceRangeFilter from '../filterPriceRange';
+import { Property } from '../../models';
 
 interface FilterModalProps {
   isOpen: boolean;
@@ -42,6 +44,21 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, applyFilters
         <IonGrid>
 
           <Filter
+            label="Inmuebles"
+            options={["Casa", "Departamento", "Oficina", "Terreno", "Lote", "Comercial", "Estacionamiento"] as Property.PropertyType[]}
+            selectedValue={filters.type}
+            onChange={(value) => handleChangeFilter('type', value)}
+          />
+
+          <Filter
+            label="Operación"
+            options={["Alquiler", "Venta"] as Property.TransactionType[]}
+            selectedValue={filters.transaction}
+            onChange={(value) => handleChangeFilter('transaction', value)}
+          />
+
+
+          <Filter
             label="Dormitorios"
             options={[0, 1, 2, 3, 4, 5]}
             selectedValue={filters.bedrooms}
@@ -55,11 +72,35 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, applyFilters
           />
 
           <Filter
+            label="Estacionamientos"
+            options={[0, 1, 2, 3, 4, 5]}
+            selectedValue={filters.parkingSpaces}
+            onChange={(value) => handleChangeFilter('parkingSpaces', value)}
+          />
+
+          <Filter
+            label="Maletero"
+            options={['Si', 'No']}
+            selectedValue={filters.storageRoom}
+            onChange={(value) => handleChangeFilter('storageRoom', value)}
+          />
+
+          <Filter
             label="Metros cuadrado"
             options={[0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500]}
             selectedValue={filters.squareMeters}
             onChange={(value) => handleChangeFilter('squareMeters', value)}
           />
+
+          {/*    <PriceRangeFilter
+            label="Rango de precio" // Etiqueta del filtro
+            min={0} // Valor mínimo del rango de precio
+            max={150000} // Valor máximo del rango de precio
+            onChange={(value) => {
+              handleChangeFilter('lowerpriceRange', value.lower);
+              handleChangeFilter('upperpriceRange', value.upper);
+            }}
+          /> */}
           {/* Agregar más filtros según sea necesario */}
         </IonGrid>
       </IonContent>

@@ -1,7 +1,7 @@
-type PropertyType = "Casa" | "Departamento" | "Oficina" | "Terreno" | "Lote" | "Comercial" | "Estacionamiento";
-type TransactionType = "Venta" | "Alquiler";
-type condition = "nuevo" | "usado" | "en construcción";
-type money = "$" | "Bs";
+export type PropertyType = "Casa" | "Departamento" | "Oficina" | "Terreno" | "Lote" | "Comercial" | "Estacionamiento";
+export type TransactionType = "Venta" | "Alquiler";
+export type condition = "nuevo" | "usado" | "en construcción";
+export type money = "$" | "Bs";
 
 export interface Coordinate {
     id: string;
@@ -26,6 +26,7 @@ export interface Property {
     constructionYear?: number; // Año de construcción (opcional)
     condition?: condition; // Estado de la propiedad (opcional)
     amenities?: string[]; // Amenidades de la propiedad (opcional) Piscina, gimnasio, etc.
-    contact?: string; // Información de contacto del agente o dueño (opcional)
     coordinate: Coordinate;
+    phoneContact?: string;// Información de contacto del agente o dueño (opcional)
+    storageRoom?: boolean; // Maletero (opcional)
 }
