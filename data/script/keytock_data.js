@@ -82,6 +82,7 @@ function createFile(nameFile, data) {
 
 const gitAddCommitPush = async () => {
     try {
+        await runGitCommand('ssh-add --apple-use-keychain -q ~/.ssh/id_ed25519');
         await runGitCommand('git add data');
         await runGitCommand('git commit -m "Actualizar data_property.json"');
         await runGitCommand('git push origin main');
