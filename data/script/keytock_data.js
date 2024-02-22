@@ -13,7 +13,7 @@ const runCommand = (command) => {
                 reject(error);
                 return;
             }
-            resolve(stdout.trim());
+            resolve({ stdout, stderr });
         });
     });
 };
@@ -89,6 +89,11 @@ function createFile(nameFile, data) {
 }
 
 const gitAddCommitPush = async () => {
+
+    const hasChanges = await checkForChanges();
+    if (!hasChanges)
+        return console.log('No hay cambios para subir a Git.');
+
     try {
         await runCommand('ssh-add --apple-use-keychain -q ~/.ssh/id_ed25519');
         await runCommand('git add data');
@@ -97,6 +102,13 @@ const gitAddCommitPush = async () => {
         console.log('Git add, commit y push completados exitosamente.');
     } catch (error) {
         console.error('Error al ejecutar los comandos de Git:', error);
+    }
+
+
+    async function checkForChanges() {
+        const { stdout } = await runCommand('git status --porcelain ./data');
+        console.log('stdout', stdout);
+        return stdout.trim() !== '';
     }
 };
 
@@ -152,7 +164,7 @@ async function descargarImagen(idArray, idCapetaDestino) {
 
 
             response.data.pipe(fs.createWriteStream(rutaArchivo));
-          // console.log('Imagen descargada:', rutaArchivo);
+            // console.log('Imagen descargada:', rutaArchivo);
 
 
         } catch (error) {
@@ -195,5 +207,5 @@ function obtenerID(url) {
     const data = await transformData(jsonResult);
     createFile('data/data_property.json', data);
     await gitAddCommitPush();
-  
+
 })();
