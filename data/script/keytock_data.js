@@ -62,7 +62,8 @@ async function transformData(data) {
                     lng: parseFloat(item.lng)
                 },
                 amenities: item.amenities.split(',').map((amenity) => amenity.trim()),
-                image: searchImage(`data/img/${item.id}`).map((image) => `${urlImgGit}/${item.id}/${image.name}`)
+                image: searchImage(`data/img/${item.id}`).map((image) => `${urlImgGit}/${item.id}/${image.name}`),
+                storageRoom: item?.storageRoom.toUpperCase() === 'SI' ? true : false,
 
             }
         });
