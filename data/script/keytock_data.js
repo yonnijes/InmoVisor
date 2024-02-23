@@ -219,20 +219,24 @@ function obtenerID(url) {
 
 (async () => {
     const jsonResult = await donwloadXlsx('https://docs.google.com/spreadsheets/d/1Xbg9AZeIFAa1nweJKAXNY3Bu9bNC4KUm/export?format=xlsx');
-    const infoImagenes = jsonResult.map((item) => {
+
+  
+
+    const infoImagenes =  jsonResult.map((item) => {
         return {
             id: item.images.split(',').map((image) => obtenerID(image)),
             idCapetaDestino: item.id,
         }
-    });
+    })
+   
 
     await Promise.all(infoImagenes.map(async (item) => {
-        await descargarImagenes(item.id, item.idCarpetaDestino);
+        await descargarImagenes(item.id, item.idCapetaDestino);
     }));
 
 
     const data = await transformData(jsonResult);
     createFile('data/data_property.json', data);
-    await gitAddCommitPush();
+   await gitAddCommitPush();
 
 })();
