@@ -174,7 +174,7 @@ async function donwloadXlsx(url) {
     console.log('Imagenes descargadas');
 } */
 
-async function descargarImagen(idArray, idCarpetaDestino) {
+async function descargarImagenes(idArray, idCarpetaDestino) {
   
     async function descargarImg(id, idCarpetaDestino) {
         const url = `https://drive.google.com/uc?id=${id}`;
@@ -226,9 +226,9 @@ function obtenerID(url) {
         }
     });
 
-    infoImagenes.map(async (item) => {
-        await descargarImagen(item.id, item.idCapetaDestino);
-    });
+    await Promise.all(infoImagenes.map(async (item) => {
+        await descargarImagenes(item.id, item.idCarpetaDestino);
+    }));
 
 
     const data = await transformData(jsonResult);
