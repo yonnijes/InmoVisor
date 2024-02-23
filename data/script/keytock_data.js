@@ -140,7 +140,7 @@ async function donwloadXlsx(url) {
 }
 
 
-async function descargarImagen(idArray, idCapetaDestino) {
+/* async function descargarImagen(idArray, idCapetaDestino) {
 
     idArray.forEach(async (id) => {
 
@@ -172,6 +172,33 @@ async function descargarImagen(idArray, idCapetaDestino) {
         }
     });
     console.log('Imagenes descargadas');
+} */
+
+async function descargarImagen(idArray, idCarpetaDestino) {
+  
+    async function descargarImg(id, idCarpetaDestino) {
+        const url = `https://drive.google.com/uc?id=${id}`;
+        const carpetaDestino = `data/img/${idCarpetaDestino}`;
+        try {
+            const response = await axios({
+                method: 'get',
+                url: url,
+                responseType: 'stream'
+            });
+    
+            if (!fs.existsSync(carpetaDestino)) {
+                fs.mkdirSync(carpetaDestino, { recursive: true });
+            }
+    
+            const rutaArchivo = path.join(carpetaDestino, `${id}.jpg`);
+            response.data.pipe(fs.createWriteStream(rutaArchivo));
+            console.log('Imagen descargada:', rutaArchivo);
+        } catch (error) {
+            console.log('Error al descargar la imagen:', error);
+        }
+    }
+    await Promise.all(idArray.map(id => descargarImg(id, idCarpetaDestino)));
+
 }
 
 function obtenerID(url) {
