@@ -61,13 +61,15 @@ async function transformData(data) {
                     lat: parseFloat(item.lat),
                     lng: parseFloat(item.lng)
                 },
-                amenities: item.amenities.split(',').map((amenity) => amenity.trim()),
+                amenities: item?.amenities?.split(',').map((amenity) => amenity.trim()),
                 image: searchImage(`data/img/${item.id}`).map((image) => `${urlImgGit}/${item.id}/${image.name}`),
                 storageRoom: item?.storageRoom.toUpperCase() === 'SI' ? true : false,
 
             }
         });
     } catch (error) {
+        console.log('Error al transformar los datos')
+        console.log(error);
 
     }
 }
@@ -175,7 +177,7 @@ async function donwloadXlsx(url) {
 } */
 
 async function descargarImagenes(idArray, idCarpetaDestino) {
-  
+
     async function descargarImg(id, idCarpetaDestino) {
         const url = `https://drive.google.com/uc?id=${id}`;
         const carpetaDestino = `data/img/${idCarpetaDestino}`;
@@ -185,11 +187,11 @@ async function descargarImagenes(idArray, idCarpetaDestino) {
                 url: url,
                 responseType: 'stream'
             });
-    
+
             if (!fs.existsSync(carpetaDestino)) {
                 fs.mkdirSync(carpetaDestino, { recursive: true });
             }
-    
+
             const rutaArchivo = path.join(carpetaDestino, `${id}.jpg`);
             response.data.pipe(fs.createWriteStream(rutaArchivo));
             console.log('Imagen descargada:', rutaArchivo);
@@ -220,15 +222,15 @@ function obtenerID(url) {
 (async () => {
     const jsonResult = await donwloadXlsx('https://docs.google.com/spreadsheets/d/1Xbg9AZeIFAa1nweJKAXNY3Bu9bNC4KUm/export?format=xlsx');
 
-  
 
-    const infoImagenes =  jsonResult.map((item) => {
+
+    const infoImagenes = jsonResult.map((item) => {
         return {
-            id: item.images.split(',').map((image) => obtenerID(image)),
+            id: item.images?.split(',').map((image) => obtenerID(image)),
             idCapetaDestino: item.id,
         }
     })
-   
+
 
     await Promise.all(infoImagenes.map(async (item) => {
         await descargarImagenes(item.id, item.idCapetaDestino);
@@ -236,7 +238,9 @@ function obtenerID(url) {
 
 
     const data = await transformData(jsonResult);
+    console.log(`SE HAN DESCARGADO ${data.length} PROPIEDADES`)
+
     createFile('data/data_property.json', data);
-   await gitAddCommitPush();
+    await gitAddCommitPush();
 
 })();
