@@ -43,7 +43,7 @@ const PropertyComponent: React.FC<PropertyComponentProps> = ({ property }) => {
               {property.amenities &&
                 <>
                   <IonText>
-                    <strong>Caracteristocas destacadad:</strong>
+                    <strong>Características destacadas:</strong>
                   </IonText>
                   <ul>
                     {property.amenities?.map((amenity, index) => (
