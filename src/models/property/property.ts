@@ -1,6 +1,6 @@
 export type PropertyType = "Casa" | "Departamento" | "Oficina" | "Terreno" | "Lote" | "Comercial" | "Estacionamiento";
 export type TransactionType = "Venta" | "Alquiler";
-export type condition = "nuevo" | "usado" | "en construcción";
+export type condition = "Nuevo" | "Usado" | "En construcción";
 export type money = "$" | "Bs";
 
 export interface Coordinate {
