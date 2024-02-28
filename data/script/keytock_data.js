@@ -226,7 +226,9 @@ function obtenerID(url) {
 
     const infoImagenes = jsonResult.map((item) => {
         return {
-            id: item.images?.split(',').map((image) => obtenerID(image)),
+            id: item.images?.split(',')
+            .map((image) => obtenerID(image))
+            .filter((id) => id !== null),
             idCapetaDestino: item.id,
         }
     })
