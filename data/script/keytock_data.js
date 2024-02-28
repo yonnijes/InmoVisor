@@ -196,7 +196,7 @@ async function descargarImagenes(idArray, idCarpetaDestino) {
             response.data.pipe(fs.createWriteStream(rutaArchivo));
             console.log('Imagen descargada:', rutaArchivo);
         } catch (error) {
-            console.log('Error al descargar la imagen:', error);
+            console.log('Error al descargar la imagen:', id, carpetaDestino);
         }
     }
     await Promise.all(idArray.map(id => descargarImg(id, idCarpetaDestino)));
