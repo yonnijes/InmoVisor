@@ -232,7 +232,6 @@ function obtenerID(url) {
             idCapetaDestino: item.id,
         }
     })
-    console.log(infoImagenes);
 
 
     await Promise.all(infoImagenes.map(async (item) => {
