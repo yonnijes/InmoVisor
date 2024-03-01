@@ -101,7 +101,7 @@ const gitAddCommitPush = async () => {
 
         const projectDir = '/Users/yonnieraleman/MyCode/typescript/InmoVisor';
 
-       // await runCommand(`ssh-add --apple-use-keychain -q ~/.ssh/id_ed25519`);
+        await runCommand(`ssh-add --apple-use-keychain -q ~/.ssh/id_ed25519`);
         await runCommand(`git add data`, projectDir);
         await runCommand(`git commit -m "Actualizar data_property.json"`, projectDir);
         await runCommand(`git push origin main`, projectDir);
