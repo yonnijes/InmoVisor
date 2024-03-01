@@ -147,45 +147,11 @@ async function donwloadXlsx(url) {
 }
 
 
-/* async function descargarImagen(idArray, idCapetaDestino) {
-
-    idArray.forEach(async (id) => {
-
-
-        // URL de descarga directa de la imagen
-        const url = `https://drive.google.com/uc?id=${id}`;
-        const carpetaDestino = `data/img/${idCapetaDestino}`;
-        try {
-            const response = await axios({
-                method: 'get',
-                url: url,
-                responseType: 'stream'
-            });
-
-
-            // Asegúrate de que la carpeta exista, si no, créala
-            if (!fs.existsSync(carpetaDestino)) {
-                fs.mkdirSync(carpetaDestino);
-            }
-            const rutaArchivo = path.join(carpetaDestino, `${id}.jpg`);
-
-
-            response.data.pipe(fs.createWriteStream(rutaArchivo));
-            // console.log('Imagen descargada:', rutaArchivo);
-
-
-        } catch (error) {
-            console.log('Error al descargar la imagen:', error);
-        }
-    });
-    console.log('Imagenes descargadas');
-} */
-
 async function descargarImagenes(idArray, idCarpetaDestino) {
 
     async function descargarImg(id, idCarpetaDestino) {
         const url = `https://drive.google.com/uc?id=${id}`;
-        const carpetaDestino = `data/img/${idCarpetaDestino}`;
+        const carpetaDestino = `/Users/yonnieraleman/MyCode/typescript/InmoVisordata/img/${idCarpetaDestino}`;
         try {
             const response = await axios({
                 method: 'get',
