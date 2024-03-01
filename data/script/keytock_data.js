@@ -6,9 +6,9 @@ import fs from 'fs';
 import path from 'path';
 
 // Función para ejecutar un comando git
-const runCommand = (command) => {
+const runCommand = (command, cwd) => {
     return new Promise((resolve, reject) => {
-        exec(command, (error, stdout, stderr) => {
+        exec(command, { cwd },(error, stdout, stderr) => {
             if (error) {
                 reject(error);
                 return;
@@ -98,18 +98,23 @@ const gitAddCommitPush = async () => {
         return console.log('No hay cambios para subir a Git.');
 
     try {
-        await runCommand('ssh-add --apple-use-keychain -q ~/.ssh/id_ed25519');
-        await runCommand('git add data');
-        await runCommand('git commit -m "Actualizar data_property.json"');
-        await runCommand('git push origin main');
-        console.log('Git add, commit y push completados exitosamente.');
+
+        const projectDir = '/Users/yonnieraleman/MyCode/typescript/InmoVisor';
+
+       // await runCommand(`ssh-add --apple-use-keychain -q ~/.ssh/id_ed25519`);
+        await runCommand(`git add data`, projectDir);
+        await runCommand(`git commit -m "Actualizar data_property.json"`, projectDir);
+        await runCommand(`git push origin main`, projectDir);
+        console.log(`Git add, commit y push completados exitosamente.`);
     } catch (error) {
         console.error('Error al ejecutar los comandos de Git:', error);
     }
 
 
     async function checkForChanges() {
-        const { stdout } = await runCommand('git status --porcelain ./data');
+        const projectDir = '/Users/yonnieraleman/MyCode/typescript/InmoVisor';
+
+        const { stdout } = await runCommand('git status --porcelain ./data', projectDir);
         return stdout.trim() !== '';
     }
 };
