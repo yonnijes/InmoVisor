@@ -151,7 +151,7 @@ async function descargarImagenes(idArray, idCarpetaDestino) {
 
     async function descargarImg(id, idCarpetaDestino) {
         const url = `https://drive.google.com/uc?id=${id}`;
-        const carpetaDestino = `/Users/yonnieraleman/MyCode/typescript/InmoVisordata/img/${idCarpetaDestino}`;
+        const carpetaDestino = `/Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/${idCarpetaDestino}`;
         try {
             const response = await axios({
                 method: 'get',
@@ -211,7 +211,7 @@ function obtenerID(url) {
 
 
     const data = await transformData(jsonResult);
-    console.log(`SE HAN DESCARGADO ${data.length} PROPIEDADES`)
+    console.log(`SE HAN DESCARGADO ${data?.length} PROPIEDADES`)
 
     createFile('data/data_property.json', data);
     await gitAddCommitPush();
