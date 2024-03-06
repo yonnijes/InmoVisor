@@ -149,7 +149,7 @@ async function donwloadXlsx(url) {
 
 async function descargarImagenes(idArray, idCarpetaDestino) {
 
-    async function descargarImg(id, idCarpetaDestino) {
+    async function descargarImg(id, idCarpetaDestino, prefix= 'img') {
         const url = `https://drive.google.com/uc?id=${id}`;
         const carpetaDestino = `/Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/${idCarpetaDestino}`;
         try {
@@ -163,14 +163,14 @@ async function descargarImagenes(idArray, idCarpetaDestino) {
                 fs.mkdirSync(carpetaDestino, { recursive: true });
             }
 
-            const rutaArchivo = path.join(carpetaDestino, `${id}.jpg`);
+            const rutaArchivo = path.join(carpetaDestino, `${prefix}_${id}.jpg`);
             response.data.pipe(fs.createWriteStream(rutaArchivo));
             console.log('Imagen descargada:', rutaArchivo);
         } catch (error) {
             console.log('Error al descargar la imagen:', id, carpetaDestino);
         }
     }
-    await Promise.all(idArray.map(id => descargarImg(id, idCarpetaDestino)));
+    await Promise.all(idArray.map((id,index) => descargarImg(id, idCarpetaDestino, `img${index}`)));
 
 }
 
@@ -210,7 +210,6 @@ function obtenerID(url) {
 
     const data = await transformData(jsonResult);
     console.log(`SE HAN DESCARGADO ${data?.length} PROPIEDADES`)
-    console.log(data);
 
     createFile('data/data_property.json', data);
     await gitAddCommitPush();
