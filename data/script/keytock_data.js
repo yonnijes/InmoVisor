@@ -170,7 +170,7 @@ async function descargarImagenes(idArray, idCarpetaDestino) {
             console.log('Error al descargar la imagen:', id, carpetaDestino);
         }
     }
-    await Promise.all(idArray.map((id,index) => descargarImg(id, idCarpetaDestino, `img${index}`)));
+    await Promise.all(idArray?.map((id,index) => descargarImg(id, idCarpetaDestino, `img${index}`)));
 
 }
 
@@ -192,6 +192,9 @@ function obtenerID(url) {
 
 (async () => {
     const jsonResult = await donwloadXlsx('https://docs.google.com/spreadsheets/d/1Xbg9AZeIFAa1nweJKAXNY3Bu9bNC4KUm/export?format=xlsx');
+
+
+    console.log(`SE HAN DESCARGADO ${jsonResult.length} PROPIEDADES`)
 
     const infoImagenes = jsonResult.map((item) => {
         return {
