@@ -64,9 +64,9 @@ const Map: React.FC<MapProps> = ({ coordinates }) => {
         map.fitBounds(bounds);
 
         const getProperty = (id: string) => {
-            const savedData = localStorage.getItem('propertys');
-            const propertys: Property.Property[] = savedData ? JSON.parse(savedData) : [];
-            const property = propertys.find(property => property.id === id);
+            const savedData = localStorage.getItem('properties');
+            const properties: Property.Property[] = savedData ? JSON.parse(savedData) : [];
+            const property = properties.find(property => property.id === id);
             return property;
         }
 

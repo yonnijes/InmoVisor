@@ -16,7 +16,7 @@ const config: CapacitorConfig = {
       backgroundColor: "#ffffff",
       splashImmersive: false,
       splashShowOnlyFirstTime: false,
-      splashAutoHide: true,
+      splashAutoHide: false,
       iosSplash: {
         backgroundColor: "#ffffff",
         resizeMode: "cover",

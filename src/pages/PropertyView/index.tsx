@@ -1,25 +1,24 @@
-import { useState, useEffect } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSearchbar, IonButton, IonIcon, IonModal } from '@ionic/react';
+import { IonButton, IonContent, IonHeader, IonIcon, IonPage, IonSearchbar, IonTitle, IonToolbar } from '@ionic/react';
+import axios, { AxiosError } from 'axios';
 import { filterOutline, locationOutline } from 'ionicons/icons';
-import axios, { Axios, AxiosError } from 'axios';
-import PropertyComponent from '../../components/property';
-import { Property } from '../../models';
-import FilterModal from '../../components/filter-modal';
+import { useEffect } from 'react';
 import { useHistory } from 'react-router';
 import jsonDataMOK from '../../../data/data_property.json';
+import FilterModal from '../../components/filter-modal';
+import PropertyComponent from '../../components/property';
 import { usePropertyViewLogic } from '../../hook/usePropertyViewLogic';
+import { Property } from '../../models';
 
 
 
 const PropertyView: React.FC = () => {
 
   const {
-    propertys,
-    searchText,
+    properties,
     isModalOpen,
     countFilters,
     filters,
-    setPropertys,
+    setProperties,
     setSearchText,
     handleOpenModal,
     handleCloseModal,
@@ -45,38 +44,20 @@ const PropertyView: React.FC = () => {
         });
 
         const data = await response.data;
-        setPropertys(data);
+        setProperties(data);
 
         // Guardar los datos en localStorage
-        localStorage.setItem('propertys', JSON.stringify(data));
+        localStorage.setItem('properties', JSON.stringify(data));
       } catch (error) {
         if (error instanceof AxiosError)
           console.log(`Error fetching data: ${error.status} - ${error.message}`);
-        setPropertys(jsonDataMOK as  unknown as Property.Property[]);
-        localStorage.setItem('propertys', JSON.stringify(jsonDataMOK));
+        setProperties(jsonDataMOK as  unknown as Property.Property[]);
+        localStorage.setItem('properties', JSON.stringify(jsonDataMOK));
       }
     }
 
     fetchData();
   }, []);
-
-  useEffect(() => {
-    // Filtrar propiedades en función del searchText
-
-    const savedData = localStorage.getItem('propertys');
-    const propertys = savedData ? JSON.parse(savedData) : [];
-
-
-    const filteredPropertys = searchText
-      ? propertys.filter((property: Property.Property) =>
-        property.address.toLowerCase().includes(searchText.toLowerCase()) ||
-        property.type.toLowerCase().includes(searchText.toLowerCase()) ||
-        property.description?.toLowerCase().includes(searchText.toLowerCase())
-      )
-      : propertys;
-
-    setPropertys(filteredPropertys);
-  }, [searchText]);
 
 
   return (
@@ -92,7 +73,7 @@ const PropertyView: React.FC = () => {
             Ver mapa
           </IonButton>
           <IonTitle size="small" >
-            {propertys.length} registros
+            {properties.length} registros
           </IonTitle>
           <IonButton slot="end" onClick={handleOpenModal}>
             <IonIcon icon={filterOutline} />
@@ -103,7 +84,7 @@ const PropertyView: React.FC = () => {
       <IonContent fullscreen>
 
 
-        {propertys.map((property, i) => (
+        {properties.map((property, i) => (
           <PropertyComponent key={i} property={property} />
         ))}
 

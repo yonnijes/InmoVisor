@@ -66,7 +66,26 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, applyFilters
           />
           <Filter
             label="Baños"
-            options={[0, 1, 2, 3, 4, 5]}
+            options={[
+              {
+                '0': 0
+              },
+              {
+                '1': 1
+              },
+              {
+                '2': 2
+              },
+              {
+                '3': 3
+              },
+              {
+                '4': 4
+              },
+              {
+                '5 o más': 5
+              }
+            ]}
             selectedValue={filters.bathrooms}
             onChange={(value) => handleChangeFilter('bathrooms', value)}
           />
@@ -97,8 +116,8 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, applyFilters
             min={0} // Valor mínimo del rango de precio
             max={150000} // Valor máximo del rango de precio
             onChange={(value) => {
-              handleChangeFilter('lowerpriceRange', value.lower);
-              handleChangeFilter('upperpriceRange', value.upper);
+              handleChangeFilter('lowerPriceRange', value.lower);
+              handleChangeFilter('upperPriceRange', value.upper);
             }}
           /> */}
           {/* Agregar más filtros según sea necesario */}

@@ -23,11 +23,15 @@ const PropertyComponent: React.FC<PropertyComponentProps> = ({ property }) => {
       <IonCardContent>
         <p>{property.condition}</p>
         <p>{property.address}</p>
-        <p><strong>{property.money} {property.price}</strong> </p>
+        <p><strong>{property.money} {property.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</strong> </p>
         <p>
-          {property.bedrooms} Dormitorio{property.bedrooms > 1 ? 's' : ''} | &nbsp;
-          {property.bathrooms} Baño{property.bathrooms > 1 ? 's' : ''} 
-          {property?.parkingSpaces! > 0 && ` | ${property.parkingSpaces} Estacionamiento${property.parkingSpaces! > 1 ? 's' : ''}`}
+          {property?.bedrooms! > 0 && `${property.bedrooms} Dormitorio${property.bedrooms > 1 ? 's' : ''} | `}
+          {property?.bathrooms! > 0 && `${property.bathrooms} Baño${property.bathrooms > 1 ? 's' : ''} | `}
+          {property?.parkingSpaces! > 0 && `${property.parkingSpaces} Estacionamiento${property.parkingSpaces! > 1 ? 's' : ''}`}
+
+        </p>
+        <p>
+          {property?.storageRoom && <span>Maletero</span>}
         </p>
         <p>{property.squareMeters} m<sup>2</sup></p>
         <Carousel images={property.image} />
@@ -52,6 +56,7 @@ const PropertyComponent: React.FC<PropertyComponentProps> = ({ property }) => {
                       </li>
 
                     ))}
+
                   </ul>
                 </>}
 

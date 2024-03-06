@@ -11,12 +11,11 @@ import { Property } from '../../models';
 const PropertyViewMap: React.FC = () => {
   const [coordinates, setCoordinates] = useState<Property.Coordinate[]>([])
   const {
-    propertys,
-    searchText,
+    properties,
     isModalOpen,
     countFilters,
     filters,
-    setPropertys,
+    setProperties,
     setSearchText,
     handleOpenModal,
     handleCloseModal,
@@ -33,14 +32,14 @@ const PropertyViewMap: React.FC = () => {
 
 
   useEffect(() => {
-    const savedData = localStorage.getItem('propertys');
-    const propertys: Property.Property[] = savedData ? JSON.parse(savedData) : [];
-    setPropertys(propertys);
+    const savedData = localStorage.getItem('properties');
+    const properties: Property.Property[] = savedData ? JSON.parse(savedData) : [];
+    setProperties(properties);
   }, []);
 
 
   useEffect(() => {
-    const coordinates = propertys
+    const coordinates = properties
       .map(property => ({
         id: property.id,
         lat: property?.coordinate?.lat,
@@ -49,26 +48,8 @@ const PropertyViewMap: React.FC = () => {
       .filter(coordinate => coordinate.lat && coordinate.lng);
 
     setCoordinates(coordinates);
-  }, [propertys]);
+  }, [properties]);
 
-
-  useEffect(() => {
-    // Filtrar propiedades en función del searchText
-
-    const savedData = localStorage.getItem('propertys');
-    const propertys = savedData ? JSON.parse(savedData) : [];
-
-
-    const filteredPropertys = searchText
-      ? propertys.filter((property: Property.Property) =>
-        property.address.toLowerCase().includes(searchText.toLowerCase()) ||
-        property.type.toLowerCase().includes(searchText.toLowerCase()) ||
-        property.description?.toLowerCase().includes(searchText.toLowerCase())
-      )
-      : propertys;
-
-    setPropertys(filteredPropertys);
-  }, [searchText]);
 
 
   return (

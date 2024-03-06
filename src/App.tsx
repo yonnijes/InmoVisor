@@ -35,7 +35,11 @@ setupIonicReact();
 const App: React.FC = () => {
 
   useEffect(() => {
-    SplashScreen.hide();
+    SplashScreen.hide({
+      //duration: 30 segundos
+      fadeOutDuration: 30000
+    });
+
   }, []);
 
 
