@@ -193,8 +193,6 @@ function obtenerID(url) {
 (async () => {
     const jsonResult = await donwloadXlsx('https://docs.google.com/spreadsheets/d/1Xbg9AZeIFAa1nweJKAXNY3Bu9bNC4KUm/export?format=xlsx');
 
-   
-
     const infoImagenes = jsonResult.map((item) => {
         return {
             id: item.images?.split(',')
@@ -204,8 +202,6 @@ function obtenerID(url) {
         }
     })
 
-    console.log("infoImagenes", infoImagenes);
-
 
     await Promise.all(infoImagenes.map(async (item) => {
         await descargarImagenes(item.id, item.idCapetaDestino);
@@ -214,6 +210,7 @@ function obtenerID(url) {
 
     const data = await transformData(jsonResult);
     console.log(`SE HAN DESCARGADO ${data?.length} PROPIEDADES`)
+    console.log(data);
 
     createFile('data/data_property.json', data);
     await gitAddCommitPush();
