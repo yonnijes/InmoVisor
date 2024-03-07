@@ -6,6 +6,7 @@ import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
+
 // Función para ejecutar un comando git
 const runCommand = (command, cwd) => {
     return new Promise((resolve, reject) => {
@@ -175,6 +176,9 @@ async function descargarImagenes(idArray, idCarpetaDestino) {
                 response.data.on('error', reject);
             });
 
+             // Agregar un pequeño retraso antes de procesar la imagen
+             await new Promise(resolve => setTimeout(resolve, 3000)); // Esperar 3 segundo
+
             // Llamar a la función para ajustar la calidad de la imagen
             await qualityImages(80, rutaArchivo, rutaDestino);
 
@@ -193,15 +197,34 @@ async function descargarImagenes(idArray, idCarpetaDestino) {
 
 async function qualityImages(quality, urlOrigin, urlDestino) {
     try {
+
+
+
+
         // Utiliza sharp para cargar la imagen, reducir su calidad y guardarla
         await sharp(urlOrigin)
             .jpeg({ quality: quality })
             .toFile(urlDestino);
 
+
+        const stats = fs.statSync(urlDestino);
+        const size = stats.size;
+        const sizeMB = (size / 1024 / 1024).toFixed(2);
+
+        // Muestra el tamaño original de la imagen en megabytes
+        if (sizeMB >= 1){
+            console.log(`TAMAÑO DE LA IMAGEN: ${sizeMB} MB`);
+            await qualityImages(quality - 3, urlOrigin, urlDestino);
+        }
+
+
         console.log('Imagen reducida guardada con éxito');
     } catch (error) {
         console.error('Error al reducir la imagen:', error, urlOrigin, urlDestino);
+
         fs.renameSync(urlOrigin, urlDestino);
+
+
     }
 }
 
