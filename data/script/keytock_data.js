@@ -165,6 +165,7 @@ async function descargarImagenes(idArray, idCarpetaDestino) {
 
             const rutaArchivo = path.join(carpetaDestino, `${prefix}_${id}.jpg`);
             response.data.pipe(fs.createWriteStream(rutaArchivo));
+            await qualityImages(80, rutaArchivo, rutaArchivo);
             console.log('Imagen descargada:', rutaArchivo);
         } catch (error) {
             console.log('Error al descargar la imagen:', id, carpetaDestino);
@@ -173,6 +174,20 @@ async function descargarImagenes(idArray, idCarpetaDestino) {
     await Promise.all(idArray?.map((id, index) => descargarImg(id, idCarpetaDestino, `img${index}`)));
 
 }
+
+async function qualityImages(quality, urlOrigin, urlDestino) {
+    try {
+        // Utiliza sharp para cargar la imagen, reducir su calidad y guardarla
+        await sharp(urlOrigin)
+          .jpeg({ quality: quality })
+          .toFile(urlDestino);
+        
+        console.log('Imagen reducida guardada con éxito');
+      } catch (error) {
+        console.error('Error al reducir la imagen:', error);
+      }
+}
+
 
 function obtenerID(url) {
     // Expresión regular para encontrar el ID del archivo en la URL de Google Drive
