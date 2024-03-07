@@ -161,6 +161,10 @@ async function descargarImagenes(idArray, idCarpetaDestino) {
                 responseType: 'stream'
             });
 
+
+        
+
+
             if (!fs.existsSync(carpetaDestino)) {
                 fs.mkdirSync(carpetaDestino, { recursive: true });
             }
@@ -176,8 +180,8 @@ async function descargarImagenes(idArray, idCarpetaDestino) {
                 response.data.on('error', reject);
             });
 
-             // Agregar un pequeño retraso antes de procesar la imagen
-             await new Promise(resolve => setTimeout(resolve, 3000)); // Esperar 3 segundo
+            // Agregar un pequeño retraso antes de procesar la imagen
+            await new Promise(resolve => setTimeout(resolve, 3000)); // Esperar 3 segundo
 
             // Llamar a la función para ajustar la calidad de la imagen
             await qualityImages(80, rutaArchivo, rutaDestino);
@@ -212,7 +216,7 @@ async function qualityImages(quality, urlOrigin, urlDestino) {
         const sizeMB = (size / 1024 / 1024).toFixed(2);
 
         // Muestra el tamaño original de la imagen en megabytes
-        if (sizeMB >= 1){
+        if (sizeMB >= 1) {
             console.log(`TAMAÑO DE LA IMAGEN: ${sizeMB} MB`);
             await qualityImages(quality - 3, urlOrigin, urlDestino);
         }
