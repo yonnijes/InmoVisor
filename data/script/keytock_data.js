@@ -4,6 +4,7 @@ import { exec } from 'child_process';
 import axios from 'axios';
 import fs from 'fs';
 import path from 'path';
+import sharp from 'sharp';
 
 // Función para ejecutar un comando git
 const runCommand = (command, cwd) => {
