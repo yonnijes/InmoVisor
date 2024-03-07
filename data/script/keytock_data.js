@@ -8,7 +8,7 @@ import path from 'path';
 // Función para ejecutar un comando git
 const runCommand = (command, cwd) => {
     return new Promise((resolve, reject) => {
-        exec(command, { cwd },(error, stdout, stderr) => {
+        exec(command, { cwd }, (error, stdout, stderr) => {
             if (error) {
                 reject(error);
                 return;
@@ -142,14 +142,14 @@ async function donwloadXlsx(url) {
     });
 
     // Devolver el JSON resultante
-    return jsonObj.filter((item) => item.id !== undefined);
+    return jsonObj.filter((item) => item.id !== undefined).filter((item) => !item.expired);
 
 }
 
 
 async function descargarImagenes(idArray, idCarpetaDestino) {
 
-    async function descargarImg(id, idCarpetaDestino, prefix= 'img') {
+    async function descargarImg(id, idCarpetaDestino, prefix = 'img') {
         const url = `https://drive.google.com/uc?id=${id}`;
         const carpetaDestino = `/Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/${idCarpetaDestino}`;
         try {
@@ -170,7 +170,7 @@ async function descargarImagenes(idArray, idCarpetaDestino) {
             console.log('Error al descargar la imagen:', id, carpetaDestino);
         }
     }
-    await Promise.all(idArray?.map((id,index) => descargarImg(id, idCarpetaDestino, `img${index}`)));
+    await Promise.all(idArray?.map((id, index) => descargarImg(id, idCarpetaDestino, `img${index}`)));
 
 }
 
@@ -199,8 +199,8 @@ function obtenerID(url) {
     const infoImagenes = jsonResult.map((item) => {
         return {
             id: item.images?.split(',')
-            .map((image) => obtenerID(image))
-            .filter((id) => id !== null),
+                .map((image) => obtenerID(image))
+                .filter((id) => id !== null),
             idCapetaDestino: item.id,
         }
     })
