@@ -164,9 +164,24 @@ async function descargarImagenes(idArray, idCarpetaDestino) {
                 fs.mkdirSync(carpetaDestino, { recursive: true });
             }
 
-            const rutaArchivo = path.join(carpetaDestino, `${prefix}_${id}.jpg`);
+            const rutaArchivo = path.join(carpetaDestino, `${id}.jpg`);
+            const rutaDestino = path.join(carpetaDestino, `${prefix}_${id}.jpg`);
             response.data.pipe(fs.createWriteStream(rutaArchivo));
-            await qualityImages(80, rutaArchivo, rutaArchivo);
+
+
+            // Esperar a que la descarga se complete
+            await new Promise((resolve, reject) => {
+                response.data.on('end', resolve);
+                response.data.on('error', reject);
+            });
+
+            // Llamar a la función para ajustar la calidad de la imagen
+            await qualityImages(80, rutaArchivo, rutaDestino);
+
+            // Eliminar el archivo temporal después de procesarlo
+            fs.unlinkSync(rutaArchivo);
+
+
             console.log('Imagen descargada:', rutaArchivo);
         } catch (error) {
             console.log('Error al descargar la imagen:', id, carpetaDestino);
@@ -180,13 +195,14 @@ async function qualityImages(quality, urlOrigin, urlDestino) {
     try {
         // Utiliza sharp para cargar la imagen, reducir su calidad y guardarla
         await sharp(urlOrigin)
-          .jpeg({ quality: quality })
-          .toFile(urlDestino);
-        
+            .jpeg({ quality: quality })
+            .toFile(urlDestino);
+
         console.log('Imagen reducida guardada con éxito');
-      } catch (error) {
-        console.error('Error al reducir la imagen:', error);
-      }
+    } catch (error) {
+        console.error('Error al reducir la imagen:', error, urlOrigin, urlDestino);
+        fs.renameSync(urlOrigin, urlDestino);
+    }
 }
 
 
