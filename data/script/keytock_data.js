@@ -162,9 +162,6 @@ async function descargarImagenes(idArray, idCarpetaDestino) {
             });
 
 
-        
-
-
             if (!fs.existsSync(carpetaDestino)) {
                 fs.mkdirSync(carpetaDestino, { recursive: true });
             }

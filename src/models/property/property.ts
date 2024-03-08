@@ -18,6 +18,7 @@ export interface Property {
     money: money;
     price: number; // Precio de la propiedad
     squareMeters: number; // Metros cuadrados de la propiedad
+    landSquareMeters?: number; // Metros cuadrados de terreno (opcional)
     bedrooms: number; // Número de dormitorios
     bathrooms: number; // Número de baños
     parkingSpaces?: number; // Número de estacionamientos (opcional)

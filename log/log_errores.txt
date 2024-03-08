@@ -1,0 +1,12 @@
+node:internal/fs/utils:916
+    throw new ERR_INVALID_ARG_TYPE(
+          ^
+
+TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined
+    at writeFile (node:fs:2295:5)
+    at createFile (file:///Users/yonnieraleman/MyCode/typescript/InmoVisor/data/script/keytock_data.js:90:5)
+    at file:///Users/yonnieraleman/MyCode/typescript/InmoVisor/data/script/keytock_data.js:273:5 {
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+
+Node.js v20.11.0

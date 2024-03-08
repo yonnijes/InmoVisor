@@ -33,7 +33,11 @@ const PropertyComponent: React.FC<PropertyComponentProps> = ({ property }) => {
         <p>
           {property?.storageRoom && <span>Maletero</span>}
         </p>
-        <p>{property.squareMeters} m<sup>2</sup></p>
+        <p>
+          {property.squareMeters} m<sup>2</sup>
+          {property.landSquareMeters && " | " + property.landSquareMeters}
+          {property.landSquareMeters && <span dangerouslySetInnerHTML={{ __html: ' m<sup>2</sup> de terreno' }}></span>}
+        </p>
         <Carousel images={property.image} />
         {showMore && (
           <>
@@ -82,7 +86,7 @@ const PropertyComponent: React.FC<PropertyComponentProps> = ({ property }) => {
           {showMore ? 'Ver menos' : 'Ver más'}
         </IonButton>
       </IonCardContent>
-    </IonCard>
+    </IonCard >
   );
 };
 
