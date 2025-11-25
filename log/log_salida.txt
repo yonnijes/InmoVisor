@@ -1,52 +1,40 @@
-SE HAN DESCARGADO 4 PROPIEDADES
-Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-4/15Y0lbeQEmh99TEzOSxrZ64F2zMQPz5kh.jpg
-Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-2/1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg
+SE HAN DESCARGADO 3 PROPIEDADES
 Imagen reducida guardada con éxito
 Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-4/1tuUjauOlR05gkcx_LEKj8p5B53J_NBkL.jpg
 Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-2/13ZPhm9mzTuxnzP1jlkW7clsKdw9TpuID.jpg
+Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-4/1aLwKE8Kl3r5SqP0xgpYAaZpfyh6Ts0aC.jpg
 Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-4/1RJA6fem5igUPgNvSeRJVam_fbBfFqiIw.jpg
-Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-2/1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg
-Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-4/1QR3tcZ8IaX7TcB-lS0YP60qeBOQaQEfr.jpg
-Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-1/1KFwkIRMB5mRBFI793aIT66GY2h3qDos6.jpg
-Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-3/1AfYU1Foh9XwGI71S6-QagsPzbB2YsB-N.jpg
-Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-1/1kRvCe9gZ5xAxkaiv75nVK55QHHL4fwiQ.jpg
-Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-4/1jAUo4I--Oqdr0oOiPycfFoka5Zp66hB6.jpg
-Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-4/1YpBC6i6orTJ2kz-eIeI2d5wa420x-l6H.jpg
-Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-1/1-p151NcUOmjy8Zm_9K2dsYtNvnCeXSTL.jpg
-Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-2/1FbP1NKxQNtzBykNDJClmePfClTZB9tEZ.jpg
-Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-3/1zvyxlICM92FJyhTx-xmuGR9RgBSV0Kmk.jpg
+Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-4/15Y0lbeQEmh99TEzOSxrZ64F2zMQPz5kh.jpg
 Imagen reducida guardada con éxito
 Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-3/12zcdJSSIABdVHktftRs9AdG0rv0y78iN.jpg
 Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-1/1o4ADl3iM4EyGVE91eMVpAS4Egze8Sp0_.jpg
+Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-3/1AfYU1Foh9XwGI71S6-QagsPzbB2YsB-N.jpg
 Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-1/18njH-MrK05Ef8z2ewJjCX0jopwnsDUZd.jpg
+Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-4/1YpBC6i6orTJ2kz-eIeI2d5wa420x-l6H.jpg
 Imagen reducida guardada con éxito
 Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-2/1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg
 Imagen reducida guardada con éxito
+Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-4/1QR3tcZ8IaX7TcB-lS0YP60qeBOQaQEfr.jpg
+Imagen reducida guardada con éxito
+Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-2/1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg
+Imagen reducida guardada con éxito
 Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-4/1gXyT9heM7NZahTuIKuE3yIMvxU6ZjT9A.jpg
 Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-4/1aLwKE8Kl3r5SqP0xgpYAaZpfyh6Ts0aC.jpg
+Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-2/13ZPhm9mzTuxnzP1jlkW7clsKdw9TpuID.jpg
+Imagen reducida guardada con éxito
+Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-2/1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg
+Imagen reducida guardada con éxito
+Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-2/1FbP1NKxQNtzBykNDJClmePfClTZB9tEZ.jpg
+Imagen reducida guardada con éxito
+Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-4/1jAUo4I--Oqdr0oOiPycfFoka5Zp66hB6.jpg
 Imagen reducida guardada con éxito
 Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-3/1DlT7JYm8RlOm5svJJ8bL5AR7g6vy11SY.jpg
 Imagen reducida guardada con éxito
 Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-2/1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg
 Imagen reducida guardada con éxito
-Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-1/119iWz-NmTdEPxcPF7ahv75gAvh5PwYsC.jpg
+Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-4/1RJA6fem5igUPgNvSeRJVam_fbBfFqiIw.jpg
+Imagen reducida guardada con éxito
+Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-3/1zvyxlICM92FJyhTx-xmuGR9RgBSV0Kmk.jpg
 TAMAÑO DE LA IMAGEN: 1.91 MB
 TAMAÑO DE LA IMAGEN: 1.73 MB
 TAMAÑO DE LA IMAGEN: 1.63 MB
@@ -73,7 +61,7 @@ Imagen reducida guardada con éxito
 Imagen descargada: /Users/yonnieraleman/MyCode/typescript/InmoVisor/data/img/A-4/1DT0ef07QngLnVdKyHcolTUeJvxo2JuJb.jpg
 Error al transformar los datos
 Error: ENOENT: no such file or directory, scandir 'data/img/A-4'
-    at readdirSync (node:fs:1515:26)
+    at readdirSync (node:fs:1507:26)
     at searchImage (file:///Users/yonnieraleman/MyCode/typescript/InmoVisor/data/script/keytock_data.js:80:19)
     at file:///Users/yonnieraleman/MyCode/typescript/InmoVisor/data/script/keytock_data.js:67:24
     at Array.map (<anonymous>)

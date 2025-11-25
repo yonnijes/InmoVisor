@@ -43,7 +43,8 @@ const PropertyViewMap: React.FC = () => {
       .map(property => ({
         id: property.id,
         lat: property?.coordinate?.lat,
-        lng: property?.coordinate?.lng
+        lng: property?.coordinate?.lng,
+        label: property?.price?.toString() + ' ' + property?.money
       }))
       .filter(coordinate => coordinate.lat && coordinate.lng);
 
