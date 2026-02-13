@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Property } from '../models';
 
+// (La interfaz AppliedFilters se mantiene igual)
 interface AppliedFilters {
   bedrooms?: number;
   bathrooms?: number;
@@ -13,121 +14,96 @@ interface AppliedFilters {
   storageRoom?: string | number | undefined;
 }
 
-
 export const usePropertyViewLogic = () => {
+  // --- Estados ---
+  // Estado para la lista original de propiedades, sin filtros.
+  const [originalProperties, setOriginalProperties] = useState<Property.Property[]>([]);
+  // Estado para las propiedades mostradas en la UI (ya filtradas).
   const [properties, setProperties] = useState<Property.Property[]>([]);
+  
   const [searchText, setSearchText] = useState<string>('');
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [countFilters, setCountFilters] = useState<number>(0);
-  const [filters, setFilters] = useState<AppliedFilters>({
-    bedrooms: 0,
-    bathrooms: 0,
-    squareMeters: 0,
-    lowerPriceRange: 0,
-    upperPriceRange: 0,
-    type: '' as Property.PropertyType,
-    transaction: '' as Property.TransactionType,
-    parkingSpaces: 0,
-    storageRoom: undefined,
-  });
+  const [filters, setFilters] = useState<AppliedFilters>({});
 
+  // --- Lógica de Carga y Filtrado ---
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-
-
-  const applyFilters = (appliedFilters: AppliedFilters) => {
-
-
+  // Carga las propiedades desde localStorage.
+  const loadPropertiesFromStorage = useCallback(() => {
     const savedData = localStorage.getItem('properties');
-    const properties: Property.Property[] = savedData ? JSON.parse(savedData) : [];
+    const loadedProperties: Property.Property[] = savedData ? JSON.parse(savedData) : [];
+    setOriginalProperties(loadedProperties);
+  }, []);
 
-    // Filtrar las propiedades en función de los filtros aplicados
-    const filteredProperties = properties.filter(property => {
-      // Verificar si se han aplicado filtros y si la propiedad cumple con esos filtros
-      if (appliedFilters.bedrooms && property.bedrooms !== appliedFilters.bedrooms) {
-        return false;
-      }
+  // Función que aplica TODOS los filtros y búsquedas en cadena.
+  const applyAllFilters = useCallback(() => {
+    let filtered = [...originalProperties];
 
-      if (appliedFilters.bathrooms && property.bathrooms !== appliedFilters.bathrooms && !(appliedFilters.bathrooms == 5 && property.bathrooms >= 5)) {
-        console.log(property.bathrooms);
-        return false;
-      }
+    // 1. Aplicar filtro de búsqueda por texto
+    if (searchText) {
+      filtered = filtered.filter((property: Property.Property) =>
+        property.address.toLowerCase().includes(searchText.toLowerCase()) ||
+        property.type.toLowerCase().includes(searchText.toLowerCase()) ||
+        property.description?.toLowerCase().includes(searchText.toLowerCase())
+      );
+    }
 
+    // 2. Aplicar filtros del modal
+    if (Object.keys(filters).length > 0) {
+        filtered = filtered.filter(property => {
+            if (filters.bedrooms && property.bedrooms !== filters.bedrooms) return false;
+            if (filters.bathrooms && property.bathrooms !== filters.bathrooms && !(filters.bathrooms == 5 && property.bathrooms >= 5)) return false;
+            if (filters.squareMeters && property.squareMeters !== filters.squareMeters) return false;
+            if (filters.lowerPriceRange && property.price < filters.lowerPriceRange) return false;
+            if (filters.upperPriceRange && property.price > filters.upperPriceRange) return false;
+            if (filters.type && property.type !== filters.type) return false;
+            if (filters.transaction && property.transaction !== filters.transaction) return false;
+            if (filters.parkingSpaces && property.parkingSpaces !== filters.parkingSpaces) return false;
+            if (filters.storageRoom && filters.storageRoom !== 'Indiferente') {
+                const storageRoomBoolean = filters.storageRoom === 'Si';
+                if (property.storageRoom !== storageRoomBoolean) return false;
+            }
+            return true;
+        });
+    }
 
+    setProperties(filtered);
+  }, [originalProperties, searchText, filters]);
 
-      if (appliedFilters.squareMeters && property.squareMeters !== appliedFilters.squareMeters) {
-        return false;
-      }
-      if (appliedFilters.lowerPriceRange && property.price < appliedFilters.lowerPriceRange) {
-        return false;
-      }
-      if (appliedFilters.upperPriceRange && property.price > appliedFilters.upperPriceRange) {
-        return false;
-      }
+  // --- Efectos (Lifecycle) ---
 
-      if (appliedFilters.type && property.type !== appliedFilters.type) {
-        return false;
-      }
-
-      if (appliedFilters.transaction && property.transaction !== appliedFilters.transaction) {
-        return false;
-      }
-
-
-      if (appliedFilters.parkingSpaces && property.parkingSpaces !== appliedFilters.parkingSpaces) {
-        return false;
-      }
-
-      const storageRoomBoolean = appliedFilters.storageRoom === 'Si' ? true : false;
-      if (appliedFilters.storageRoom !== undefined && appliedFilters.storageRoom !== 0 && property.storageRoom !== storageRoomBoolean) {
-        return false;
-      }
-
-
-      // Agregar más condiciones para otros filtros si es necesario
-
-      // Si la propiedad pasa todos los filtros, devolver true
-      return true;
-    });
-
-    // Actualizar el estado de las propiedades filtradas
-    setProperties(filteredProperties);
-  };
-
-
-  const applySearchText = (properties:Property.Property[], text: string):Property.Property[]  => {
-   
-    const filteredProperties = text
-      ? properties.filter((property: Property.Property) =>
-        property.address.toLowerCase().includes(text.toLowerCase()) ||
-        property.type.toLowerCase().includes(text.toLowerCase()) ||
-        property.description?.toLowerCase().includes(text.toLowerCase())
-      )
-      : properties;
-
-
-    return filteredProperties;
-  }
-
+  // Carga inicial de propiedades
   useEffect(() => {
-    const values = Object.values(filters);
-    const count = values.filter(value => typeof value === "number" && value > 0 || typeof value === "string" && value !== "").length;
-    setCountFilters(count);
+    loadPropertiesFromStorage();
+  }, [loadPropertiesFromStorage]);
 
-  }, [filters]);
-
+  // Re-aplica los filtros cuando cambia la lista original, el texto de búsqueda o los filtros del modal
   useEffect(() => {
-    // Filtrar propiedades en función del searchText
-    const propertiesSearched =  applySearchText(properties,searchText);
-    setProperties(propertiesSearched);
+    applyAllFilters();
+  }, [applyAllFilters]);
+  
+  // Listener para cambios en localStorage desde otras pestañas
+  useEffect(() => {
+    const handleStorageChange = (event: StorageEvent) => {
+      if (event.key === 'properties') {
+        loadPropertiesFromStorage();
+      }
+    };
+    window.addEventListener('storage', handleStorageChange);
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, [loadPropertiesFromStorage]);
 
-  }, [searchText]);
+
+  // --- Handlers para la UI ---
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+  
+  const countFilters = Object.values(filters).filter(value => {
+    if (typeof value === 'number' && value > 0) return true;
+    if (typeof value === 'string' && value && value !== 'Indiferente') return true;
+    return false;
+  }).length;
 
   return {
     properties,
@@ -135,11 +111,9 @@ export const usePropertyViewLogic = () => {
     isModalOpen,
     countFilters,
     filters,
-    setProperties,
     setSearchText,
     handleOpenModal,
     handleCloseModal,
-    applyFilters,
-    setFilters
+    setFilters, // El modal ahora solo actualiza el estado de los filtros
   };
 };
