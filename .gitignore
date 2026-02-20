@@ -12,6 +12,7 @@
 
 # production
 /dist
+/dev-dist
 /admin-desktop/dist-electron
 
 # misc
