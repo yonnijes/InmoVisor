@@ -26,6 +26,17 @@ export default defineConfig({
               },
             },
           },
+          {
+            urlPattern: /^https:\/\/raw\.githubusercontent\.com\/.*?\.(json)$/,
+            handler: 'NetworkFirst', // Intentar red, pero caer a caché si offline
+            options: {
+              cacheName: 'github-data-cache',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24, // 1 día
+              },
+            },
+          },
         ],
       },
     })
