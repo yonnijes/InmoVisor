@@ -51,4 +51,19 @@ export class PropertyRepository {
     all.push(property);
     await this.save(all);
   }
+
+  async delete(id: string): Promise<void> {
+    const all = await this.getAll();
+    const updated = all.filter(p => p.id !== id);
+    await this.save(updated);
+  }
+
+  async update(id: string, property: PropertyData): Promise<void> {
+    const all = await this.getAll();
+    const index = all.findIndex(p => p.id === id);
+    if (index !== -1) {
+      all[index] = property;
+      await this.save(all);
+    }
+  }
 }

@@ -36,4 +36,11 @@ export class PropertyService {
     // 3. Sync with Git
     return await this.gitService.syncPropertyData(propertyId);
   }
+
+  async deleteProperty(propertyId: string) {
+    await this.repository.delete(propertyId);
+    // Optional: Delete images folder too? Roadmap says "Git as DB", so yes.
+    // For now just sync JSON change.
+    return await this.gitService.syncPropertyData(`Delete ${propertyId}`);
+  }
 }

@@ -8,6 +8,7 @@ declare global {
     electronAPI: {
       getProperties: () => Promise<any[]>;
       saveProperty: (property: any, imagePaths: string[]) => Promise<any>;
+      deleteProperty: (id: string) => Promise<any>;
       gitPull: () => Promise<any>;
     }
   }
@@ -24,6 +25,13 @@ const App: React.FC = () => {
   const loadProperties = async () => {
     const data = await window.electronAPI.getProperties()
     setProperties(data)
+  }
+
+  const handleDelete = async (id: string) => {
+    if (confirm(`¿Estás seguro de eliminar la propiedad ${id}?`)) {
+      await window.electronAPI.deleteProperty(id)
+      loadProperties()
+    }
   }
 
   return (
@@ -116,7 +124,12 @@ const App: React.FC = () => {
                       </td>
                       <td className="px-6 py-4 text-sm">
                         <button className="text-blue-600 hover:text-blue-800 font-medium mr-3">Editar</button>
-                        <button className="text-red-600 hover:text-red-800 font-medium">Eliminar</button>
+                        <button 
+                          onClick={() => handleDelete(p.id)}
+                          className="text-red-600 hover:text-red-800 font-medium"
+                        >
+                          Eliminar
+                        </button>
                       </td>
                     </tr>
                   ))}
