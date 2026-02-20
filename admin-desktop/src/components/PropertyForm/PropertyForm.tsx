@@ -10,10 +10,12 @@ const COMMON_AMENITIES = [
   'Quincho', 'Estacionamiento Visitas', 'Bodega', 'Jardín'
 ];
 
-const PropertyForm: React.FC<{ onSuccess: () => void }> = ({ onSuccess }) => {
+const PropertyForm: React.FC<{ initialData?: any; onSuccess: () => void }> = ({ initialData, onSuccess }) => {
   const [loading, setLoading] = useState(false)
-  const [images, setImages] = useState<{ path: string; preview: string }[]>([])
-  const [formData, setFormData] = useState<Partial<PropertyData>>({
+  const [images, setImages] = useState<{ path: string; preview: string; isExisting?: boolean }[]>(
+    initialData?.image?.map((url: string) => ({ path: url, preview: url, isExisting: true })) || []
+  )
+  const [formData, setFormData] = useState<Partial<PropertyData>>(initialData || {
     id: `A-${Date.now().toString().slice(-6)}`,
     type: 'Departamento',
     transaction: 'Venta',
@@ -60,10 +62,21 @@ const PropertyForm: React.FC<{ onSuccess: () => void }> = ({ onSuccess }) => {
 
     setLoading(true)
     try {
-      // Pass only paths to the backend
-      const paths = images.map(img => img.path);
-      await window.electronAPI.saveProperty(formData, paths)
-      alert('¡Propiedad guardada y sincronizada con éxito! 🧙‍♂️✨')
+      if (initialData) {
+        // Edit Mode
+        const newImagePaths = images.filter(img => !img.isExisting).map(img => img.path);
+        const existingImages = images.filter(img => img.isExisting).map(img => img.path);
+        
+        // Pass the updated image list (existing + new ones to be processed)
+        const updatedData = { ...formData, image: existingImages };
+        await window.electronAPI.updateProperty(initialData.id, updatedData, newImagePaths)
+        alert('¡Propiedad actualizada y sincronizada! 🧙‍♂️✨')
+      } else {
+        // Create Mode
+        const paths = images.map(img => img.path);
+        await window.electronAPI.saveProperty(formData, paths)
+        alert('¡Propiedad guardada y sincronizada con éxito! 🧙‍♂️✨')
+      }
       onSuccess()
     } catch (error) {
       console.error(error)
@@ -230,7 +243,7 @@ const PropertyForm: React.FC<{ onSuccess: () => void }> = ({ onSuccess }) => {
         }`}
       >
         <Save size={20} />
-        {loading ? 'PROCESANDO Y SUBIENDO A GITHUB...' : 'PUBLICAR PROPIEDAD'}
+        {loading ? 'PROCESANDO Y SUBIENDO A GITHUB...' : (initialData ? 'GUARDAR CAMBIOS' : 'PUBLICAR PROPIEDAD')}
       </button>
     </div>
   )
