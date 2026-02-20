@@ -39,8 +39,22 @@ export class PropertyService {
 
   async deleteProperty(propertyId: string) {
     await this.repository.delete(propertyId);
-    // Optional: Delete images folder too? Roadmap says "Git as DB", so yes.
-    // For now just sync JSON change.
     return await this.gitService.syncPropertyData(`Delete ${propertyId}`);
+  }
+
+  async updateProperty(id: string, data: PropertyData, tempImagePaths: string[]) {
+    const outputDir = path.join(this.dataRoot, 'img', id);
+    const imageLinks: string[] = [...(data.image || [])];
+
+    for (const imgPath of tempImagePaths) {
+      const result = await this.imageService.processForMobile(imgPath, outputDir);
+      if (result.success) {
+        imageLinks.push(`https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/${id}/${result.filename}`);
+      }
+    }
+
+    const updatedProperty = { ...data, image: imageLinks };
+    await this.repository.update(id, updatedProperty);
+    return await this.gitService.syncPropertyData(`Update ${id}`);
   }
 }

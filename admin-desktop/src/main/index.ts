@@ -40,6 +40,10 @@ function createWindow() {
     return await propertyService.createNewProperty(property, imagePaths)
   })
 
+  ipcMain.handle('update-property', async (_event, id, property, imagePaths) => {
+    return await propertyService.updateProperty(id, property, imagePaths)
+  })
+
   ipcMain.handle('delete-property', async (_event, id) => {
     return await propertyService.deleteProperty(id)
   })

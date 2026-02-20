@@ -8,6 +8,7 @@ declare global {
     electronAPI: {
       getProperties: () => Promise<any[]>;
       saveProperty: (property: any, imagePaths: string[]) => Promise<any>;
+      updateProperty: (id: string, property: any, imagePaths: string[]) => Promise<any>;
       deleteProperty: (id: string) => Promise<any>;
       gitPull: () => Promise<any>;
     }
