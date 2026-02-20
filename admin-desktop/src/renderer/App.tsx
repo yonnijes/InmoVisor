@@ -18,6 +18,7 @@ declare global {
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'list' | 'create'>('list')
   const [properties, setProperties] = useState<any[]>([])
+  const [editingProperty, setEditingProperty] = useState<any | null>(null)
 
   useEffect(() => {
     loadProperties()
@@ -26,6 +27,16 @@ const App: React.FC = () => {
   const loadProperties = async () => {
     const data = await window.electronAPI.getProperties()
     setProperties(data)
+  }
+
+  const handleEdit = (property: any) => {
+    setEditingProperty(property)
+    setActiveTab('create')
+  }
+
+  const handleAddNew = () => {
+    setEditingProperty(null)
+    setActiveTab('create')
   }
 
   const handleDelete = async (id: string) => {
@@ -54,8 +65,8 @@ const App: React.FC = () => {
             Propiedades
           </button>
           <button 
-            onClick={() => setActiveTab('create')}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${activeTab === 'create' ? 'bg-emerald-600 text-white' : 'hover:bg-slate-800 text-slate-400'}`}
+            onClick={handleAddNew}
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${activeTab === 'create' && !editingProperty ? 'bg-emerald-600 text-white' : 'hover:bg-slate-800 text-slate-400'}`}
           >
             <PlusCircle size={20} />
             Añadir Nueva
@@ -79,7 +90,7 @@ const App: React.FC = () => {
         {/* Header */}
         <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-8">
           <h2 className="text-xl font-semibold text-gray-800 uppercase tracking-wider text-sm">
-            {activeTab === 'list' ? 'Gestión de Inventario' : 'Nueva Propiedad'}
+            {activeTab === 'list' ? 'Gestión de Inventario' : (editingProperty ? `Editando: ${editingProperty.id}` : 'Nueva Propiedad')}
           </h2>
           
           <div className="flex items-center gap-4">
@@ -124,7 +135,12 @@ const App: React.FC = () => {
                         <span className="text-sm font-bold text-emerald-600">{p.money} {p.price.toLocaleString('es-CL')}</span>
                       </td>
                       <td className="px-6 py-4 text-sm">
-                        <button className="text-blue-600 hover:text-blue-800 font-medium mr-3">Editar</button>
+                        <button 
+                          onClick={() => handleEdit(p)}
+                          className="text-blue-600 hover:text-blue-800 font-medium mr-3"
+                        >
+                          Editar
+                        </button>
                         <button 
                           onClick={() => handleDelete(p.id)}
                           className="text-red-600 hover:text-red-800 font-medium"
@@ -139,10 +155,13 @@ const App: React.FC = () => {
             </div>
           ) : (
             <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
-              <PropertyForm onSuccess={() => {
-                setActiveTab('list')
-                loadProperties()
-              }} />
+              <PropertyForm 
+                initialData={editingProperty}
+                onSuccess={() => {
+                  setActiveTab('list')
+                  loadProperties()
+                }} 
+              />
             </div>
           )}
         </div>
