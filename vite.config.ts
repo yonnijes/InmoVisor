@@ -3,13 +3,15 @@ import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     legacy(),
     VitePWA({
       registerType: 'autoUpdate',
+      devOptions: {
+        enabled: true // Habilitado para que puedas verlo en modo desarrollo (npm run dev)
+      },
       workbox: {
         runtimeCaching: [
           {
@@ -19,7 +21,7 @@ export default defineConfig({
               cacheName: 'github-images-cache',
               expiration: {
                 maxEntries: 200,
-                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 días
+                maxAgeSeconds: 60 * 60 * 24 * 30,
               },
               cacheableResponse: {
                 statuses: [0, 200],
@@ -28,12 +30,12 @@ export default defineConfig({
           },
           {
             urlPattern: /^https:\/\/raw\.githubusercontent\.com\/.*?\.(json)$/,
-            handler: 'NetworkFirst', // Intentar red, pero caer a caché si offline
+            handler: 'NetworkFirst',
             options: {
               cacheName: 'github-data-cache',
               expiration: {
                 maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24, // 1 día
+                maxAgeSeconds: 60 * 60 * 24,
               },
             },
           },
@@ -41,9 +43,4 @@ export default defineConfig({
       },
     })
   ],
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './src/setupTests.ts',
-  }
 })
