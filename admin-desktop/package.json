@@ -1,7 +1,7 @@
 {
   "name": "inmovisor-admin",
   "version": "1.0.0",
-  "main": "dist-electron/main.js",
+  "main": "dist-electron/index.js",
   "description": "Panel de administración para InmoVisor con Git as DB",
   "scripts": {
     "dev": "vite",
