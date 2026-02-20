@@ -1,31 +1,30 @@
 # Estructura del Proyecto 📂
 
-Guía detallada de las carpetas y archivos principales de InmoVisor.
+InmoVisor está organizado como un monorepo simplificado para separar el visor del administrador.
 
 ## 📁 Carpetas Principales
 
-### `/src`
-Contiene el código fuente de la aplicación React.
-- **`/components`**: Componentes reutilizables (Filtros, Mapas, Botón de WhatsApp, Carousels).
-- **`/hook`**: Lógica personalizada y gestión de estado (ej: `usePropertyViewLogic`).
-- **`/models`**: Definiciones de interfaces y tipos de TypeScript para las entidades (Propiedades).
-- **`/pages`**: Pantallas principales:
-  - `PropertyView`: Vista de lista/galería de propiedades.
-  - `PropertyViewMap`: Vista de mapa interactivo.
-- **`/theme`**: Configuración visual y variables de diseño CSS.
+### `/src` (App Móvil)
+Contiene el código fuente de la aplicación móvil Ionic React.
+- **`/components`**: UI reutilizable y lógica de mapas.
+- **`/hook`**: Lógica de filtrado y fetching de datos.
 
-### `/android` y `/ios`
-Carpetas generadas por Capacitor que contienen los proyectos nativos listos para ser abiertos en Android Studio o Xcode.
+### `/admin-desktop` (Nueva 💻)
+Proyecto de administración basado en Electron.
+- **Lógica de Git:** Automatización de comandos push/pull.
+- **Procesamiento:** Script de conversión de imágenes a WebP y redimensión a 1080px.
+- **Formulario:** Captura de coordenadas y metadatos de propiedades.
 
-### `/public` y `/resources`
-- **`/public`**: Activos web (favicon, manifest).
-- **`/resources`**: Iconos y pantallas de carga (splash screens) generados para las apps nativas.
+### `/data` (Base de Datos)
+Repositorio central de información compartido.
+- **`data_property.json`**: El "Master Record" de todas las propiedades.
+- **`/img`**: Repositorio de imágenes optimizadas.
 
-### `/cypress`
-Contiene los tests de integración (End-to-End) para asegurar la calidad del flujo de usuario.
+### `/docs`
+Documentación técnica del ecosistema.
 
-## 📄 Archivos de Configuración
-- `capacitor.config.ts`: Configuración del runtime nativo.
-- `ionic.config.json`: Integración con el CLI de Ionic.
-- `vite.config.ts`: Configuración del bundler y servidor de desarrollo.
-- `package.json`: Listado de dependencias y scripts de ejecución.
+## 📄 Flujo de Sincronización
+1. El administrador edita datos en `/admin-desktop`.
+2. Se procesan imágenes y se actualiza el JSON local.
+3. Se realiza un `git push` automático desde la App de Escritorio.
+4. La App Móvil detecta el cambio (vía Network-First) y actualiza su caché local.
