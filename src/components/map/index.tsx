@@ -38,18 +38,29 @@ const Map: React.FC<MapProps> = ({ coordinates }) => {
         }).addTo(map);
 
 
-        // Define el icono personalizado
-        const iconoPersonalizado = L.icon({
-            iconUrl: './favicon.png',
-            iconSize: [20, 20], // Tamaño del icono
-            iconAnchor: [20, 40], // Punto en el icono que se alinea con las coordenadas del marcador
-            popupAnchor: [0, -40] // Punto en el icono que se alinea con la parte superior del popup
-        });
+        // Función para crear el icono personalizado con el precio
+        const createPriceMarkerIcon = (label: string) => {
+            return L.divIcon({
+                className: 'custom-price-marker',
+                html: `
+                    <div class="price-marker-container">
+                        <div class="price-marker-content">
+                            <span class="price-marker-text">${label}</span>
+                        </div>
+                        <div class="price-marker-arrow"></div>
+                    </div>
+                `,
+                iconSize: [0, 0], // Tamaño automático basado en el contenido
+                iconAnchor: [0, 0], // Se ajusta con CSS
+                popupAnchor: [0, -10]
+            });
+        };
 
 
         // Itera sobre las coordenadas y agrega un marcador por cada una
         coordinates.forEach(coord => {
-            const marker = L.marker([coord.lat, coord.lng], { icon: iconoPersonalizado }).addTo(map);
+            const customIcon = createPriceMarkerIcon(coord.label);
+            const marker = L.marker([coord.lat, coord.lng], { icon: customIcon }).addTo(map);
             marker.on('click', () => {
                 setShowModal(true);
                 setSelectedProperty(getProperty(coord.id));
