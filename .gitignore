@@ -4,12 +4,15 @@
 /node_modules
 /.pnp
 .pnp.js
+/admin-desktop/node_modules
+
 
 # testing
 /coverage
 
 # production
 /dist
+/admin-desktop/dist-electron
 
 # misc
 .DS_Store

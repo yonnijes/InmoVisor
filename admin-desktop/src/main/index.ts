@@ -12,7 +12,7 @@ let win: BrowserWindow | null
 
 // Initialize Services
 const repoPath = path.resolve(__dirname, '../../../') // Root of InmoVisor repo
-const dataJsonPath = path.join(repoPath, 'data/data_property.json')
+const dataJsonPath = path.join(repoPath, 'inmoVisor/data/data_property.json')
 
 const repository = new PropertyRepository(dataJsonPath)
 const imageService = new SharpImageService()
