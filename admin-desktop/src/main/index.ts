@@ -11,13 +11,21 @@ process.env.VITE_PUBLIC = app.isPackaged ? process.env.DIST : path.join(process.
 let win: BrowserWindow | null
 
 // Initialize Services
-const repoPath = path.resolve(__dirname, '../../../') // Root of InmoVisor repo
+// En desarrollo, __dirname está en admin-desktop/dist-electron
+// Queremos llegar a la raíz del repo (InmoVisor/)
+const repoPath = app.isPackaged 
+  ? path.join(process.resourcesPath, '..') // Ajustar para producción
+  : path.resolve(__dirname, '../../')    // Ajustar para desarrollo (dist-electron -> root)
+
 const dataJsonPath = path.join(repoPath, 'data/data_property.json')
 
 const repository = new PropertyRepository(dataJsonPath)
 const imageService = new SharpImageService()
 const gitService = new GitService(repoPath)
 const propertyService = new PropertyService(repository, imageService, gitService, path.join(repoPath, 'data'))
+
+console.log('Repo Path:', repoPath);
+console.log('JSON Path:', dataJsonPath);
 
 function createWindow() {
   win = new BrowserWindow({
