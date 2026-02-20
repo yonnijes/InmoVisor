@@ -133,5 +133,26 @@
     "image": [
       "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/TEST-1771620078939/1771620078943_dummy.webp"
     ]
+  },
+  {
+    "id": "A-539099",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "money": "$",
+    "price": 3444,
+    "squareMeters": 455,
+    "bedrooms": 0,
+    "bathrooms": 0,
+    "parkingSpaces": 0,
+    "address": "mi prueba",
+    "description": "casa de prueba ",
+    "lat": "10.338394",
+    "lng": "-67.043724",
+    "amenities": [
+      "Piscina"
+    ],
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-539099/1771621645346_A9552D3E-A08C-48C2-8093-DC9B9FE70981.webp"
+    ]
   }
 ]
