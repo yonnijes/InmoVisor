@@ -27,6 +27,7 @@ const App: React.FC = () => {
   const [editingProperty, setEditingProperty] = useState<any | null>(null)
   const [isAuthConfigured, setIsAuthConfigured] = useState<boolean | null>(null)
   const [showAuthSetup, setShowAuthSetup] = useState(false)
+  const [isSyncingGit, setIsSyncingGit] = useState(false)
 
   useEffect(() => {
     checkAuthStatus()
@@ -80,6 +81,24 @@ const App: React.FC = () => {
     if (confirm(`¿Estás seguro de eliminar la propiedad ${id}?`)) {
       await window.electronAPI.deleteProperty(id)
       loadProperties()
+    }
+  }
+
+  const handleGitSync = async () => {
+    setIsSyncingGit(true)
+    try {
+      const result = await window.electronAPI.gitPull()
+      if (result?.success) {
+        await loadProperties()
+        alert('Sincronización completada ✅')
+      } else {
+        alert('No se pudo sincronizar con Git. Revisa la consola.')
+      }
+    } catch (error) {
+      console.error('Git sync error:', error)
+      alert('Error al sincronizar con Git.')
+    } finally {
+      setIsSyncingGit(false)
     }
   }
 
@@ -164,8 +183,12 @@ const App: React.FC = () => {
                 className="pl-10 pr-4 py-2 bg-gray-100 border-transparent rounded-full text-sm focus:bg-white focus:ring-2 focus:ring-emerald-500 transition-all outline-none w-64"
               />
             </div>
-            <button className="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-emerald-100 transition-colors">
-              Sincronizar Git
+            <button
+              onClick={handleGitSync}
+              disabled={isSyncingGit}
+              className="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-emerald-100 transition-colors disabled:opacity-60"
+            >
+              {isSyncingGit ? 'Sincronizando...' : 'Sincronizar Git'}
             </button>
           </div>
         </header>
