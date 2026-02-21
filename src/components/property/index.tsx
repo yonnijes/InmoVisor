@@ -11,6 +11,14 @@ interface PropertyComponentProps {
 const PropertyComponent: React.FC<PropertyComponentProps> = ({ property }) => {
   const [showMore, setShowMore] = useState(false);
 
+  const formatCurrency = (money: string | undefined, price: number) => {
+    const amount = Number(price || 0).toLocaleString('es-CL');
+    if (money === 'USD' || money === '$') return `$ ${amount}`;
+    if (money === 'EUR') return `€ ${amount}`;
+    if (money === 'Bs') return `Bs ${amount}`;
+    return `${money || ''} ${amount}`.trim();
+  };
+
   const handleShowMore = () => {
     setShowMore(!showMore);
   };
@@ -23,7 +31,7 @@ const PropertyComponent: React.FC<PropertyComponentProps> = ({ property }) => {
       <IonCardContent>
         <p>{property.condition}</p>
         <p>{property.address}</p>
-        <p><strong>{property.money} {property.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</strong> </p>
+        <p><strong>{formatCurrency(property.money as unknown as string, property.price)}</strong> </p>
         <p>
           {property?.bedrooms! > 0 && `${property.bedrooms} Dormitorio${property.bedrooms > 1 ? 's' : ''} | `}
           {property?.bathrooms! > 0 && `${property.bathrooms} Baño${property.bathrooms > 1 ? 's' : ''} | `}

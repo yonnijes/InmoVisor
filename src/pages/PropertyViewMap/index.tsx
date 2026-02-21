@@ -39,6 +39,14 @@ const PropertyViewMap: React.FC = () => {
 
 
   useEffect(() => {
+    const formatCurrency = (money: string | undefined, price: number) => {
+      const amount = Number(price || 0).toLocaleString('es-CL');
+      if (money === 'USD' || money === '$') return `$ ${amount}`;
+      if (money === 'EUR') return `€ ${amount}`;
+      if (money === 'Bs') return `Bs ${amount}`;
+      return `${money || ''} ${amount}`.trim();
+    };
+
     const coordinates = properties
       .map(property => {
         // Compatibilidad: algunas propiedades guardan coordinate.{lat,lng}
@@ -52,7 +60,7 @@ const PropertyViewMap: React.FC = () => {
           id: property.id,
           lat,
           lng,
-          label: property?.price?.toString() + ' ' + property?.money
+          label: formatCurrency((property as any)?.money, Number(property?.price || 0))
         };
       })
       .filter(coordinate => Number.isFinite(coordinate.lat) && Number.isFinite(coordinate.lng));
