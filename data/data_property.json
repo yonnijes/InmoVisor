@@ -4,7 +4,7 @@
     "type": "Departamento",
     "transaction": "Alquiler",
     "address": "Calle miranda, los teques ",
-    "money": "$",
+    "money": "Bs",
     "price": 299,
     "squareMeters": 80,
     "bedrooms": 3,
