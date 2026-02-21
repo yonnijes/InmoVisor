@@ -13,121 +13,125 @@ interface AppliedFilters {
   storageRoom?: string | number | undefined;
 }
 
+type SortOrder = 'price-asc' | 'price-desc' | 'newest' | 'sqm-desc' | 'sqm-asc';
+
+const FILTERS_STORAGE_KEY = 'property_filters';
+const SORT_STORAGE_KEY = 'property_sort_order';
+
+const defaultFilters: AppliedFilters = {
+  bedrooms: 0,
+  bathrooms: 0,
+  squareMeters: 0,
+  lowerPriceRange: 0,
+  upperPriceRange: 0,
+  type: '' as Property.PropertyType,
+  transaction: '' as Property.TransactionType,
+  parkingSpaces: 0,
+  storageRoom: undefined,
+};
 
 export const usePropertyViewLogic = () => {
-  const [properties, setProperties] = useState<Property.Property[]>([]);
+  const [allProperties, setAllProperties] = useState<Property.Property[]>([]);
+  const [properties, setPropertiesState] = useState<Property.Property[]>([]);
   const [searchText, setSearchText] = useState<string>('');
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [countFilters, setCountFilters] = useState<number>(0);
-  const [filters, setFilters] = useState<AppliedFilters>({
-    bedrooms: 0,
-    bathrooms: 0,
-    squareMeters: 0,
-    lowerPriceRange: 0,
-    upperPriceRange: 0,
-    type: '' as Property.PropertyType,
-    transaction: '' as Property.TransactionType,
-    parkingSpaces: 0,
-    storageRoom: undefined,
+  const [filters, setFilters] = useState<AppliedFilters>(() => {
+    const raw = localStorage.getItem(FILTERS_STORAGE_KEY);
+    return raw ? JSON.parse(raw) as AppliedFilters : defaultFilters;
+  });
+  const [sortOrder, setSortOrder] = useState<SortOrder>(() => {
+    return (localStorage.getItem(SORT_STORAGE_KEY) as SortOrder) || 'newest';
   });
 
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
-  };
+  const applyFiltersFn = (source: Property.Property[], appliedFilters: AppliedFilters): Property.Property[] => {
+    return source.filter(property => {
+      if (appliedFilters.bedrooms && property.bedrooms !== appliedFilters.bedrooms) return false;
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-
-
-  const applyFilters = (appliedFilters: AppliedFilters) => {
-
-
-    const savedData = localStorage.getItem('properties');
-    const properties: Property.Property[] = savedData ? JSON.parse(savedData) : [];
-
-    // Filtrar las propiedades en función de los filtros aplicados
-    const filteredProperties = properties.filter(property => {
-      // Verificar si se han aplicado filtros y si la propiedad cumple con esos filtros
-      if (appliedFilters.bedrooms && property.bedrooms !== appliedFilters.bedrooms) {
+      if (appliedFilters.bathrooms && property.bathrooms !== appliedFilters.bathrooms && !(appliedFilters.bathrooms === 5 && property.bathrooms >= 5)) {
         return false;
       }
 
-      if (appliedFilters.bathrooms && property.bathrooms !== appliedFilters.bathrooms && !(appliedFilters.bathrooms == 5 && property.bathrooms >= 5)) {
-        console.log(property.bathrooms);
-        return false;
-      }
-
-
-
-      if (appliedFilters.squareMeters && property.squareMeters !== appliedFilters.squareMeters) {
-        return false;
-      }
-      if (appliedFilters.lowerPriceRange && property.price < appliedFilters.lowerPriceRange) {
-        return false;
-      }
-      if (appliedFilters.upperPriceRange && property.price > appliedFilters.upperPriceRange) {
-        return false;
-      }
-
-      if (appliedFilters.type && property.type !== appliedFilters.type) {
-        return false;
-      }
-
-      if (appliedFilters.transaction && property.transaction !== appliedFilters.transaction) {
-        return false;
-      }
-
-
-      if (appliedFilters.parkingSpaces && property.parkingSpaces !== appliedFilters.parkingSpaces) {
-        return false;
-      }
+      if (appliedFilters.squareMeters && property.squareMeters !== appliedFilters.squareMeters) return false;
+      if (appliedFilters.lowerPriceRange && property.price < appliedFilters.lowerPriceRange) return false;
+      if (appliedFilters.upperPriceRange && property.price > appliedFilters.upperPriceRange) return false;
+      if (appliedFilters.type && property.type !== appliedFilters.type) return false;
+      if (appliedFilters.transaction && property.transaction !== appliedFilters.transaction) return false;
+      if (appliedFilters.parkingSpaces && property.parkingSpaces !== appliedFilters.parkingSpaces) return false;
 
       const storageRoomBoolean = appliedFilters.storageRoom === 'Si' ? true : false;
       if (appliedFilters.storageRoom !== undefined && appliedFilters.storageRoom !== 0 && property.storageRoom !== storageRoomBoolean) {
         return false;
       }
 
-
-      // Agregar más condiciones para otros filtros si es necesario
-
-      // Si la propiedad pasa todos los filtros, devolver true
       return true;
     });
-
-    // Actualizar el estado de las propiedades filtradas
-    setProperties(filteredProperties);
   };
 
+  const applySearchFn = (source: Property.Property[], text: string): Property.Property[] => {
+    if (!text) return source;
+    const t = text.toLowerCase();
+    return source.filter((property) =>
+      property.address?.toLowerCase().includes(t) ||
+      property.type?.toLowerCase().includes(t) ||
+      property.description?.toLowerCase().includes(t)
+    );
+  };
 
-  const applySearchText = (properties:Property.Property[], text: string):Property.Property[]  => {
-   
-    const filteredProperties = text
-      ? properties.filter((property: Property.Property) =>
-        property.address.toLowerCase().includes(text.toLowerCase()) ||
-        property.type.toLowerCase().includes(text.toLowerCase()) ||
-        property.description?.toLowerCase().includes(text.toLowerCase())
-      )
-      : properties;
+  const applySortFn = (source: Property.Property[], order: SortOrder): Property.Property[] => {
+    const cloned = [...source];
+    switch (order) {
+      case 'price-asc':
+        return cloned.sort((a, b) => a.price - b.price);
+      case 'price-desc':
+        return cloned.sort((a, b) => b.price - a.price);
+      case 'sqm-asc':
+        return cloned.sort((a, b) => a.squareMeters - b.squareMeters);
+      case 'sqm-desc':
+        return cloned.sort((a, b) => b.squareMeters - a.squareMeters);
+      case 'newest':
+      default:
+        return cloned.sort((a, b) => {
+          const aNum = parseInt(String(a.id).replace(/\D/g, ''), 10) || 0;
+          const bNum = parseInt(String(b.id).replace(/\D/g, ''), 10) || 0;
+          return bNum - aNum;
+        });
+    }
+  };
 
+  const recalculate = (source = allProperties, currentFilters = filters, currentSearch = searchText, currentSort = sortOrder) => {
+    const filtered = applyFiltersFn(source, currentFilters);
+    const searched = applySearchFn(filtered, currentSearch);
+    const sorted = applySortFn(searched, currentSort);
+    setPropertiesState(sorted);
+  };
 
-    return filteredProperties;
-  }
+  const setProperties = (incoming: Property.Property[]) => {
+    setAllProperties(incoming);
+  };
+
+  const applyFilters = (appliedFilters: AppliedFilters) => {
+    setFilters(appliedFilters);
+    setIsModalOpen(false);
+  };
 
   useEffect(() => {
     const values = Object.values(filters);
-    const count = values.filter(value => typeof value === "number" && value > 0 || typeof value === "string" && value !== "").length;
+    const count = values.filter(value => (typeof value === 'number' && value > 0) || (typeof value === 'string' && value !== '')).length;
     setCountFilters(count);
-
+    localStorage.setItem(FILTERS_STORAGE_KEY, JSON.stringify(filters));
   }, [filters]);
 
   useEffect(() => {
-    // Filtrar propiedades en función del searchText
-    const propertiesSearched =  applySearchText(properties,searchText);
-    setProperties(propertiesSearched);
+    localStorage.setItem(SORT_STORAGE_KEY, sortOrder);
+  }, [sortOrder]);
 
-  }, [searchText]);
+  useEffect(() => {
+    recalculate();
+  }, [allProperties, filters, searchText, sortOrder]);
 
   return {
     properties,
@@ -140,6 +144,8 @@ export const usePropertyViewLogic = () => {
     handleOpenModal,
     handleCloseModal,
     applyFilters,
-    setFilters
+    setFilters,
+    sortOrder,
+    setSortOrder,
   };
 };

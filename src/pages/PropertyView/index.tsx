@@ -1,7 +1,7 @@
-import { IonButton, IonContent, IonHeader, IonIcon, IonPage, IonSearchbar, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonContent, IonHeader, IonIcon, IonPage, IonSearchbar, IonSkeletonText, IonTitle, IonToolbar } from '@ionic/react';
 import axios, { AxiosError } from 'axios';
 import { filterOutline, locationOutline } from 'ionicons/icons';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import jsonDataMOK from '../../../data/data_property.json';
 import FilterModal from '../../components/filter-modal';
@@ -24,10 +24,13 @@ const PropertyView: React.FC = () => {
     handleOpenModal,
     handleCloseModal,
     applyFilters,
-    setFilters
+    setFilters,
+    sortOrder,
+    setSortOrder
   } = usePropertyViewLogic();
 
   const history = useHistory();
+  const [isLoading, setIsLoading] = useState(true);
 
   const goToMap = () => {
     history.push('/mapa');
@@ -83,6 +86,8 @@ const PropertyView: React.FC = () => {
           console.log(`Error fetching data: ${error.status} - ${error.message}`);
         setProperties(jsonDataMOK as  unknown as Property.Property[]);
         localStorage.setItem('properties', JSON.stringify(jsonDataMOK));
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -95,6 +100,28 @@ const PropertyView: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonSearchbar placeholder="Buscar" onIonChange={(e) => setSearchText(e.detail.value!)} />
+        </IonToolbar>
+
+        <IonToolbar>
+          <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '6px 12px' }}>
+            <select
+              value={sortOrder}
+              onChange={(e) => setSortOrder(e.target.value as any)}
+              style={{
+                border: '1px solid #d1d5db',
+                borderRadius: 8,
+                padding: '6px 10px',
+                fontSize: 13,
+                background: 'white'
+              }}
+            >
+              <option value="newest">Más recientes</option>
+              <option value="price-asc">Precio: menor a mayor</option>
+              <option value="price-desc">Precio: mayor a menor</option>
+              <option value="sqm-desc">Mayor m²</option>
+              <option value="sqm-asc">Menor m²</option>
+            </select>
+          </div>
         </IonToolbar>
 
         <IonToolbar>
@@ -113,10 +140,22 @@ const PropertyView: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
 
-
-        {properties.map((property, i) => (
-          <PropertyComponent key={i} property={property} />
-        ))}
+        {isLoading ? (
+          <div style={{ padding: '12px' }}>
+            {Array.from({ length: 3 }).map((_, i) => (
+              <div key={i} style={{ marginBottom: 16, borderRadius: 12, border: '1px solid #e5e7eb', padding: 12 }}>
+                <IonSkeletonText animated style={{ width: '55%', height: 22 }} />
+                <IonSkeletonText animated style={{ width: '40%', height: 16 }} />
+                <IonSkeletonText animated style={{ width: '30%', height: 16 }} />
+                <IonSkeletonText animated style={{ width: '100%', height: 180, marginTop: 8 }} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          properties.map((property, i) => (
+            <PropertyComponent key={i} property={property} />
+          ))
+        )}
 
         {/* Modal de Filtros */}
         <FilterModal
