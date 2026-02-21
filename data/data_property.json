@@ -133,39 +133,5 @@
     "image": [
       "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-539099/1771621645346_A9552D3E-A08C-48C2-8093-DC9B9FE70981.webp"
     ]
-  },
-  {
-    "id": "A-471692",
-    "type": "Departamento",
-    "transaction": "Venta",
-    "money": "EUR",
-    "price": 45555,
-    "squareMeters": 300,
-    "bedrooms": 3,
-    "bathrooms": 1,
-    "parkingSpaces": 1,
-    "constructionYear": 2002,
-    "condition": "Usado",
-    "phoneContact": "56925135292",
-    "address": "av santa ana 333",
-    "description": "hermosa casa en un lugar muy lindo",
-    "lat": "10.347175",
-    "lng": "-67.044411",
-    "amenities": [
-      "Sótano",
-      "Terraza"
-    ],
-    "image": [
-      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-471692/1771700700875_IMG_1704.webp",
-      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-471692/1771700701178_IMG_1706.webp",
-      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-471692/1771700701300_IMG_1679.webp",
-      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-471692/1771700701485_IMG_1581.webp",
-      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-471692/1771700701676_IMG_1586.webp",
-      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-471692/1771700701846_IMG_1584.webp",
-      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-471692/1771700702036_IMG_1578.webp",
-      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-471692/1771700702231_IMG_1568.webp",
-      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-471692/1771700702458_IMG_1559.webp",
-      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-471692/1771700702695_IMG_1543.webp"
-    ]
   }
 ]

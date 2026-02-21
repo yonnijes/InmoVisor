@@ -18,7 +18,7 @@ export class PropertyService {
   ) { }
 
   async createNewProperty(data: PropertyData, tempImagePaths: string[]) {
-    const propertyId = data.id;
+    const propertyId = data?.id;
     const outputDir = path.join(this.dataRoot, 'img', propertyId);
 
     // 1. Process Images
