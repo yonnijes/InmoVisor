@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { LayoutDashboard, PlusCircle, Search, Key } from 'lucide-react'
+import { LayoutDashboard, PlusCircle, Search, Key, Menu, X } from 'lucide-react'
 import PropertyForm from '../components/PropertyForm/PropertyForm'
 import GithubTokenSetup from '../components/Auth/GithubTokenSetup'
 
@@ -28,6 +28,7 @@ const App: React.FC = () => {
   const [isAuthConfigured, setIsAuthConfigured] = useState<boolean | null>(null)
   const [showAuthSetup, setShowAuthSetup] = useState(false)
   const [isSyncingGit, setIsSyncingGit] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   useEffect(() => {
     checkAuthStatus()
@@ -129,9 +130,17 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="flex h-screen w-full bg-gray-50 overflow-hidden">
+    <div className="flex h-screen w-full bg-gray-50 overflow-hidden flex-col md:flex-row">
+      {/* Mobile Topbar */}
+      <div className="md:hidden h-14 bg-slate-900 text-white flex items-center justify-between px-4">
+        <h1 className="font-bold">InmoVisor Admin</h1>
+        <button onClick={() => setSidebarOpen(!sidebarOpen)}>
+          {sidebarOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </div>
+
       {/* Sidebar */}
-      <aside className="w-64 bg-slate-900 text-white flex flex-col">
+      <aside className={`${sidebarOpen ? 'block' : 'hidden'} md:block w-full md:w-64 bg-slate-900 text-white flex flex-col`}>
         <div className="p-6">
           <h1 className="text-2xl font-bold flex items-center gap-2 text-emerald-400">
             InmoVisor <span className="text-xs bg-emerald-900 px-2 py-0.5 rounded text-white">Admin</span>
@@ -140,14 +149,14 @@ const App: React.FC = () => {
         
         <nav className="flex-1 px-4 space-y-2">
           <button 
-            onClick={() => setActiveTab('list')}
+            onClick={() => { setActiveTab('list'); setSidebarOpen(false) }}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${activeTab === 'list' ? 'bg-emerald-600 text-white' : 'hover:bg-slate-800 text-slate-400'}`}
           >
             <LayoutDashboard size={20} />
             Propiedades
           </button>
           <button 
-            onClick={handleAddNew}
+            onClick={() => { handleAddNew(); setSidebarOpen(false) }}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${activeTab === 'create' && !editingProperty ? 'bg-emerald-600 text-white' : 'hover:bg-slate-800 text-slate-400'}`}
           >
             <PlusCircle size={20} />
@@ -169,18 +178,18 @@ const App: React.FC = () => {
       {/* Main Content */}
       <main className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
-        <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-8">
+        <header className="min-h-16 bg-white border-b border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between px-4 md:px-8 py-3 gap-3">
           <h2 className="text-xl font-semibold text-gray-800 uppercase tracking-wider text-sm">
             {activeTab === 'list' ? 'Gestión de Inventario' : (editingProperty ? `Editando: ${editingProperty.id}` : 'Nueva Propiedad')}
           </h2>
           
-          <div className="flex items-center gap-4">
-            <div className="relative">
+          <div className="flex items-center gap-3 w-full md:w-auto">
+            <div className="relative flex-1 md:flex-none">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
               <input 
                 type="text" 
                 placeholder="Buscar propiedades..." 
-                className="pl-10 pr-4 py-2 bg-gray-100 border-transparent rounded-full text-sm focus:bg-white focus:ring-2 focus:ring-emerald-500 transition-all outline-none w-64"
+                className="pl-10 pr-4 py-2 bg-gray-100 border-transparent rounded-full text-sm focus:bg-white focus:ring-2 focus:ring-emerald-500 transition-all outline-none w-full md:w-64"
               />
             </div>
             <button
@@ -194,10 +203,11 @@ const App: React.FC = () => {
         </header>
 
         {/* Content Area */}
-        <div className="flex-1 overflow-y-auto p-8">
+        <div className="flex-1 overflow-y-auto p-4 md:p-8">
           {activeTab === 'list' ? (
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-              <table className="w-full text-left">
+              <div className="overflow-x-auto">
+              <table className="w-full text-left min-w-[760px]">
                 <thead className="bg-gray-50 border-b border-gray-200">
                   <tr>
                     <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">ID</th>
@@ -237,6 +247,7 @@ const App: React.FC = () => {
                   ))}
                 </tbody>
               </table>
+              </div>
             </div>
           ) : (
             <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
