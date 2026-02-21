@@ -1,6 +1,7 @@
 import { PropertyRepository, PropertyData } from './propertyRepository';
 import { IImageService } from './imageService';
 import { GitService } from './gitService';
+import { VersionService } from './versionService';
 import path from 'path';
 
 /**
@@ -12,6 +13,7 @@ export class PropertyService {
     private repository: PropertyRepository,
     private imageService: IImageService,
     private gitService: GitService,
+    private versionService: VersionService,
     private dataRoot: string
   ) {}
 
@@ -33,12 +35,16 @@ export class PropertyService {
     const propertyToSave = { ...data, image: imageLinks };
     await this.repository.add(propertyToSave);
 
-    // 3. Sync with Git
+    // 3. Increment version so mobile app can detect fresh data
+    await this.versionService.bumpVersion(`New property ${propertyId}`);
+
+    // 4. Sync with Git
     return await this.gitService.syncPropertyData(propertyId);
   }
 
   async deleteProperty(propertyId: string) {
     await this.repository.delete(propertyId);
+    await this.versionService.bumpVersion(`Delete property ${propertyId}`);
     return await this.gitService.syncPropertyData(`Delete ${propertyId}`);
   }
 
@@ -55,6 +61,7 @@ export class PropertyService {
 
     const updatedProperty = { ...data, image: imageLinks };
     await this.repository.update(id, updatedProperty);
+    await this.versionService.bumpVersion(`Update property ${id}`);
     return await this.gitService.syncPropertyData(`Update ${id}`);
   }
 }

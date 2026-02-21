@@ -62,6 +62,15 @@ const PropertyView: React.FC = () => {
 
         // Guardar los datos en localStorage
         localStorage.setItem('properties', JSON.stringify(data));
+
+        // Actualizar cache de Workbox programáticamente (si está disponible)
+        if ('caches' in window) {
+          const cache = await caches.open('github-data-cache');
+          const cachedResponse = new Response(JSON.stringify(data), {
+            headers: { 'Content-Type': 'application/json' },
+          });
+          await cache.put(url, cachedResponse);
+        }
         
         // Save the new version number after successful update
         if (versionCheck.remoteVersion) {

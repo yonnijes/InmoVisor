@@ -31,9 +31,9 @@ export const checkDataVersion = async (): Promise<CheckVersionResult> => {
     const localVersionStr = localStorage.getItem(VERSION_STORAGE_KEY);
     const localVersion = localVersionStr ? parseInt(localVersionStr, 10) : null;
 
-    // Fetch remote version.json with cache-busting to avoid cached responses
-    const response = await fetch(`${VERSION_JSON_URL}?t=${Date.now()}`, {
-      cache: 'no-cache',
+    // Fetch remote version.json with no-store to always check latest version
+    const response = await fetch(VERSION_JSON_URL, {
+      cache: 'no-store',
     });
 
     if (!response.ok) {

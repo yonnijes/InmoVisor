@@ -5,6 +5,7 @@ import { SharpImageService } from '../services/imageService'
 import { GitService } from '../services/gitService'
 import { PropertyService } from '../services/propertyService'
 import * as authService from '../services/authService'
+import { VersionService } from '../services/versionService'
 
 process.env.DIST = path.join(__dirname, '../dist')
 process.env.VITE_PUBLIC = app.isPackaged ? process.env.DIST : path.join(process.env.DIST, '../public')
@@ -23,7 +24,8 @@ const dataJsonPath = path.join(repoPath, 'data/data_property.json')
 const repository = new PropertyRepository(dataJsonPath)
 const imageService = new SharpImageService()
 const gitService = new GitService(repoPath)
-const propertyService = new PropertyService(repository, imageService, gitService, path.join(repoPath, 'data'))
+const versionService = new VersionService(path.join(repoPath, 'data/version.json'))
+const propertyService = new PropertyService(repository, imageService, gitService, versionService, path.join(repoPath, 'data'))
 
 console.log('Repo Path:', repoPath);
 console.log('JSON Path:', dataJsonPath);
