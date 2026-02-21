@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { LayoutDashboard, PlusCircle, Settings, LogOut, Search } from 'lucide-react'
+import { LayoutDashboard, PlusCircle, Settings, LogOut, Search, Key } from 'lucide-react'
 import PropertyForm from '../components/PropertyForm/PropertyForm'
+import GithubTokenSetup from '../components/Auth/GithubTokenSetup'
 
 // Typing for Electron API
 declare global {
@@ -11,6 +12,11 @@ declare global {
       updateProperty: (id: string, property: any, imagePaths: string[]) => Promise<any>;
       deleteProperty: (id: string) => Promise<any>;
       gitPull: () => Promise<any>;
+      // Auth Services
+      saveGithubToken: (token: string) => Promise<any>;
+      getGithubTokenStatus: () => Promise<{ hasToken: boolean; isValidated: boolean; lastValidatedAt?: string }>;
+      validateGithubToken: () => Promise<{ isValid: boolean; username?: string; error?: string }>;
+      clearGithubToken: () => Promise<any>;
     }
   }
 }
@@ -19,12 +25,39 @@ const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'list' | 'create'>('list')
   const [properties, setProperties] = useState<any[]>([])
   const [editingProperty, setEditingProperty] = useState<any | null>(null)
+  const [isAuthConfigured, setIsAuthConfigured] = useState<boolean | null>(null)
+  const [showAuthSetup, setShowAuthSetup] = useState(false)
 
   useEffect(() => {
-    loadProperties()
+    checkAuthStatus()
   }, [])
 
+  const checkAuthStatus = async () => {
+    try {
+      const status = await window.electronAPI.getGithubTokenStatus()
+      setIsAuthConfigured(status.hasToken && status.isValidated)
+      // Si no está configurado, mostrar el setup
+      if (!status.hasToken || !status.isValidated) {
+        setShowAuthSetup(true)
+      }
+    } catch (error) {
+      console.error('Error checking auth status:', error)
+      setIsAuthConfigured(false)
+      setShowAuthSetup(true)
+    }
+  }
+
+  const handleAuthSetupComplete = () => {
+    setShowAuthSetup(false)
+    setIsAuthConfigured(true)
+    loadProperties()
+  }
+
   const loadProperties = async () => {
+    // Solo cargar propiedades si la autenticación está configurada
+    if (!isAuthConfigured) {
+      return
+    }
     const data = await window.electronAPI.getProperties()
     setProperties(data)
   }
@@ -44,6 +77,27 @@ const App: React.FC = () => {
       await window.electronAPI.deleteProperty(id)
       loadProperties()
     }
+  }
+
+  // Mostrar pantalla de configuración de autenticación si es necesario
+  if (showAuthSetup || isAuthConfigured === false) {
+    return (
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+        <GithubTokenSetup onSetupComplete={handleAuthSetupComplete} />
+      </div>
+    )
+  }
+
+  // Mostrar loading mientras se verifica el estado
+  if (isAuthConfigured === null) {
+    return (
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Cargando...</p>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -74,6 +128,13 @@ const App: React.FC = () => {
         </nav>
 
         <div className="p-4 border-t border-slate-800 space-y-2">
+          <button 
+            onClick={() => setShowAuthSetup(true)}
+            className="w-full flex items-center gap-3 px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors"
+          >
+            <Key size={18} />
+            Configurar GitHub
+          </button>
           <button className="w-full flex items-center gap-3 px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors">
             <Settings size={18} />
             Configuración
