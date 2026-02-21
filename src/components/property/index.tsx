@@ -85,7 +85,14 @@ const PropertyComponent: React.FC<PropertyComponentProps> = ({ property }) => {
 
             <div>
               {property.phoneContact &&
-                <WhatsAppButton phoneNumber={property.phoneContact} />
+                <WhatsAppButton
+                  phoneNumber={property.phoneContact}
+                  propertyId={property.id}
+                  propertyType={property.type}
+                  propertyAddress={property.address}
+                  propertyPrice={property.price}
+                  propertyMoney={property.money as unknown as string}
+                />
               }
             </div>
           </>

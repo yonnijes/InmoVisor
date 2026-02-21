@@ -291,6 +291,12 @@ const PropertyForm: React.FC<{ initialData?: any; onSuccess: () => void }> = ({ 
             onChange={(e) => setCustomAmenity(e.target.value)}
             placeholder="Agregar otro amenity"
             className="flex-1 p-3 bg-white border border-gray-200 rounded-xl"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                addCustomAmenity();
+              }
+            }}
           />
           <button
             type="button"
@@ -300,6 +306,25 @@ const PropertyForm: React.FC<{ initialData?: any; onSuccess: () => void }> = ({ 
             Agregar
           </button>
         </div>
+
+        {(formData.amenities || []).length > 0 && (
+          <div>
+            <p className="text-xs font-semibold text-gray-500 mb-2">Seleccionadas:</p>
+            <div className="flex flex-wrap gap-2">
+              {(formData.amenities || []).map((amenity) => (
+                <button
+                  key={amenity}
+                  type="button"
+                  onClick={() => toggleAmenity(amenity)}
+                  className="px-3 py-1 text-xs rounded-full bg-emerald-100 text-emerald-700 hover:bg-emerald-200"
+                  title="Quitar"
+                >
+                  {amenity} ✕
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </section>
 
       {/* Description */}
