@@ -6,6 +6,7 @@ import { useHistory } from 'react-router';
 import jsonDataMOK from '../../../data/data_property.json';
 import FilterModal from '../../components/filter-modal';
 import PropertyComponent from '../../components/property';
+import { checkDataVersion, saveDataVersion } from '../../hook/checkDataVersion';
 import { usePropertyViewLogic } from '../../hook/usePropertyViewLogic';
 import { Property } from '../../models';
 
@@ -36,6 +37,19 @@ const PropertyView: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // First, check if there's a new version available
+        const versionCheck = await checkDataVersion();
+        
+        // If no update needed, try to load from localStorage first (offline support)
+        if (!versionCheck.hasUpdate) {
+          const cachedProperties = localStorage.getItem('properties');
+          if (cachedProperties) {
+            setProperties(JSON.parse(cachedProperties) as Property.Property[]);
+            return;
+          }
+        }
+
+        // Fetch new data from remote
         const url = `https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/data_property.json`;
         const response = await axios({
           url,
@@ -48,6 +62,11 @@ const PropertyView: React.FC = () => {
 
         // Guardar los datos en localStorage
         localStorage.setItem('properties', JSON.stringify(data));
+        
+        // Save the new version number after successful update
+        if (versionCheck.remoteVersion) {
+          saveDataVersion(versionCheck.remoteVersion);
+        }
       } catch (error) {
         if (error instanceof AxiosError)
           console.log(`Error fetching data: ${error.status} - ${error.message}`);
