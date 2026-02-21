@@ -15,12 +15,12 @@ export class PropertyService {
     private gitService: GitService,
     private versionService: VersionService,
     private dataRoot: string
-  ) {}
+  ) { }
 
   async createNewProperty(data: PropertyData, tempImagePaths: string[]) {
     const propertyId = data.id;
     const outputDir = path.join(this.dataRoot, 'img', propertyId);
-    
+
     // 1. Process Images
     const imageLinks: string[] = [];
     for (const imgPath of tempImagePaths) {
