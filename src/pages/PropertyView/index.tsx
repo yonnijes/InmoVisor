@@ -50,7 +50,9 @@ const PropertyView: React.FC = () => {
         }
 
         // Fetch new data from remote
-        const url = `https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/data_property.json`;
+        const baseUrl = `https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/data_property.json`;
+        const versionTag = versionCheck.remoteVersion ?? Date.now();
+        const url = `${baseUrl}?v=${versionTag}`;
         const response = await axios({
           url,
           method: "GET",
