@@ -114,27 +114,6 @@
     ]
   },
   {
-    "id": "TEST-1771620078939",
-    "type": "Departamento",
-    "transaction": "Venta",
-    "address": "Calle de Prueba 123, Eurekka City",
-    "money": "$",
-    "price": 99999,
-    "squareMeters": 50,
-    "bedrooms": 1,
-    "bathrooms": 1,
-    "parkingSpaces": 0,
-    "description": "Propiedad generada por Eurekka para probar la sincronización automática.",
-    "lat": "10.35",
-    "lng": "-67.04",
-    "amenities": [
-      "Prueba Automatizada"
-    ],
-    "image": [
-      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/TEST-1771620078939/1771620078943_dummy.webp"
-    ]
-  },
-  {
     "id": "A-539099",
     "type": "Departamento",
     "transaction": "Venta",
