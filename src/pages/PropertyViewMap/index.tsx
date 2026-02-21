@@ -40,15 +40,24 @@ const PropertyViewMap: React.FC = () => {
 
   useEffect(() => {
     const coordinates = properties
-      .map(property => ({
-        id: property.id,
-        lat: property?.coordinate?.lat,
-        lng: property?.coordinate?.lng,
-        label: property?.price?.toString() + ' ' + property?.money
-      }))
-      .filter(coordinate => coordinate.lat && coordinate.lng);
+      .map(property => {
+        // Compatibilidad: algunas propiedades guardan coordinate.{lat,lng}
+        // y otras guardan lat/lng en raíz (string o number)
+        const latRaw = property?.coordinate?.lat ?? (property as any)?.lat;
+        const lngRaw = property?.coordinate?.lng ?? (property as any)?.lng;
+        const lat = typeof latRaw === 'string' ? parseFloat(latRaw) : latRaw;
+        const lng = typeof lngRaw === 'string' ? parseFloat(lngRaw) : lngRaw;
 
-    setCoordinates(coordinates);
+        return {
+          id: property.id,
+          lat,
+          lng,
+          label: property?.price?.toString() + ' ' + property?.money
+        };
+      })
+      .filter(coordinate => Number.isFinite(coordinate.lat) && Number.isFinite(coordinate.lng));
+
+    setCoordinates(coordinates as Property.Coordinate[]);
   }, [properties]);
 
 
