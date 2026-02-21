@@ -43,3 +43,20 @@ Este documento describe cómo funciona el versionado remoto para mantener la app
 ## Criterio operativo
 
 Cada cambio de datos que impacte `data_property.json` debe pasar por `PropertyService` para asegurar incremento de versión.
+
+## Checklist de validación manual (release)
+
+1. Crear o editar una propiedad desde **Admin-Desktop**.
+2. Confirmar que `data/version.json` incrementa `version` y actualiza `updatedAt`.
+3. Verificar que el push a `main` incluye tanto `data_property.json` como `version.json`.
+4. Abrir la app móvil/PWA y validar que:
+   - detecta nueva versión,
+   - descarga JSON actualizado,
+   - actualiza `localStorage`,
+   - mantiene fallback offline si no hay red.
+
+## Troubleshooting rápido
+
+- Si la app no detecta cambios, revisar que el commit en `main` incluya `data/version.json`.
+- Si el cliente sigue con datos antiguos, limpiar `github-data-cache` y volver a iniciar la PWA.
+- Si Admin-Desktop falla al versionar, revisar permisos de escritura sobre `data/version.json`.
