@@ -4,6 +4,7 @@ import { PropertyRepository } from '../services/propertyRepository'
 import { SharpImageService } from '../services/imageService'
 import { GitService } from '../services/gitService'
 import { PropertyService } from '../services/propertyService'
+import * as authService from '../services/authService'
 
 process.env.DIST = path.join(__dirname, '../dist')
 process.env.VITE_PUBLIC = app.isPackaged ? process.env.DIST : path.join(process.env.DIST, '../public')
@@ -59,6 +60,28 @@ function createWindow() {
   ipcMain.handle('git-pull', async () => {
     return await gitService.pullLatest()
   })
+
+  // Auth Service - GitHub Token
+  ipcMain.handle('save-github-token', async (_event, token: string) => {
+    authService.saveGithubToken(token);
+    return { success: true };
+  });
+
+  ipcMain.handle('get-github-token-status', async () => {
+    const hasToken = authService.hasGithubToken();
+    const isValidated = authService.isTokenValidated();
+    const lastValidatedAt = authService.getLastValidatedAt();
+    return { hasToken, isValidated, lastValidatedAt };
+  });
+
+  ipcMain.handle('validate-github-token', async () => {
+    return await authService.validateGithubToken();
+  });
+
+  ipcMain.handle('clear-github-token', async () => {
+    authService.clearGithubToken();
+    return { success: true };
+  });
 
   if (process.env.VITE_DEV_SERVER_URL) {
     win.loadURL(process.env.VITE_DEV_SERVER_URL)
