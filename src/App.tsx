@@ -35,11 +35,10 @@ setupIonicReact();
 const App: React.FC = () => {
 
   useEffect(() => {
+    // Ocultar splash apenas monta la app (evitar overlay semitransparente persistente)
     SplashScreen.hide({
-      //duration: 30 segundos
-      fadeOutDuration: 30000
+      fadeOutDuration: 250,
     });
-
   }, []);
 
 
