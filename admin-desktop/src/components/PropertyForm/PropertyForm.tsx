@@ -5,6 +5,12 @@ import { PropertyData } from '../../services/propertyRepository'
 
 const PROPERTY_TYPES = ['Departamento', 'Casa', 'Comercial', 'Terreno', 'Oficina'];
 const TRANSACTION_TYPES = ['Venta', 'Alquiler'];
+const CURRENCY_OPTIONS = [
+  { label: 'Dólar (USD)', value: 'USD' },
+  { label: 'Euro (EUR)', value: 'EUR' },
+  { label: 'Bolívares (Bs)', value: 'Bs' },
+];
+const CONDITION_OPTIONS = ['Nuevo', 'Usado'];
 const COMMON_AMENITIES = [
   'Piscina', 'Gimnasio', 'Salon de fiesta', 'Seguridad 24/7', 
   'Quincho', 'Estacionamiento Visitas', 'Bodega', 'Jardín'
@@ -15,16 +21,20 @@ const PropertyForm: React.FC<{ initialData?: any; onSuccess: () => void }> = ({ 
   const [images, setImages] = useState<{ path: string; preview: string; isExisting?: boolean }[]>(
     initialData?.image?.map((url: string) => ({ path: url, preview: url, isExisting: true })) || []
   )
+  const [customAmenity, setCustomAmenity] = useState('')
   const [formData, setFormData] = useState<Partial<PropertyData>>(initialData || {
     id: `A-${Date.now().toString().slice(-6)}`,
     type: 'Departamento',
     transaction: 'Venta',
-    money: '$',
+    money: 'USD',
     price: 0,
     squareMeters: 0,
     bedrooms: 0,
     bathrooms: 0,
     parkingSpaces: 0,
+    constructionYear: new Date().getFullYear(),
+    condition: 'Usado',
+    phoneContact: '',
     address: '',
     description: '',
     lat: '10.3532',
@@ -44,6 +54,18 @@ const PropertyForm: React.FC<{ initialData?: any; onSuccess: () => void }> = ({ 
     handleInputChange('amenities', updated);
   }
 
+  const addCustomAmenity = () => {
+    const value = customAmenity.trim();
+    if (!value) return;
+    const current = formData.amenities || [];
+    if (!current.includes(value)) {
+      handleInputChange('amenities', [...current, value]);
+    }
+    setCustomAmenity('');
+  }
+
+  const appliesRoomsAndParking = formData.type !== 'Terreno';
+
   const handleImageAdd = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const newImages = Array.from(e.target.files).map(file => ({
@@ -55,8 +77,18 @@ const PropertyForm: React.FC<{ initialData?: any; onSuccess: () => void }> = ({ 
   }
 
   const handleSubmit = async () => {
-    if (!formData.address || formData.price === 0) {
-      alert('Por favor, completa la dirección y el precio.');
+    if (!formData.address || !formData.price || Number(formData.price) <= 0) {
+      alert('Por favor, completa la dirección y un precio válido.');
+      return;
+    }
+
+    if (!formData.phoneContact || String(formData.phoneContact).trim().length < 8) {
+      alert('El teléfono de contacto es obligatorio para enlazar a WhatsApp.');
+      return;
+    }
+
+    if (appliesRoomsAndParking && (formData.bedrooms === undefined || formData.parkingSpaces === undefined)) {
+      alert('Completa habitaciones y estacionamientos para este tipo de propiedad.');
       return;
     }
 
@@ -114,7 +146,7 @@ const PropertyForm: React.FC<{ initialData?: any; onSuccess: () => void }> = ({ 
         </div>
       </section>
 
-      <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <section className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div className="space-y-2">
           <label className="text-sm font-bold text-gray-700">Tipo</label>
           <select 
@@ -136,26 +168,106 @@ const PropertyForm: React.FC<{ initialData?: any; onSuccess: () => void }> = ({ 
           </select>
         </div>
         <div className="space-y-2">
-          <label className="text-sm font-bold text-gray-700">Precio ($)</label>
+          <label className="text-sm font-bold text-gray-700">Moneda</label>
+          <select
+            className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl outline-none"
+            value={String(formData.money || 'USD')}
+            onChange={e => handleInputChange('money', e.target.value)}
+          >
+            {CURRENCY_OPTIONS.map((c) => <option key={c.value} value={c.value}>{c.label}</option>)}
+          </select>
+        </div>
+        <div className="space-y-2">
+          <label className="text-sm font-bold text-gray-700">Precio</label>
           <input 
             type="number"
+            value={Number(formData.price || 0)}
             className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl font-bold text-emerald-600"
             onChange={e => handleInputChange('price', Number(e.target.value))}
           />
         </div>
+      </section>
+
+      <section className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div className="space-y-2">
           <label className="text-sm font-bold text-gray-700">Superficie (M²)</label>
           <input 
             type="number"
+            value={Number(formData.squareMeters || 0)}
             className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl"
             onChange={e => handleInputChange('squareMeters', Number(e.target.value))}
+          />
+        </div>
+
+        {appliesRoomsAndParking && (
+          <>
+            <div className="space-y-2">
+              <label className="text-sm font-bold text-gray-700">Habitaciones</label>
+              <input
+                type="number"
+                value={Number(formData.bedrooms || 0)}
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl"
+                onChange={e => handleInputChange('bedrooms', Number(e.target.value))}
+              />
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-bold text-gray-700">Estacionamientos</label>
+              <input
+                type="number"
+                value={Number(formData.parkingSpaces || 0)}
+                className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl"
+                onChange={e => handleInputChange('parkingSpaces', Number(e.target.value))}
+              />
+            </div>
+          </>
+        )}
+
+        <div className="space-y-2">
+          <label className="text-sm font-bold text-gray-700">Baños</label>
+          <input
+            type="number"
+            value={Number(formData.bathrooms || 0)}
+            className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl"
+            onChange={e => handleInputChange('bathrooms', Number(e.target.value))}
+          />
+        </div>
+      </section>
+
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="space-y-2">
+          <label className="text-sm font-bold text-gray-700">Año de construcción</label>
+          <input
+            type="number"
+            value={Number(formData.constructionYear || new Date().getFullYear())}
+            className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl"
+            onChange={e => handleInputChange('constructionYear', Number(e.target.value))}
+          />
+        </div>
+        <div className="space-y-2">
+          <label className="text-sm font-bold text-gray-700">Condición</label>
+          <select
+            className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl outline-none"
+            value={String(formData.condition || 'Usado')}
+            onChange={e => handleInputChange('condition', e.target.value)}
+          >
+            {CONDITION_OPTIONS.map((c) => <option key={c} value={c}>{c}</option>)}
+          </select>
+        </div>
+        <div className="space-y-2">
+          <label className="text-sm font-bold text-gray-700">Teléfono de contacto (obligatorio)</label>
+          <input
+            type="text"
+            value={String(formData.phoneContact || '')}
+            placeholder="Ej: 584121234567"
+            className="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl"
+            onChange={e => handleInputChange('phoneContact', e.target.value.replace(/\D/g, ''))}
           />
         </div>
       </section>
 
       {/* Amenities grid */}
-      <section className="bg-gray-50 p-6 rounded-2xl">
-        <label className="block text-sm font-bold text-gray-700 mb-4">Comodidades (Amenities)</label>
+      <section className="bg-gray-50 p-6 rounded-2xl space-y-4">
+        <label className="block text-sm font-bold text-gray-700">Comodidades (Amenities)</label>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {COMMON_AMENITIES.map(amenity => (
             <TouchableOpacity 
@@ -170,6 +282,23 @@ const PropertyForm: React.FC<{ initialData?: any; onSuccess: () => void }> = ({ 
               <span className="text-sm text-gray-600">{amenity}</span>
             </TouchableOpacity>
           ))}
+        </div>
+
+        <div className="flex gap-2">
+          <input
+            type="text"
+            value={customAmenity}
+            onChange={(e) => setCustomAmenity(e.target.value)}
+            placeholder="Agregar otro amenity"
+            className="flex-1 p-3 bg-white border border-gray-200 rounded-xl"
+          />
+          <button
+            type="button"
+            onClick={addCustomAmenity}
+            className="px-4 py-3 rounded-xl bg-emerald-600 text-white font-semibold"
+          >
+            Agregar
+          </button>
         </div>
       </section>
 

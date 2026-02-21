@@ -18,6 +18,9 @@ export interface PropertyData extends Transaction {
   lng: string;
   amenities: string[];
   image: string[];
+  constructionYear?: number;
+  condition?: 'Nuevo' | 'Usado' | 'En construcción';
+  phoneContact?: string;
 }
 
 /**
