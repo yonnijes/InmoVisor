@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { LayoutDashboard, PlusCircle, Settings, LogOut, Search, Key } from 'lucide-react'
+import { LayoutDashboard, PlusCircle, Search, Key } from 'lucide-react'
 import PropertyForm from '../components/PropertyForm/PropertyForm'
 import GithubTokenSetup from '../components/Auth/GithubTokenSetup'
 
@@ -53,6 +53,10 @@ const App: React.FC = () => {
     loadProperties()
   }
 
+  const handleAuthSetupCancel = () => {
+    setShowAuthSetup(false)
+  }
+
   const loadProperties = async () => {
     // Solo cargar propiedades si la autenticación está configurada
     if (!isAuthConfigured) {
@@ -81,9 +85,14 @@ const App: React.FC = () => {
 
   // Mostrar pantalla de configuración de autenticación si es necesario
   if (showAuthSetup || isAuthConfigured === false) {
+    const forcedSetup = isAuthConfigured === false
     return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-        <GithubTokenSetup onSetupComplete={handleAuthSetupComplete} />
+        <GithubTokenSetup
+          onSetupComplete={handleAuthSetupComplete}
+          onCancel={handleAuthSetupCancel}
+          allowCancel={!forcedSetup}
+        />
       </div>
     )
   }
@@ -134,14 +143,6 @@ const App: React.FC = () => {
           >
             <Key size={18} />
             Configurar GitHub
-          </button>
-          <button className="w-full flex items-center gap-3 px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors">
-            <Settings size={18} />
-            Configuración
-          </button>
-          <button className="w-full flex items-center gap-3 px-4 py-2 text-sm text-red-400 hover:text-red-300 transition-colors">
-            <LogOut size={18} />
-            Cerrar Sesión
           </button>
         </div>
       </aside>

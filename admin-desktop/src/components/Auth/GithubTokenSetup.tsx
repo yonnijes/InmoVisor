@@ -3,9 +3,11 @@ import { Key, CheckCircle, XCircle, Loader2, AlertTriangle } from 'lucide-react'
 
 interface GithubTokenSetupProps {
   onSetupComplete?: () => void;
+  onCancel?: () => void;
+  allowCancel?: boolean;
 }
 
-const GithubTokenSetup: React.FC<GithubTokenSetupProps> = ({ onSetupComplete }) => {
+const GithubTokenSetup: React.FC<GithubTokenSetupProps> = ({ onSetupComplete, onCancel, allowCancel = false }) => {
   const [token, setToken] = useState('');
   const [isSaving, setIsSaving] = useState(false);
   const [isValidating, setIsValidating] = useState(false);
@@ -197,12 +199,22 @@ const GithubTokenSetup: React.FC<GithubTokenSetupProps> = ({ onSetupComplete }) 
             </div>
           )}
 
-          {/* Botón de guardar */}
-          <button
-            onClick={handleSaveAndValidate}
-            disabled={isSaving || isValidating || !token}
-            className="w-full bg-emerald-600 hover:bg-emerald-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
-          >
+          {/* Botones de acción */}
+          <div className="flex gap-3">
+            {allowCancel && (
+              <button
+                onClick={onCancel}
+                type="button"
+                className="w-1/3 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-3 px-4 rounded-lg transition-colors"
+              >
+                Atrás
+              </button>
+            )}
+            <button
+              onClick={handleSaveAndValidate}
+              disabled={isSaving || isValidating || !token}
+              className={`${allowCancel ? 'w-2/3' : 'w-full'} bg-emerald-600 hover:bg-emerald-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2`}
+            >
             {isSaving || isValidating ? (
               <>
                 <Loader2 className="animate-spin" size={20} />
@@ -215,6 +227,7 @@ const GithubTokenSetup: React.FC<GithubTokenSetupProps> = ({ onSetupComplete }) 
               </>
             )}
           </button>
+          </div>
 
           {/* Instrucciones */}
           <div className="mt-6 p-4 bg-gray-50 rounded-xl border border-gray-200">
