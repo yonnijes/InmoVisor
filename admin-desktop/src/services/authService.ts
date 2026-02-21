@@ -8,21 +8,19 @@
 import Store from 'electron-store';
 import axios from 'axios';
 
-// Schema para electron-store
+// Schema para electron-store (flat keys para evitar errores de AJV strict mode)
 const schema = {
-  github: {
-    token: {
-      type: 'string',
-      maxLength: 256
-    },
-    validated: {
-      type: 'boolean',
-      default: false
-    },
-    lastValidatedAt: {
-      type: 'string'
-    }
-  }
+  'github.token': {
+    type: 'string',
+    maxLength: 256,
+  },
+  'github.validated': {
+    type: 'boolean',
+    default: false,
+  },
+  'github.lastValidatedAt': {
+    type: 'string',
+  },
 } as const;
 
 // Inicializar store con encriptación
