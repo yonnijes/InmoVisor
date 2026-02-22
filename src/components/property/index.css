@@ -27,13 +27,13 @@
 }
 
 .property-chip--condition {
-  background: rgba(15, 23, 42, 0.08);
-  color: #0f172a;
+  background: rgba(var(--ion-color-medium-rgb, 146, 148, 156), 0.22);
+  color: var(--ion-text-color);
 }
 
 .property-chip--transaction {
-  background: rgba(16, 185, 129, 0.12);
-  color: #047857;
+  background: var(--ion-color-success-tint);
+  color: var(--ion-color-success-shade);
 }
 
 .property-card__price {
@@ -46,7 +46,7 @@
 .property-card__meta,
 .property-card__surface {
   font-size: 0.95rem;
-  color: #475467;
+  color: var(--ion-color-medium-shade);
   margin: 6px 0;
 }
 

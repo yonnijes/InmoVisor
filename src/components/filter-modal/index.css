@@ -25,34 +25,47 @@
   border: 1px solid var(--ion-color-medium-shade);
   border-radius: 12px;
   padding: 12px 14px;
-  font-size: 14px;
+  font-size: 16px;
   background: var(--ion-background-color);
   color: var(--ion-text-color);
-  font-weight: 600;
+  font-weight: 700;
   text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-sort-option ion-icon {
+  font-size: 18px;
 }
 
 .filter-sort-option.is-active {
-  background: var(--ion-color-primary-tint);
+  background: var(--ion-color-primary);
   border-color: var(--ion-color-primary);
   color: var(--ion-color-primary-contrast);
 }
 
 .filter-item {
-  --inner-padding-top: 8px;
-  --inner-padding-bottom: 8px;
-  --inner-padding-end: 6px;
-  --min-height: 60px;
+  --inner-padding-top: 10px;
+  --inner-padding-bottom: 10px;
+  --inner-padding-end: 8px;
+  --min-height: 62px;
+  --background: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.03);
+  border-radius: 12px;
+  margin: 0 0 8px;
 }
 
 .filter-item__label {
   font-weight: 700;
   color: var(--ion-text-color);
+  font-size: 18px;
 }
 
 .filter-item__select {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--ion-text-color);
+  --placeholder-color: var(--ion-color-medium);
+  --placeholder-opacity: 1;
 }
 
 .filter-modal__footer-actions {

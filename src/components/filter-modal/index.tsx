@@ -1,5 +1,6 @@
 import React from 'react';
-import { IonModal, IonButton, IonContent, IonHeader, IonTitle, IonToolbar, IonFooter } from '@ionic/react';
+import { IonModal, IonButton, IonContent, IonHeader, IonTitle, IonToolbar, IonFooter, IonIcon } from '@ionic/react';
+import { checkmarkCircleOutline } from 'ionicons/icons';
 import Filter from '../filter';
 import { Property } from '../../models';
 import './index.css';
@@ -57,31 +58,31 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, applyFilters
             className={`filter-sort-option ${sortOrder === 'newest' ? 'is-active' : ''}`}
             onClick={() => setSortOrder('newest')}
           >
-            Más recientes
+            Más recientes {sortOrder === 'newest' && <IonIcon icon={checkmarkCircleOutline} slot="end" />}
           </button>
           <button
             className={`filter-sort-option ${sortOrder === 'price-asc' ? 'is-active' : ''}`}
             onClick={() => setSortOrder('price-asc')}
           >
-            Precio: menor a mayor
+            Precio: menor a mayor {sortOrder === 'price-asc' && <IonIcon icon={checkmarkCircleOutline} slot="end" />}
           </button>
           <button
             className={`filter-sort-option ${sortOrder === 'price-desc' ? 'is-active' : ''}`}
             onClick={() => setSortOrder('price-desc')}
           >
-            Precio: mayor a menor
+            Precio: mayor a menor {sortOrder === 'price-desc' && <IonIcon icon={checkmarkCircleOutline} slot="end" />}
           </button>
           <button
             className={`filter-sort-option ${sortOrder === 'sqm-desc' ? 'is-active' : ''}`}
             onClick={() => setSortOrder('sqm-desc')}
           >
-            Mayor m²
+            Mayor m² {sortOrder === 'sqm-desc' && <IonIcon icon={checkmarkCircleOutline} slot="end" />}
           </button>
           <button
             className={`filter-sort-option ${sortOrder === 'sqm-asc' ? 'is-active' : ''}`}
             onClick={() => setSortOrder('sqm-asc')}
           >
-            Menor m²
+            Menor m² {sortOrder === 'sqm-asc' && <IonIcon icon={checkmarkCircleOutline} slot="end" />}
           </button>
         </div>
 

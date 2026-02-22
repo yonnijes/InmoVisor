@@ -11,10 +11,7 @@ import { usePropertyViewLogic } from '../../hook/usePropertyViewLogic';
 import { Property } from '../../models';
 import './index.css';
 
-
-
 const PropertyView: React.FC = () => {
-
   const {
     properties,
     isModalOpen,
@@ -27,7 +24,7 @@ const PropertyView: React.FC = () => {
     applyFilters,
     setFilters,
     sortOrder,
-    setSortOrder
+    setSortOrder,
   } = usePropertyViewLogic();
 
   const history = useHistory();
@@ -37,22 +34,11 @@ const PropertyView: React.FC = () => {
     history.push('/mapa');
   };
 
-  const sortOptions = [
-    { value: 'newest', label: 'Recientes' },
-    { value: 'price-asc', label: 'Precio ↑' },
-    { value: 'price-desc', label: 'Precio ↓' },
-    { value: 'sqm-desc', label: 'm² ↑' },
-    { value: 'sqm-asc', label: 'm² ↓' },
-  ] as const;
-
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // First, check if there's a new version available
         const versionCheck = await checkDataVersion();
-        
-        // If no update needed, try to load from localStorage first (offline support)
+
         if (!versionCheck.hasUpdate) {
           const cachedProperties = localStorage.getItem('properties');
           if (cachedProperties) {
@@ -61,23 +47,19 @@ const PropertyView: React.FC = () => {
           }
         }
 
-        // Fetch new data from remote
         const baseUrl = `https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/data_property.json`;
         const versionTag = versionCheck.remoteVersion ?? Date.now();
         const url = `${baseUrl}?v=${versionTag}`;
         const response = await axios({
           url,
-          method: "GET",
+          method: 'GET',
           responseType: 'json',
         });
 
         const data = await response.data;
         setProperties(data);
-
-        // Guardar los datos en localStorage
         localStorage.setItem('properties', JSON.stringify(data));
 
-        // Actualizar cache de Workbox programáticamente (si está disponible)
         if ('caches' in window) {
           const cache = await caches.open('github-data-cache');
           const cachedResponse = new Response(JSON.stringify(data), {
@@ -85,24 +67,23 @@ const PropertyView: React.FC = () => {
           });
           await cache.put(url, cachedResponse);
         }
-        
-        // Save the new version number after successful update
+
         if (versionCheck.remoteVersion) {
           saveDataVersion(versionCheck.remoteVersion);
         }
       } catch (error) {
-        if (error instanceof AxiosError)
+        if (error instanceof AxiosError) {
           console.log(`Error fetching data: ${error.status} - ${error.message}`);
-        setProperties(jsonDataMOK as  unknown as Property.Property[]);
+        }
+        setProperties(jsonDataMOK as unknown as Property.Property[]);
         localStorage.setItem('properties', JSON.stringify(jsonDataMOK));
       } finally {
         setIsLoading(false);
       }
-    }
+    };
 
     fetchData();
   }, []);
-
 
   return (
     <IonPage>
@@ -117,9 +98,7 @@ const PropertyView: React.FC = () => {
               <IonIcon icon={locationOutline} />
               Ver mapa
             </IonButton>
-            <IonTitle size="small" >
-              {properties.length} registros
-            </IonTitle>
+            <IonTitle size="small">{properties.length} registros</IonTitle>
             <IonButton fill="outline" onClick={handleOpenModal} className="toolbar-btn">
               <IonIcon icon={filterOutline} />
               Filtrar {countFilters > 0 && `(${countFilters})`}
@@ -128,7 +107,6 @@ const PropertyView: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-
         {isLoading ? (
           <div style={{ padding: '12px' }}>
             {Array.from({ length: 3 }).map((_, i) => (
@@ -141,21 +119,18 @@ const PropertyView: React.FC = () => {
             ))}
           </div>
         ) : (
-          properties.map((property, i) => (
-            <PropertyComponent key={i} property={property} />
-          ))
+          properties.map((property, i) => <PropertyComponent key={i} property={property} />)
         )}
 
-        {/* Modal de Filtros */}
         <FilterModal
           isOpen={isModalOpen}
           onClose={handleCloseModal}
           applyFilters={applyFilters}
           filters={filters}
           setFilters={setFilters}
+          sortOrder={sortOrder}
+          setSortOrder={setSortOrder}
         />
-
-
       </IonContent>
     </IonPage>
   );
