@@ -1,0 +1,15 @@
+.property-toolbar-sort-wrap {
+  display: flex;
+  justify-content: flex-end;
+  padding: 6px 12px;
+}
+
+.property-toolbar-sort {
+  border: 1px solid #d0d5dd;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 13px;
+  background: #fff;
+  color: #101828;
+  font-weight: 600;
+}

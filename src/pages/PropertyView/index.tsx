@@ -9,6 +9,7 @@ import PropertyComponent from '../../components/property';
 import { checkDataVersion, saveDataVersion } from '../../hook/checkDataVersion';
 import { usePropertyViewLogic } from '../../hook/usePropertyViewLogic';
 import { Property } from '../../models';
+import './index.css';
 
 
 
@@ -103,17 +104,11 @@ const PropertyView: React.FC = () => {
         </IonToolbar>
 
         <IonToolbar>
-          <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '6px 12px' }}>
+          <div className="property-toolbar-sort-wrap">
             <select
+              className="property-toolbar-sort"
               value={sortOrder}
               onChange={(e) => setSortOrder(e.target.value as any)}
-              style={{
-                border: '1px solid #d1d5db',
-                borderRadius: 8,
-                padding: '6px 10px',
-                fontSize: 13,
-                background: 'white'
-              }}
             >
               <option value="newest">Más recientes</option>
               <option value="price-asc">Precio: menor a mayor</option>
