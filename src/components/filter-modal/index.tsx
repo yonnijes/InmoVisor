@@ -51,21 +51,21 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, applyFilters
         <Filter
           label="Inmuebles"
           options={["Casa", "Departamento", "Oficina", "Terreno", "Lote", "Comercial", "Estacionamiento"] as Property.PropertyType[]}
-          selectedValue={filters.type}
+          selectedValue={filters.type || undefined}
           onChange={(value) => handleChangeFilter('type', value)}
         />
 
         <Filter
           label="Operación"
           options={["Alquiler", "Venta"] as Property.TransactionType[]}
-          selectedValue={filters.transaction}
+          selectedValue={filters.transaction || undefined}
           onChange={(value) => handleChangeFilter('transaction', value)}
         />
 
         <Filter
           label="Dormitorios"
           options={[0, 1, 2, 3, 4, 5]}
-          selectedValue={filters.bedrooms}
+          selectedValue={filters.bedrooms || undefined}
           onChange={(value) => handleChangeFilter('bedrooms', value)}
         />
 
@@ -79,14 +79,14 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, applyFilters
             { '4': 4 },
             { '5 o más': 5 }
           ]}
-          selectedValue={filters.bathrooms}
+          selectedValue={filters.bathrooms || undefined}
           onChange={(value) => handleChangeFilter('bathrooms', value)}
         />
 
         <Filter
           label="Estacionamientos"
           options={[0, 1, 2, 3, 4, 5]}
-          selectedValue={filters.parkingSpaces}
+          selectedValue={filters.parkingSpaces || undefined}
           onChange={(value) => handleChangeFilter('parkingSpaces', value)}
         />
 
@@ -100,7 +100,7 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, applyFilters
         <Filter
           label="Metros cuadrados"
           options={[0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500]}
-          selectedValue={filters.squareMeters}
+          selectedValue={filters.squareMeters || undefined}
           onChange={(value) => handleChangeFilter('squareMeters', value)}
         />
       </IonContent>
