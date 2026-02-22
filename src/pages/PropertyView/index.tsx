@@ -112,34 +112,19 @@ const PropertyView: React.FC = () => {
         </IonToolbar>
 
         <IonToolbar>
-          <div className="property-toolbar-sort-wrap">
-            <div className="property-toolbar-sort-label">Ordenar:</div>
-            <div className="property-sort-chips" role="tablist" aria-label="Ordenar propiedades">
-              {sortOptions.map((opt) => (
-                <button
-                  key={opt.value}
-                  className={`property-sort-chip ${sortOrder === opt.value ? 'is-active' : ''}`}
-                  onClick={() => setSortOrder(opt.value as any)}
-                >
-                  {opt.label}
-                </button>
-              ))}
-            </div>
+          <div className="property-toolbar-actions">
+            <IonButton fill="outline" onClick={goToMap} className="toolbar-btn">
+              <IonIcon icon={locationOutline} />
+              Ver mapa
+            </IonButton>
+            <IonTitle size="small" >
+              {properties.length} registros
+            </IonTitle>
+            <IonButton fill="outline" onClick={handleOpenModal} className="toolbar-btn">
+              <IonIcon icon={filterOutline} />
+              Filtrar {countFilters > 0 && `(${countFilters})`}
+            </IonButton>
           </div>
-        </IonToolbar>
-
-        <IonToolbar>
-          <IonButton slot="start" onClick={goToMap} >
-            <IonIcon icon={locationOutline} />
-            Ver mapa
-          </IonButton>
-          <IonTitle size="small" >
-            {properties.length} registros
-          </IonTitle>
-          <IonButton slot="end" onClick={handleOpenModal}>
-            <IonIcon icon={filterOutline} />
-            Filtrar {countFilters > 0 && `(${countFilters})`}
-          </IonButton>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
