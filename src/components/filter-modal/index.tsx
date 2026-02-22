@@ -14,7 +14,7 @@ interface FilterModalProps {
   setSortOrder: (order: string) => void;
 }
 
-const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, applyFilters, filters, setFilters }) => {
+const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, applyFilters, filters, setFilters, sortOrder, setSortOrder }) => {
   const handleApplyFilters = () => {
     applyFilters(filters);
     onClose();
@@ -33,6 +33,7 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, applyFilters
       storageRoom: undefined,
     };
     setFilters(clearedFilters);
+    setSortOrder('newest');
     applyFilters(clearedFilters);
     onClose();
   };
