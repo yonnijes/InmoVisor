@@ -52,8 +52,9 @@
 
 .property-card__section {
   margin-top: 12px;
-  padding-top: 10px;
+  padding-top: 12px;
   border-top: 1px dashed rgba(2, 6, 23, 0.1);
+  line-height: 1.45;
 }
 
 .property-card__list {
@@ -62,7 +63,7 @@
 }
 
 .property-card__list li {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .property-card__toggle {
@@ -71,5 +72,5 @@
 }
 
 .property-card__whatsapp {
-  margin-top: 12px;
+  margin-top: 18px;
 }

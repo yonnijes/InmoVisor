@@ -37,6 +37,14 @@ const PropertyView: React.FC = () => {
     history.push('/mapa');
   };
 
+  const sortOptions = [
+    { value: 'newest', label: 'Recientes' },
+    { value: 'price-asc', label: 'Precio ↑' },
+    { value: 'price-desc', label: 'Precio ↓' },
+    { value: 'sqm-desc', label: 'm² ↑' },
+    { value: 'sqm-asc', label: 'm² ↓' },
+  ] as const;
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -98,24 +106,25 @@ const PropertyView: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader className="property-header-sticky">
         <IonToolbar>
           <IonSearchbar placeholder="Buscar" onIonChange={(e) => setSearchText(e.detail.value!)} />
         </IonToolbar>
 
         <IonToolbar>
           <div className="property-toolbar-sort-wrap">
-            <select
-              className="property-toolbar-sort"
-              value={sortOrder}
-              onChange={(e) => setSortOrder(e.target.value as any)}
-            >
-              <option value="newest">Más recientes</option>
-              <option value="price-asc">Precio: menor a mayor</option>
-              <option value="price-desc">Precio: mayor a menor</option>
-              <option value="sqm-desc">Mayor m²</option>
-              <option value="sqm-asc">Menor m²</option>
-            </select>
+            <div className="property-toolbar-sort-label">Ordenar:</div>
+            <div className="property-sort-chips" role="tablist" aria-label="Ordenar propiedades">
+              {sortOptions.map((opt) => (
+                <button
+                  key={opt.value}
+                  className={`property-sort-chip ${sortOrder === opt.value ? 'is-active' : ''}`}
+                  onClick={() => setSortOrder(opt.value as any)}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
           </div>
         </IonToolbar>
 
