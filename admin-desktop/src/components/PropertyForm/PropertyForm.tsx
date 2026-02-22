@@ -22,6 +22,7 @@ const PropertyForm: React.FC<{ initialData?: any; onSuccess: () => void }> = ({ 
     initialData?.image?.map((url: string) => ({ path: url, preview: url, isExisting: true })) || []
   )
   const [customAmenity, setCustomAmenity] = useState('')
+  const [dragIndex, setDragIndex] = useState<number | null>(null)
   const [formData, setFormData] = useState<Partial<PropertyData>>(initialData || {
     id: `A-${Date.now().toString().slice(-6)}`,
     type: 'Departamento',
@@ -74,6 +75,23 @@ const PropertyForm: React.FC<{ initialData?: any; onSuccess: () => void }> = ({ 
       }))
       setImages(prev => [...prev, ...newImages])
     }
+  }
+
+  const handleDragStart = (index: number) => {
+    setDragIndex(index)
+  }
+
+  const handleDrop = (dropIndex: number) => {
+    if (dragIndex === null || dragIndex === dropIndex) return
+
+    setImages(prev => {
+      const next = [...prev]
+      const [moved] = next.splice(dragIndex, 1)
+      next.splice(dropIndex, 0, moved)
+      return next
+    })
+
+    setDragIndex(null)
   }
 
   const handleSubmit = async () => {
@@ -373,8 +391,20 @@ const PropertyForm: React.FC<{ initialData?: any; onSuccess: () => void }> = ({ 
           </div>
 
           {images.map((img, idx) => (
-            <div key={idx} className="aspect-square rounded-2xl border border-gray-100 relative group overflow-hidden bg-gray-200">
+            <div
+              key={`${img.path}-${idx}`}
+              draggable
+              onDragStart={() => handleDragStart(idx)}
+              onDragOver={(e) => e.preventDefault()}
+              onDrop={() => handleDrop(idx)}
+              onDragEnd={() => setDragIndex(null)}
+              className={`aspect-square rounded-2xl border relative group overflow-hidden bg-gray-200 cursor-move ${dragIndex === idx ? 'border-emerald-500 opacity-70' : 'border-gray-100'}`}
+              title="Arrastra para reordenar"
+            >
               <img src={img.preview} className="w-full h-full object-cover" />
+              <div className="absolute left-2 top-2 text-[10px] px-2 py-1 rounded bg-black/55 text-white">
+                #{idx + 1}
+              </div>
               <button 
                 onClick={() => setImages(prev => prev.filter((_, i) => i !== idx))}
                 className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
@@ -384,6 +414,9 @@ const PropertyForm: React.FC<{ initialData?: any; onSuccess: () => void }> = ({ 
             </div>
           ))}
         </div>
+        {images.length > 1 && (
+          <p className="text-xs text-gray-500">Tip: arrastra las fotos para cambiar su orden. El carrusel mostrará ese mismo orden.</p>
+        )}
       </section>
 
       {/* Submit Button */}
