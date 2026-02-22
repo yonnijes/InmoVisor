@@ -133,5 +133,3729 @@
     "image": [
       "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-539099/1771621645346_A9552D3E-A08C-48C2-8093-DC9B9FE70981.webp"
     ]
+  },
+  {
+    "id": "P-0001",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #1, Zona A",
+    "money": "USD",
+    "price": 45000,
+    "squareMeters": 55,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 1/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2000,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.350000",
+    "lng": "-67.000000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0001",
+      "lat": 10.35,
+      "lng": -67
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0002",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #2, Zona B",
+    "money": "EUR",
+    "price": 46200,
+    "squareMeters": 65,
+    "landSquareMeters": 220,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 2/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2001,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.355000",
+    "lng": "-66.996000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0002",
+      "lat": 10.355,
+      "lng": -66.996
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0003",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #3, Zona C",
+    "money": "Bs",
+    "price": 105000,
+    "squareMeters": 75,
+    "bedrooms": 0,
+    "bathrooms": 3,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 3/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2002,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.360000",
+    "lng": "-66.992000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0003",
+      "lat": 10.36,
+      "lng": -66.992
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0004",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #4, Zona D",
+    "money": "USD",
+    "price": 48600,
+    "squareMeters": 85,
+    "bedrooms": 4,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 4/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2003,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.365000",
+    "lng": "-66.988000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0004",
+      "lat": 10.365,
+      "lng": -66.988
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0005",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #5, Zona E",
+    "money": "EUR",
+    "price": 49800,
+    "squareMeters": 95,
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 5/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2004,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.370000",
+    "lng": "-66.984000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0005",
+      "lat": 10.37,
+      "lng": -66.984
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0006",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #6, Zona F",
+    "money": "Bs",
+    "price": 112500,
+    "squareMeters": 105,
+    "landSquareMeters": 300,
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 6/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2005,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.375000",
+    "lng": "-66.980000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0006",
+      "lat": 10.375,
+      "lng": -66.98
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0007",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #7, Zona G",
+    "money": "USD",
+    "price": 52200,
+    "squareMeters": 115,
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 7/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2006,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.380000",
+    "lng": "-66.976000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0007",
+      "lat": 10.38,
+      "lng": -66.976
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0008",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #8, Zona H",
+    "money": "EUR",
+    "price": 53400,
+    "squareMeters": 125,
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 8/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2007,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.385000",
+    "lng": "-66.972000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0008",
+      "lat": 10.385,
+      "lng": -66.972
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0009",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #9, Zona I",
+    "money": "Bs",
+    "price": 120000,
+    "squareMeters": 135,
+    "bedrooms": 1,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 9/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2008,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.390000",
+    "lng": "-66.968000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0009",
+      "lat": 10.39,
+      "lng": -66.968
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0010",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #10, Zona J",
+    "money": "USD",
+    "price": 55800,
+    "squareMeters": 145,
+    "landSquareMeters": 220,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 10/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2009,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.395000",
+    "lng": "-66.964000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0010",
+      "lat": 10.395,
+      "lng": -66.964
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0011",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #11, Zona K",
+    "money": "EUR",
+    "price": 57000,
+    "squareMeters": 155,
+    "bedrooms": 0,
+    "bathrooms": 2,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 11/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2010,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.350700",
+    "lng": "-67.000500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0011",
+      "lat": 10.3507,
+      "lng": -67.0005
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0012",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #12, Zona L",
+    "money": "Bs",
+    "price": 127500,
+    "squareMeters": 165,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 12/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2011,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.355700",
+    "lng": "-66.996500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0012",
+      "lat": 10.3557,
+      "lng": -66.9965
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0013",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #13, Zona M",
+    "money": "USD",
+    "price": 59400,
+    "squareMeters": 55,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 13/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2012,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.360700",
+    "lng": "-66.992500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0013",
+      "lat": 10.3607,
+      "lng": -66.9925
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0014",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #14, Zona N",
+    "money": "EUR",
+    "price": 60600,
+    "squareMeters": 65,
+    "landSquareMeters": 300,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 14/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2013,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.365700",
+    "lng": "-66.988500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0014",
+      "lat": 10.3657,
+      "lng": -66.9885
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0015",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #15, Zona O",
+    "money": "Bs",
+    "price": 135000,
+    "squareMeters": 75,
+    "bedrooms": 0,
+    "bathrooms": 3,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 15/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2014,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.370700",
+    "lng": "-66.984500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0015",
+      "lat": 10.3707,
+      "lng": -66.9845
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0016",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #16, Zona P",
+    "money": "USD",
+    "price": 63000,
+    "squareMeters": 85,
+    "bedrooms": 4,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 16/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2015,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.375700",
+    "lng": "-66.980500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0016",
+      "lat": 10.3757,
+      "lng": -66.9805
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0017",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #17, Zona Q",
+    "money": "EUR",
+    "price": 64200,
+    "squareMeters": 95,
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 17/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2016,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.380700",
+    "lng": "-66.976500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0017",
+      "lat": 10.3807,
+      "lng": -66.9765
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0018",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #18, Zona R",
+    "money": "Bs",
+    "price": 142500,
+    "squareMeters": 105,
+    "landSquareMeters": 220,
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 18/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2017,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.385700",
+    "lng": "-66.972500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0018",
+      "lat": 10.3857,
+      "lng": -66.9725
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0019",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #19, Zona S",
+    "money": "USD",
+    "price": 66600,
+    "squareMeters": 115,
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 19/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2018,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.390700",
+    "lng": "-66.968500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0019",
+      "lat": 10.3907,
+      "lng": -66.9685
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0020",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #20, Zona T",
+    "money": "EUR",
+    "price": 67800,
+    "squareMeters": 125,
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 20/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2019,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.395700",
+    "lng": "-66.964500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0020",
+      "lat": 10.3957,
+      "lng": -66.9645
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0021",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #21, Zona U",
+    "money": "Bs",
+    "price": 150000,
+    "squareMeters": 135,
+    "bedrooms": 1,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 21/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2020,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.351400",
+    "lng": "-67.001000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0021",
+      "lat": 10.3514,
+      "lng": -67.001
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0022",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #22, Zona V",
+    "money": "USD",
+    "price": 70200,
+    "squareMeters": 145,
+    "landSquareMeters": 300,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 22/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2021,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.356400",
+    "lng": "-66.997000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0022",
+      "lat": 10.3564,
+      "lng": -66.997
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0023",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #23, Zona W",
+    "money": "EUR",
+    "price": 71400,
+    "squareMeters": 155,
+    "bedrooms": 0,
+    "bathrooms": 2,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 23/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2022,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.361400",
+    "lng": "-66.993000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0023",
+      "lat": 10.3614,
+      "lng": -66.993
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0024",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #24, Zona X",
+    "money": "Bs",
+    "price": 157500,
+    "squareMeters": 165,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 24/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2023,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.366400",
+    "lng": "-66.989000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0024",
+      "lat": 10.3664,
+      "lng": -66.989
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0025",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #25, Zona Y",
+    "money": "USD",
+    "price": 73800,
+    "squareMeters": 55,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 25/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2000,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.371400",
+    "lng": "-66.985000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0025",
+      "lat": 10.3714,
+      "lng": -66.985
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0026",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #26, Zona Z",
+    "money": "EUR",
+    "price": 75000,
+    "squareMeters": 65,
+    "landSquareMeters": 220,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 26/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2001,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.376400",
+    "lng": "-66.981000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0026",
+      "lat": 10.3764,
+      "lng": -66.981
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0027",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #27, Zona A",
+    "money": "Bs",
+    "price": 165000,
+    "squareMeters": 75,
+    "bedrooms": 0,
+    "bathrooms": 3,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 27/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2002,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.381400",
+    "lng": "-66.977000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0027",
+      "lat": 10.3814,
+      "lng": -66.977
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0028",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #28, Zona B",
+    "money": "USD",
+    "price": 77400,
+    "squareMeters": 85,
+    "bedrooms": 4,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 28/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2003,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.386400",
+    "lng": "-66.973000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0028",
+      "lat": 10.3864,
+      "lng": -66.973
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0029",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #29, Zona C",
+    "money": "EUR",
+    "price": 78600,
+    "squareMeters": 95,
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 29/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2004,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.391400",
+    "lng": "-66.969000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0029",
+      "lat": 10.3914,
+      "lng": -66.969
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0030",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #30, Zona D",
+    "money": "Bs",
+    "price": 172500,
+    "squareMeters": 105,
+    "landSquareMeters": 300,
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 30/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2005,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.396400",
+    "lng": "-66.965000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0030",
+      "lat": 10.3964,
+      "lng": -66.965
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0031",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #31, Zona E",
+    "money": "USD",
+    "price": 81000,
+    "squareMeters": 115,
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 31/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2006,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.352100",
+    "lng": "-67.001500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0031",
+      "lat": 10.3521,
+      "lng": -67.0015
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0032",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #32, Zona F",
+    "money": "EUR",
+    "price": 82200,
+    "squareMeters": 125,
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 32/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2007,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.357100",
+    "lng": "-66.997500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0032",
+      "lat": 10.3571,
+      "lng": -66.9975
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0033",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #33, Zona G",
+    "money": "Bs",
+    "price": 180000,
+    "squareMeters": 135,
+    "bedrooms": 1,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 33/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2008,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.362100",
+    "lng": "-66.993500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0033",
+      "lat": 10.3621,
+      "lng": -66.9935
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0034",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #34, Zona H",
+    "money": "USD",
+    "price": 84600,
+    "squareMeters": 145,
+    "landSquareMeters": 220,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 34/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2009,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.367100",
+    "lng": "-66.989500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0034",
+      "lat": 10.3671,
+      "lng": -66.9895
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0035",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #35, Zona I",
+    "money": "EUR",
+    "price": 85800,
+    "squareMeters": 155,
+    "bedrooms": 0,
+    "bathrooms": 2,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 35/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2010,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.372100",
+    "lng": "-66.985500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0035",
+      "lat": 10.3721,
+      "lng": -66.9855
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0036",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #36, Zona J",
+    "money": "Bs",
+    "price": 187500,
+    "squareMeters": 165,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 36/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2011,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.377100",
+    "lng": "-66.981500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0036",
+      "lat": 10.3771,
+      "lng": -66.9815
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0037",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #37, Zona K",
+    "money": "USD",
+    "price": 88200,
+    "squareMeters": 55,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 37/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2012,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.382100",
+    "lng": "-66.977500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0037",
+      "lat": 10.3821,
+      "lng": -66.9775
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0038",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #38, Zona L",
+    "money": "EUR",
+    "price": 89400,
+    "squareMeters": 65,
+    "landSquareMeters": 300,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 38/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2013,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.387100",
+    "lng": "-66.973500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0038",
+      "lat": 10.3871,
+      "lng": -66.9735
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0039",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #39, Zona M",
+    "money": "Bs",
+    "price": 195000,
+    "squareMeters": 75,
+    "bedrooms": 0,
+    "bathrooms": 3,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 39/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2014,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.392100",
+    "lng": "-66.969500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0039",
+      "lat": 10.3921,
+      "lng": -66.9695
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0040",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #40, Zona N",
+    "money": "USD",
+    "price": 91800,
+    "squareMeters": 85,
+    "bedrooms": 4,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 40/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2015,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.397100",
+    "lng": "-66.965500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0040",
+      "lat": 10.3971,
+      "lng": -66.9655
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0041",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #41, Zona O",
+    "money": "EUR",
+    "price": 93000,
+    "squareMeters": 95,
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 41/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2016,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.352800",
+    "lng": "-67.002000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0041",
+      "lat": 10.3528,
+      "lng": -67.002
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0042",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #42, Zona P",
+    "money": "Bs",
+    "price": 202500,
+    "squareMeters": 105,
+    "landSquareMeters": 220,
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 42/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2017,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.357800",
+    "lng": "-66.998000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0042",
+      "lat": 10.3578,
+      "lng": -66.998
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0043",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #43, Zona Q",
+    "money": "USD",
+    "price": 95400,
+    "squareMeters": 115,
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 43/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2018,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.362800",
+    "lng": "-66.994000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0043",
+      "lat": 10.3628,
+      "lng": -66.994
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0044",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #44, Zona R",
+    "money": "EUR",
+    "price": 96600,
+    "squareMeters": 125,
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 44/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2019,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.367800",
+    "lng": "-66.990000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0044",
+      "lat": 10.3678,
+      "lng": -66.99
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0045",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #45, Zona S",
+    "money": "Bs",
+    "price": 210000,
+    "squareMeters": 135,
+    "bedrooms": 1,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 45/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2020,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.372800",
+    "lng": "-66.986000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0045",
+      "lat": 10.3728,
+      "lng": -66.986
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0046",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #46, Zona T",
+    "money": "USD",
+    "price": 99000,
+    "squareMeters": 145,
+    "landSquareMeters": 300,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 46/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2021,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.377800",
+    "lng": "-66.982000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0046",
+      "lat": 10.3778,
+      "lng": -66.982
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0047",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #47, Zona U",
+    "money": "EUR",
+    "price": 100200,
+    "squareMeters": 155,
+    "bedrooms": 0,
+    "bathrooms": 2,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 47/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2022,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.382800",
+    "lng": "-66.978000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0047",
+      "lat": 10.3828,
+      "lng": -66.978
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0048",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #48, Zona V",
+    "money": "Bs",
+    "price": 217500,
+    "squareMeters": 165,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 48/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2023,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.387800",
+    "lng": "-66.974000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0048",
+      "lat": 10.3878,
+      "lng": -66.974
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0049",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #49, Zona W",
+    "money": "USD",
+    "price": 102600,
+    "squareMeters": 55,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 49/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2000,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.392800",
+    "lng": "-66.970000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0049",
+      "lat": 10.3928,
+      "lng": -66.97
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0050",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #50, Zona X",
+    "money": "EUR",
+    "price": 103800,
+    "squareMeters": 65,
+    "landSquareMeters": 220,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 50/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2001,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.397800",
+    "lng": "-66.966000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0050",
+      "lat": 10.3978,
+      "lng": -66.966
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0051",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #51, Zona Y",
+    "money": "Bs",
+    "price": 225000,
+    "squareMeters": 75,
+    "bedrooms": 0,
+    "bathrooms": 3,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 51/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2002,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.353500",
+    "lng": "-67.002500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0051",
+      "lat": 10.3535,
+      "lng": -67.0025
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0052",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #52, Zona Z",
+    "money": "USD",
+    "price": 106200,
+    "squareMeters": 85,
+    "bedrooms": 4,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 52/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2003,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.358500",
+    "lng": "-66.998500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0052",
+      "lat": 10.3585,
+      "lng": -66.9985
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0053",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #53, Zona A",
+    "money": "EUR",
+    "price": 107400,
+    "squareMeters": 95,
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 53/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2004,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.363500",
+    "lng": "-66.994500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0053",
+      "lat": 10.3635,
+      "lng": -66.9945
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0054",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #54, Zona B",
+    "money": "Bs",
+    "price": 232500,
+    "squareMeters": 105,
+    "landSquareMeters": 300,
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 54/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2005,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.368500",
+    "lng": "-66.990500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0054",
+      "lat": 10.3685,
+      "lng": -66.9905
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0055",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #55, Zona C",
+    "money": "USD",
+    "price": 109800,
+    "squareMeters": 115,
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 55/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2006,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.373500",
+    "lng": "-66.986500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0055",
+      "lat": 10.3735,
+      "lng": -66.9865
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0056",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #56, Zona D",
+    "money": "EUR",
+    "price": 111000,
+    "squareMeters": 125,
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 56/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2007,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.378500",
+    "lng": "-66.982500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0056",
+      "lat": 10.3785,
+      "lng": -66.9825
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0057",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #57, Zona E",
+    "money": "Bs",
+    "price": 240000,
+    "squareMeters": 135,
+    "bedrooms": 1,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 57/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2008,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.383500",
+    "lng": "-66.978500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0057",
+      "lat": 10.3835,
+      "lng": -66.9785
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0058",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #58, Zona F",
+    "money": "USD",
+    "price": 113400,
+    "squareMeters": 145,
+    "landSquareMeters": 220,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 58/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2009,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.388500",
+    "lng": "-66.974500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0058",
+      "lat": 10.3885,
+      "lng": -66.9745
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0059",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #59, Zona G",
+    "money": "EUR",
+    "price": 114600,
+    "squareMeters": 155,
+    "bedrooms": 0,
+    "bathrooms": 2,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 59/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2010,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.393500",
+    "lng": "-66.970500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0059",
+      "lat": 10.3935,
+      "lng": -66.9705
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0060",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #60, Zona H",
+    "money": "Bs",
+    "price": 247500,
+    "squareMeters": 165,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 60/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2011,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.398500",
+    "lng": "-66.966500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0060",
+      "lat": 10.3985,
+      "lng": -66.9665
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0061",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #61, Zona I",
+    "money": "USD",
+    "price": 117000,
+    "squareMeters": 55,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 61/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2012,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.354200",
+    "lng": "-67.003000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0061",
+      "lat": 10.3542,
+      "lng": -67.003
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0062",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #62, Zona J",
+    "money": "EUR",
+    "price": 118200,
+    "squareMeters": 65,
+    "landSquareMeters": 300,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 62/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2013,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.359200",
+    "lng": "-66.999000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0062",
+      "lat": 10.3592,
+      "lng": -66.999
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0063",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #63, Zona K",
+    "money": "Bs",
+    "price": 255000,
+    "squareMeters": 75,
+    "bedrooms": 0,
+    "bathrooms": 3,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 63/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2014,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.364200",
+    "lng": "-66.995000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0063",
+      "lat": 10.3642,
+      "lng": -66.995
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0064",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #64, Zona L",
+    "money": "USD",
+    "price": 120600,
+    "squareMeters": 85,
+    "bedrooms": 4,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 64/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2015,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.369200",
+    "lng": "-66.991000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0064",
+      "lat": 10.3692,
+      "lng": -66.991
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0065",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #65, Zona M",
+    "money": "EUR",
+    "price": 121800,
+    "squareMeters": 95,
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 65/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2016,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.374200",
+    "lng": "-66.987000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0065",
+      "lat": 10.3742,
+      "lng": -66.987
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0066",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #66, Zona N",
+    "money": "Bs",
+    "price": 262500,
+    "squareMeters": 105,
+    "landSquareMeters": 220,
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 66/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2017,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.379200",
+    "lng": "-66.983000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0066",
+      "lat": 10.3792,
+      "lng": -66.983
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0067",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #67, Zona O",
+    "money": "USD",
+    "price": 124200,
+    "squareMeters": 115,
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 67/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2018,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.384200",
+    "lng": "-66.979000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0067",
+      "lat": 10.3842,
+      "lng": -66.979
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0068",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #68, Zona P",
+    "money": "EUR",
+    "price": 125400,
+    "squareMeters": 125,
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 68/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2019,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.389200",
+    "lng": "-66.975000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0068",
+      "lat": 10.3892,
+      "lng": -66.975
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0069",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #69, Zona Q",
+    "money": "Bs",
+    "price": 270000,
+    "squareMeters": 135,
+    "bedrooms": 1,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 69/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2020,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.394200",
+    "lng": "-66.971000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0069",
+      "lat": 10.3942,
+      "lng": -66.971
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0070",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #70, Zona R",
+    "money": "USD",
+    "price": 127800,
+    "squareMeters": 145,
+    "landSquareMeters": 300,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 70/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2021,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.399200",
+    "lng": "-66.967000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0070",
+      "lat": 10.3992,
+      "lng": -66.967
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0071",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #71, Zona S",
+    "money": "EUR",
+    "price": 129000,
+    "squareMeters": 155,
+    "bedrooms": 0,
+    "bathrooms": 2,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 71/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2022,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.354900",
+    "lng": "-67.003500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0071",
+      "lat": 10.3549,
+      "lng": -67.0035
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0072",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #72, Zona T",
+    "money": "Bs",
+    "price": 277500,
+    "squareMeters": 165,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 72/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2023,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.359900",
+    "lng": "-66.999500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0072",
+      "lat": 10.3599,
+      "lng": -66.9995
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0073",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #73, Zona U",
+    "money": "USD",
+    "price": 131400,
+    "squareMeters": 55,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 73/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2000,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.364900",
+    "lng": "-66.995500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0073",
+      "lat": 10.3649,
+      "lng": -66.9955
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0074",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #74, Zona V",
+    "money": "EUR",
+    "price": 132600,
+    "squareMeters": 65,
+    "landSquareMeters": 220,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 74/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2001,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.369900",
+    "lng": "-66.991500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0074",
+      "lat": 10.3699,
+      "lng": -66.9915
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0075",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #75, Zona W",
+    "money": "Bs",
+    "price": 285000,
+    "squareMeters": 75,
+    "bedrooms": 0,
+    "bathrooms": 3,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 75/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2002,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.374900",
+    "lng": "-66.987500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0075",
+      "lat": 10.3749,
+      "lng": -66.9875
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0076",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #76, Zona X",
+    "money": "USD",
+    "price": 135000,
+    "squareMeters": 85,
+    "bedrooms": 4,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 76/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2003,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.379900",
+    "lng": "-66.983500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0076",
+      "lat": 10.3799,
+      "lng": -66.9835
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0077",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #77, Zona Y",
+    "money": "EUR",
+    "price": 136200,
+    "squareMeters": 95,
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 77/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2004,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.384900",
+    "lng": "-66.979500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0077",
+      "lat": 10.3849,
+      "lng": -66.9795
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0078",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #78, Zona Z",
+    "money": "Bs",
+    "price": 292500,
+    "squareMeters": 105,
+    "landSquareMeters": 300,
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 78/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2005,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.389900",
+    "lng": "-66.975500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0078",
+      "lat": 10.3899,
+      "lng": -66.9755
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0079",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #79, Zona A",
+    "money": "USD",
+    "price": 138600,
+    "squareMeters": 115,
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 79/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2006,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.394900",
+    "lng": "-66.971500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0079",
+      "lat": 10.3949,
+      "lng": -66.9715
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0080",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #80, Zona B",
+    "money": "EUR",
+    "price": 139800,
+    "squareMeters": 125,
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 80/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2007,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.399900",
+    "lng": "-66.967500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0080",
+      "lat": 10.3999,
+      "lng": -66.9675
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0081",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #81, Zona C",
+    "money": "Bs",
+    "price": 300000,
+    "squareMeters": 135,
+    "bedrooms": 1,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 81/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2008,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.355600",
+    "lng": "-67.004000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0081",
+      "lat": 10.3556,
+      "lng": -67.004
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0082",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #82, Zona D",
+    "money": "USD",
+    "price": 142200,
+    "squareMeters": 145,
+    "landSquareMeters": 220,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 82/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2009,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.360600",
+    "lng": "-67.000000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0082",
+      "lat": 10.3606,
+      "lng": -67
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0083",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #83, Zona E",
+    "money": "EUR",
+    "price": 143400,
+    "squareMeters": 155,
+    "bedrooms": 0,
+    "bathrooms": 2,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 83/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2010,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.365600",
+    "lng": "-66.996000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0083",
+      "lat": 10.3656,
+      "lng": -66.996
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0084",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #84, Zona F",
+    "money": "Bs",
+    "price": 307500,
+    "squareMeters": 165,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 84/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2011,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.370600",
+    "lng": "-66.992000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0084",
+      "lat": 10.3706,
+      "lng": -66.992
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0085",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #85, Zona G",
+    "money": "USD",
+    "price": 145800,
+    "squareMeters": 55,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 85/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2012,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.375600",
+    "lng": "-66.988000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0085",
+      "lat": 10.3756,
+      "lng": -66.988
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0086",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #86, Zona H",
+    "money": "EUR",
+    "price": 147000,
+    "squareMeters": 65,
+    "landSquareMeters": 300,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 86/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2013,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.380600",
+    "lng": "-66.984000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0086",
+      "lat": 10.3806,
+      "lng": -66.984
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0087",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #87, Zona I",
+    "money": "Bs",
+    "price": 315000,
+    "squareMeters": 75,
+    "bedrooms": 0,
+    "bathrooms": 3,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 87/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2014,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.385600",
+    "lng": "-66.980000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0087",
+      "lat": 10.3856,
+      "lng": -66.98
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0088",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #88, Zona J",
+    "money": "USD",
+    "price": 149400,
+    "squareMeters": 85,
+    "bedrooms": 4,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 88/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2015,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.390600",
+    "lng": "-66.976000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0088",
+      "lat": 10.3906,
+      "lng": -66.976
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0089",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #89, Zona K",
+    "money": "EUR",
+    "price": 150600,
+    "squareMeters": 95,
+    "bedrooms": 1,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 89/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2016,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.395600",
+    "lng": "-66.972000",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0089",
+      "lat": 10.3956,
+      "lng": -66.972
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0090",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #90, Zona L",
+    "money": "Bs",
+    "price": 322500,
+    "squareMeters": 105,
+    "landSquareMeters": 220,
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 90/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2017,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.400600",
+    "lng": "-66.968000",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0090",
+      "lat": 10.4006,
+      "lng": -66.968
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0091",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #91, Zona M",
+    "money": "USD",
+    "price": 153000,
+    "squareMeters": 115,
+    "bedrooms": 0,
+    "bathrooms": 1,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 91/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2018,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.356300",
+    "lng": "-67.004500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0091",
+      "lat": 10.3563,
+      "lng": -67.0045
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0092",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #92, Zona N",
+    "money": "EUR",
+    "price": 154200,
+    "squareMeters": 125,
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 92/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2019,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.361300",
+    "lng": "-67.000500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0092",
+      "lat": 10.3613,
+      "lng": -67.0005
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0093",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #93, Zona O",
+    "money": "Bs",
+    "price": 330000,
+    "squareMeters": 135,
+    "bedrooms": 1,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 93/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2020,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.366300",
+    "lng": "-66.996500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0093",
+      "lat": 10.3663,
+      "lng": -66.9965
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0094",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #94, Zona P",
+    "money": "USD",
+    "price": 156600,
+    "squareMeters": 145,
+    "landSquareMeters": 300,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 94/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2021,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.371300",
+    "lng": "-66.992500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0094",
+      "lat": 10.3713,
+      "lng": -66.9925
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0095",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #95, Zona Q",
+    "money": "EUR",
+    "price": 157800,
+    "squareMeters": 155,
+    "bedrooms": 0,
+    "bathrooms": 2,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 95/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2022,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.376300",
+    "lng": "-66.988500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0095",
+      "lat": 10.3763,
+      "lng": -66.9885
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0096",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #96, Zona R",
+    "money": "Bs",
+    "price": 337500,
+    "squareMeters": 165,
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "parkingSpaces": 2,
+    "description": "Registro de prueba de performance 96/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2023,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.381300",
+    "lng": "-66.984500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0096",
+      "lat": 10.3813,
+      "lng": -66.9845
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0097",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #97, Zona S",
+    "money": "USD",
+    "price": 160200,
+    "squareMeters": 55,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 97/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2000,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.386300",
+    "lng": "-66.980500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0097",
+      "lat": 10.3863,
+      "lng": -66.9805
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0098",
+    "type": "Casa",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #98, Zona T",
+    "money": "EUR",
+    "price": 161400,
+    "squareMeters": 65,
+    "landSquareMeters": 220,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "parkingSpaces": 1,
+    "description": "Registro de prueba de performance 98/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2001,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina",
+      "Gimnasio"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.391300",
+    "lng": "-66.976500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0098",
+      "lat": 10.3913,
+      "lng": -66.9765
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0099",
+    "type": "Comercial",
+    "transaction": "Venta",
+    "address": "Propiedad prueba rendimiento #99, Zona U",
+    "money": "Bs",
+    "price": 345000,
+    "squareMeters": 75,
+    "bedrooms": 0,
+    "bathrooms": 3,
+    "parkingSpaces": 4,
+    "description": "Registro de prueba de performance 99/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2002,
+    "condition": "Usado",
+    "amenities": [
+      "Piscina",
+      "Gimnasio",
+      "Seguridad 24/7"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.396300",
+    "lng": "-66.972500",
+    "storageRoom": true,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0099",
+      "lat": 10.3963,
+      "lng": -66.9725
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
+  },
+  {
+    "id": "P-0100",
+    "type": "Oficina",
+    "transaction": "Alquiler",
+    "address": "Propiedad prueba rendimiento #100, Zona V",
+    "money": "USD",
+    "price": 163800,
+    "squareMeters": 85,
+    "bedrooms": 4,
+    "bathrooms": 1,
+    "parkingSpaces": 0,
+    "description": "Registro de prueba de performance 100/100 para validar carga de JSON masivo en cliente.",
+    "constructionYear": 2003,
+    "condition": "Nuevo",
+    "amenities": [
+      "Piscina"
+    ],
+    "phoneContact": "584120000000",
+    "lat": "10.401300",
+    "lng": "-66.968500",
+    "storageRoom": false,
+    "visibilityEndDate": 46000,
+    "expired": false,
+    "nearExpiry": false,
+    "coordinate": {
+      "id": "P-0100",
+      "lat": 10.4013,
+      "lng": -66.9685
+    },
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img0_1zJv69Ei5zAPFKXIp22QVujcHiQbeQZkd.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img1_1jQ2VJhhEATUBeUL2Sg5ctEg5DZOroHcO.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
+    ]
   }
 ]
