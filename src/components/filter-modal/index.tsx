@@ -20,13 +20,20 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, applyFilters
   };
 
   const handleClearFilters = () => {
-    const clearedFilters = Object.keys(filters).reduce<{ [key: string]: any; }>((acc, key) => {
-      acc[key] = 0;
-      return acc;
-    }, {});
+    const clearedFilters = {
+      bedrooms: 0,
+      bathrooms: 0,
+      squareMeters: 0,
+      lowerPriceRange: 0,
+      upperPriceRange: 0,
+      type: '',
+      transaction: '',
+      parkingSpaces: 0,
+      storageRoom: undefined,
+    };
     setFilters(clearedFilters);
-    applyFilters({}); // Aplicar los filtros vacíos
-    onClose(); // Cerrar el modal después de limpiar los filtros
+    applyFilters(clearedFilters);
+    onClose();
   };
 
   const handleChangeFilter = (filterName: string, value: number) => {

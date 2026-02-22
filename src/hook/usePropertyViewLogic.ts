@@ -38,7 +38,13 @@ export const usePropertyViewLogic = () => {
   const [countFilters, setCountFilters] = useState<number>(0);
   const [filters, setFilters] = useState<AppliedFilters>(() => {
     const raw = localStorage.getItem(FILTERS_STORAGE_KEY);
-    return raw ? JSON.parse(raw) as AppliedFilters : defaultFilters;
+    if (!raw) return defaultFilters;
+    try {
+      const parsed = JSON.parse(raw) as AppliedFilters;
+      return { ...defaultFilters, ...parsed };
+    } catch {
+      return defaultFilters;
+    }
   });
   const [sortOrder, setSortOrder] = useState<SortOrder>(() => {
     return (localStorage.getItem(SORT_STORAGE_KEY) as SortOrder) || 'newest';

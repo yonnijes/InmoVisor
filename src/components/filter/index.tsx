@@ -5,8 +5,8 @@ import { IonSelect, IonSelectOption, IonItem, IonLabel } from '@ionic/react';
 interface FilterProps {
   label: string;
   options: number[] | string[] | Record<string, unknown>[];
-  selectedValue: number;
-  onChange: (value: number) => void;
+  selectedValue: any;
+  onChange: (value: any) => void;
 }
 
 const Filter: React.FC<FilterProps> = ({ label, options, selectedValue, onChange }) => {
