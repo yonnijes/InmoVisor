@@ -10,6 +10,8 @@ interface FilterModalProps {
   applyFilters: (filters: any) => void;
   filters: any;
   setFilters: (filters: any) => void;
+  sortOrder: string;
+  setSortOrder: (order: string) => void;
 }
 
 const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, applyFilters, filters, setFilters }) => {
@@ -48,6 +50,41 @@ const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, applyFilters
       </IonHeader>
 
       <IonContent className="filter-modal__content">
+        <div className="filter-section-title">Ordenar por</div>
+        <div className="filter-sort-options">
+          <button
+            className={`filter-sort-option ${sortOrder === 'newest' ? 'is-active' : ''}`}
+            onClick={() => setSortOrder('newest')}
+          >
+            Más recientes
+          </button>
+          <button
+            className={`filter-sort-option ${sortOrder === 'price-asc' ? 'is-active' : ''}`}
+            onClick={() => setSortOrder('price-asc')}
+          >
+            Precio: menor a mayor
+          </button>
+          <button
+            className={`filter-sort-option ${sortOrder === 'price-desc' ? 'is-active' : ''}`}
+            onClick={() => setSortOrder('price-desc')}
+          >
+            Precio: mayor a menor
+          </button>
+          <button
+            className={`filter-sort-option ${sortOrder === 'sqm-desc' ? 'is-active' : ''}`}
+            onClick={() => setSortOrder('sqm-desc')}
+          >
+            Mayor m²
+          </button>
+          <button
+            className={`filter-sort-option ${sortOrder === 'sqm-asc' ? 'is-active' : ''}`}
+            onClick={() => setSortOrder('sqm-asc')}
+          >
+            Menor m²
+          </button>
+        </div>
+
+        <div className="filter-section-title">Filtros</div>
         <Filter
           label="Inmuebles"
           options={["Casa", "Departamento", "Oficina", "Terreno", "Lote", "Comercial", "Estacionamiento"] as Property.PropertyType[]}

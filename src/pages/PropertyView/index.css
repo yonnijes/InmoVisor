@@ -1,46 +1,23 @@
 .property-header-sticky {
   position: sticky;
   top: 0;
-  z-index: 50;
-  background: var(--ion-background-color, #fff);
-  box-shadow: 0 4px 16px rgba(2, 6, 23, 0.08);
+  z-index: 100;
+  background: var(--ion-background-color, #ffffff);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.property-toolbar-sort-wrap {
+.property-toolbar-actions {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 6px 12px;
+  gap: 10px;
+  padding: 8px 12px;
 }
 
-.property-toolbar-sort-label {
-  font-size: 12px;
-  color: #667085;
+.toolbar-btn {
+  flex: 1;
+  --border-radius: 12px;
   font-weight: 700;
-  letter-spacing: 0.2px;
-}
-
-.property-sort-chips {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 2px;
-  -webkit-overflow-scrolling: touch;
-}
-
-.property-sort-chip {
-  border: 1px solid #d0d5dd;
-  border-radius: 999px;
-  padding: 7px 12px;
   font-size: 13px;
-  background: #fff;
-  color: #344054;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.property-sort-chip.is-active {
-  background: #e7f0ff;
-  border-color: #7ca4d8;
-  color: #103f73;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  min-height: 42px;
 }

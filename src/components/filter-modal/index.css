@@ -5,6 +5,39 @@
   --padding-bottom: 10px;
 }
 
+.filter-section-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ion-text-color);
+  padding: 16px 12px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-sort-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 12px 12px;
+}
+
+.filter-sort-option {
+  border: 1px solid var(--ion-color-medium-shade);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 14px;
+  background: var(--ion-background-color);
+  color: var(--ion-text-color);
+  font-weight: 600;
+  text-align: left;
+}
+
+.filter-sort-option.is-active {
+  background: var(--ion-color-primary-tint);
+  border-color: var(--ion-color-primary);
+  color: var(--ion-color-primary-contrast);
+}
+
 .filter-item {
   --inner-padding-top: 8px;
   --inner-padding-bottom: 8px;
