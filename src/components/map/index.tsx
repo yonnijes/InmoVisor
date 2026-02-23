@@ -15,7 +15,7 @@ interface MapProps {
 
 const PRICE_LABEL_MIN_ZOOM = 13;
 
-const Map: React.FC<MapProps> = ({ coordinates }) => {
+const PropertyMap: React.FC<MapProps> = ({ coordinates }) => {
   const mapRef = useRef<HTMLDivElement>(null);
   const [selectedProperty, setSelectedProperty] = useState<Property.Property>();
   const [showModal, setShowModal] = useState(false);
@@ -142,4 +142,4 @@ const Map: React.FC<MapProps> = ({ coordinates }) => {
   );
 };
 
-export default Map;
+export default PropertyMap;
