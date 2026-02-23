@@ -11,9 +11,15 @@ interface FilterProps {
 
 const Filter: React.FC<FilterProps> = ({ label, options, selectedValue, onChange }) => {
   return (
-    <IonItem>
-      <IonLabel>{label}</IonLabel>
-      <IonSelect value={selectedValue} onIonChange={e => onChange(e.detail.value)} label="seleccionar">
+    <IonItem className="filter-item" lines="full">
+      <IonLabel className="filter-item__label">{label}</IonLabel>
+      <IonSelect
+        interface="popover"
+        placeholder="Cualquiera"
+        value={selectedValue}
+        onIonChange={e => onChange(e.detail.value)}
+        className="filter-item__select"
+      >
         {options.map(option => {
           const key = typeof option === 'object' ? Object.keys(option)[0] : option;
           const value = typeof option === 'object' ? Object.values(option)[0] : option;

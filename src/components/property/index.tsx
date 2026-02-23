@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonText, IonButton, IonList, IonItem, IonLabel, IonTitle } from '@ionic/react';
-import { Property } from '../../models'; // Importa la interfaz desde otro archivo
+import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonText, IonButton, IonLabel } from '@ionic/react';
+import { Property } from '../../models';
 import Carousel from '../carouse';
 import WhatsAppButton from '../whatsapp-button';
+import './index.css';
 
 interface PropertyComponentProps {
   property: Property.Property
@@ -19,72 +20,63 @@ const PropertyComponent: React.FC<PropertyComponentProps> = ({ property }) => {
     return `${money || ''} ${amount}`.trim();
   };
 
-  const handleShowMore = () => {
-    setShowMore(!showMore);
-  };
-
   return (
-    <IonCard>
+    <IonCard className="property-card">
       <IonCardHeader>
-        <IonCardTitle>{`${property.type} en ${property.transaction}`}</IonCardTitle>
+        <IonCardTitle className="property-card__title">{`${property.type} en ${property.transaction}`}</IonCardTitle>
       </IonCardHeader>
-      <IonCardContent>
-        <p>{property.condition}</p>
-        <p>{property.address}</p>
-        <p><strong>{formatCurrency(property.money as unknown as string, property.price)}</strong> </p>
-        <p>
-          {property?.bedrooms! > 0 && `${property.bedrooms} Dormitorio${property.bedrooms > 1 ? 's' : ''} | `}
-          {property?.bathrooms! > 0 && `${property.bathrooms} Baño${property.bathrooms > 1 ? 's' : ''} | `}
-          {property?.parkingSpaces! > 0 && `${property.parkingSpaces} Estacionamiento${property.parkingSpaces! > 1 ? 's' : ''}`}
 
+      <IonCardContent>
+        <p>{property.address}</p>
+
+        <div className="property-card__chips">
+          {property.condition && <span className="property-chip property-chip--condition">{property.condition}</span>}
+          <span className="property-chip property-chip--transaction">{property.transaction}</span>
+        </div>
+
+        <p className="property-card__price">{formatCurrency(property.money as unknown as string, property.price)}</p>
+
+        <p className="property-card__meta">
+          {property?.bedrooms! > 0 && `${property.bedrooms} Dormitorio${property.bedrooms > 1 ? 's' : ''} · `}
+          {property?.bathrooms! > 0 && `${property.bathrooms} Baño${property.bathrooms > 1 ? 's' : ''} · `}
+          {property?.parkingSpaces! > 0 && `${property.parkingSpaces} Estacionamiento${property.parkingSpaces! > 1 ? 's' : ''}`}
         </p>
-        <p>
-          {property?.storageRoom && <span>Maletero</span>}
+
+        <p className="property-card__surface">
+          {property.squareMeters} m²
+          {property.landSquareMeters && ` · ${property.landSquareMeters} m² de terreno`}
+          {property?.storageRoom && ' · Maletero'}
         </p>
-        <p>
-          {property.squareMeters} m<sup>2</sup>
-          {property.landSquareMeters && " | " + property.landSquareMeters}
-          {property.landSquareMeters && <span dangerouslySetInnerHTML={{ __html: ' m<sup>2</sup> de terreno' }}></span>}
-        </p>
+
         <Carousel images={property.image} />
+
         {showMore && (
-          <>
-            <p style={{ textAlign: 'left', padding: '5px' }}>
-              <IonText  >
-                {property.description}
-              </IonText>
+          <div className="property-card__section">
+            <p style={{ textAlign: 'left', padding: '5px 0' }}>
+              <IonText>{property.description}</IonText>
             </p>
 
-            <div>
-              {property.amenities &&
-                <>
-                  <IonText>
-                    <strong>Características destacadas:</strong>
-                  </IonText>
-                  <ul>
-                    {property.amenities?.map((amenity, index) => (
-                      <li key={index}>
-                        <IonLabel>{amenity}</IonLabel>
-                      </li>
+            {property.amenities && property.amenities.length > 0 && (
+              <>
+                <IonText><strong>Características destacadas:</strong></IonText>
+                <ul className="property-card__list">
+                  {property.amenities.map((amenity, index) => (
+                    <li key={index}>
+                      <IonLabel>{amenity}</IonLabel>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
 
-                    ))}
+            {property.constructionYear && (
+              <IonText>
+                {property.constructionYear} <strong>Año de construcción</strong>
+              </IonText>
+            )}
 
-                  </ul>
-                </>}
-
-            </div>
-
-            <div>
-              {property.constructionYear &&
-
-                <IonText>
-                  {property.constructionYear} <strong>Año de construcción</strong>
-                </IonText>
-              }
-            </div>
-
-            <div>
-              {property.phoneContact &&
+            {property.phoneContact && (
+              <div className="property-card__whatsapp">
                 <WhatsAppButton
                   phoneNumber={property.phoneContact}
                   propertyId={property.id}
@@ -93,15 +85,16 @@ const PropertyComponent: React.FC<PropertyComponentProps> = ({ property }) => {
                   propertyPrice={property.price}
                   propertyMoney={property.money as unknown as string}
                 />
-              }
-            </div>
-          </>
+              </div>
+            )}
+          </div>
         )}
-        <IonButton expand="block" fill="clear" onClick={handleShowMore} color="secondary">
+
+        <IonButton expand="block" fill="clear" onClick={() => setShowMore((v) => !v)} color="secondary" className="property-card__toggle">
           {showMore ? 'Ver menos' : 'Ver más'}
         </IonButton>
       </IonCardContent>
-    </IonCard >
+    </IonCard>
   );
 };
 

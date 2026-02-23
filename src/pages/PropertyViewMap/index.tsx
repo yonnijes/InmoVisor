@@ -6,10 +6,10 @@ import FilterModal from '../../components/filter-modal';
 import Map from '../../components/map';
 import { usePropertyViewLogic } from '../../hook/usePropertyViewLogic';
 import { Property } from '../../models';
-
+import './index.css';
 
 const PropertyViewMap: React.FC = () => {
-  const [coordinates, setCoordinates] = useState<Property.Coordinate[]>([])
+  const [coordinates, setCoordinates] = useState<Property.Coordinate[]>([]);
   const {
     properties,
     isModalOpen,
@@ -20,9 +20,10 @@ const PropertyViewMap: React.FC = () => {
     handleOpenModal,
     handleCloseModal,
     applyFilters,
-    setFilters
+    setFilters,
+    sortOrder,
+    setSortOrder,
   } = usePropertyViewLogic();
-
 
   const history = useHistory();
 
@@ -30,13 +31,11 @@ const PropertyViewMap: React.FC = () => {
     history.push('/');
   };
 
-
   useEffect(() => {
     const savedData = localStorage.getItem('properties');
     const properties: Property.Property[] = savedData ? JSON.parse(savedData) : [];
     setProperties(properties);
   }, []);
-
 
   useEffect(() => {
     const formatCurrency = (money: string | undefined, price: number) => {
@@ -48,9 +47,7 @@ const PropertyViewMap: React.FC = () => {
     };
 
     const coordinates = properties
-      .map(property => {
-        // Compatibilidad: algunas propiedades guardan coordinate.{lat,lng}
-        // y otras guardan lat/lng en raíz (string o number)
+      .map((property) => {
         const latRaw = property?.coordinate?.lat ?? (property as any)?.lat;
         const lngRaw = property?.coordinate?.lng ?? (property as any)?.lng;
         const lat = typeof latRaw === 'string' ? parseFloat(latRaw) : latRaw;
@@ -60,46 +57,45 @@ const PropertyViewMap: React.FC = () => {
           id: property.id,
           lat,
           lng,
-          label: formatCurrency((property as any)?.money, Number(property?.price || 0))
+          label: formatCurrency((property as any)?.money, Number(property?.price || 0)),
         };
       })
-      .filter(coordinate => Number.isFinite(coordinate.lat) && Number.isFinite(coordinate.lng));
+      .filter((coordinate) => Number.isFinite(coordinate.lat) && Number.isFinite(coordinate.lng));
 
     setCoordinates(coordinates as Property.Coordinate[]);
   }, [properties]);
 
-
-
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader className="property-header-sticky">
         <IonToolbar>
           <IonSearchbar placeholder="Buscar" onIonChange={(e) => setSearchText(e.detail.value!)} />
         </IonToolbar>
 
         <IonToolbar>
-          <IonButton slot="start" onClick={goToList} >
-            <IonIcon icon={locationOutline} />
-            Ver Lista
-          </IonButton>
-          <IonTitle size="small" >
-            {coordinates.length} registros
-          </IonTitle>
-          <IonButton slot="end" onClick={handleOpenModal}>
-            <IonIcon icon={filterOutline} />
-            Filtrar {countFilters > 0 && `(${countFilters})`}
-          </IonButton>
+          <div className="property-toolbar-actions">
+            <IonButton fill="outline" onClick={goToList} className="toolbar-btn">
+              <IonIcon icon={locationOutline} />
+              Ver lista
+            </IonButton>
+            <IonTitle size="small">{coordinates.length} registros</IonTitle>
+            <IonButton fill="outline" onClick={handleOpenModal} className="toolbar-btn">
+              <IonIcon icon={filterOutline} />
+              Filtrar {countFilters > 0 && `(${countFilters})`}
+            </IonButton>
+          </div>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         {coordinates.length !== 0 ? <Map coordinates={coordinates} /> : <p>No hay propiedades para mostrar</p>}
-        {/* Modal de Filtros */}
         <FilterModal
           isOpen={isModalOpen}
           onClose={handleCloseModal}
           applyFilters={applyFilters}
           filters={filters}
           setFilters={setFilters}
+          sortOrder={sortOrder}
+          setSortOrder={setSortOrder}
         />
       </IonContent>
     </IonPage>

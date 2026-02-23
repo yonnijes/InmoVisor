@@ -9,11 +9,9 @@ import PropertyComponent from '../../components/property';
 import { checkDataVersion, saveDataVersion } from '../../hook/checkDataVersion';
 import { usePropertyViewLogic } from '../../hook/usePropertyViewLogic';
 import { Property } from '../../models';
-
-
+import './index.css';
 
 const PropertyView: React.FC = () => {
-
   const {
     properties,
     isModalOpen,
@@ -26,7 +24,7 @@ const PropertyView: React.FC = () => {
     applyFilters,
     setFilters,
     sortOrder,
-    setSortOrder
+    setSortOrder,
   } = usePropertyViewLogic();
 
   const history = useHistory();
@@ -36,14 +34,11 @@ const PropertyView: React.FC = () => {
     history.push('/mapa');
   };
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // First, check if there's a new version available
         const versionCheck = await checkDataVersion();
-        
-        // If no update needed, try to load from localStorage first (offline support)
+
         if (!versionCheck.hasUpdate) {
           const cachedProperties = localStorage.getItem('properties');
           if (cachedProperties) {
@@ -52,23 +47,19 @@ const PropertyView: React.FC = () => {
           }
         }
 
-        // Fetch new data from remote
         const baseUrl = `https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/data_property.json`;
         const versionTag = versionCheck.remoteVersion ?? Date.now();
         const url = `${baseUrl}?v=${versionTag}`;
         const response = await axios({
           url,
-          method: "GET",
+          method: 'GET',
           responseType: 'json',
         });
 
         const data = await response.data;
         setProperties(data);
-
-        // Guardar los datos en localStorage
         localStorage.setItem('properties', JSON.stringify(data));
 
-        // Actualizar cache de Workbox programáticamente (si está disponible)
         if ('caches' in window) {
           const cache = await caches.open('github-data-cache');
           const cachedResponse = new Response(JSON.stringify(data), {
@@ -76,70 +67,46 @@ const PropertyView: React.FC = () => {
           });
           await cache.put(url, cachedResponse);
         }
-        
-        // Save the new version number after successful update
+
         if (versionCheck.remoteVersion) {
           saveDataVersion(versionCheck.remoteVersion);
         }
       } catch (error) {
-        if (error instanceof AxiosError)
+        if (error instanceof AxiosError) {
           console.log(`Error fetching data: ${error.status} - ${error.message}`);
-        setProperties(jsonDataMOK as  unknown as Property.Property[]);
+        }
+        setProperties(jsonDataMOK as unknown as Property.Property[]);
         localStorage.setItem('properties', JSON.stringify(jsonDataMOK));
       } finally {
         setIsLoading(false);
       }
-    }
+    };
 
     fetchData();
   }, []);
 
-
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader className="property-header-sticky">
         <IonToolbar>
           <IonSearchbar placeholder="Buscar" onIonChange={(e) => setSearchText(e.detail.value!)} />
         </IonToolbar>
 
         <IonToolbar>
-          <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '6px 12px' }}>
-            <select
-              value={sortOrder}
-              onChange={(e) => setSortOrder(e.target.value as any)}
-              style={{
-                border: '1px solid #d1d5db',
-                borderRadius: 8,
-                padding: '6px 10px',
-                fontSize: 13,
-                background: 'white'
-              }}
-            >
-              <option value="newest">Más recientes</option>
-              <option value="price-asc">Precio: menor a mayor</option>
-              <option value="price-desc">Precio: mayor a menor</option>
-              <option value="sqm-desc">Mayor m²</option>
-              <option value="sqm-asc">Menor m²</option>
-            </select>
+          <div className="property-toolbar-actions">
+            <IonButton fill="outline" onClick={goToMap} className="toolbar-btn">
+              <IonIcon icon={locationOutline} />
+              Ver mapa
+            </IonButton>
+            <IonTitle size="small">{properties.length} registros</IonTitle>
+            <IonButton fill="outline" onClick={handleOpenModal} className="toolbar-btn">
+              <IonIcon icon={filterOutline} />
+              Filtrar {countFilters > 0 && `(${countFilters})`}
+            </IonButton>
           </div>
-        </IonToolbar>
-
-        <IonToolbar>
-          <IonButton slot="start" onClick={goToMap} >
-            <IonIcon icon={locationOutline} />
-            Ver mapa
-          </IonButton>
-          <IonTitle size="small" >
-            {properties.length} registros
-          </IonTitle>
-          <IonButton slot="end" onClick={handleOpenModal}>
-            <IonIcon icon={filterOutline} />
-            Filtrar {countFilters > 0 && `(${countFilters})`}
-          </IonButton>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-
         {isLoading ? (
           <div style={{ padding: '12px' }}>
             {Array.from({ length: 3 }).map((_, i) => (
@@ -152,21 +119,18 @@ const PropertyView: React.FC = () => {
             ))}
           </div>
         ) : (
-          properties.map((property, i) => (
-            <PropertyComponent key={i} property={property} />
-          ))
+          properties.map((property, i) => <PropertyComponent key={i} property={property} />)
         )}
 
-        {/* Modal de Filtros */}
         <FilterModal
           isOpen={isModalOpen}
           onClose={handleCloseModal}
           applyFilters={applyFilters}
           filters={filters}
           setFilters={setFilters}
+          sortOrder={sortOrder}
+          setSortOrder={setSortOrder}
         />
-
-
       </IonContent>
     </IonPage>
   );
