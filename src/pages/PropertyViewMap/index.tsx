@@ -1,5 +1,5 @@
-import { IonButton, IonContent, IonHeader, IonIcon, IonPage, IonSearchbar, IonTitle, IonToolbar } from '@ionic/react';
-import { filterOutline, locationOutline } from 'ionicons/icons';
+import { IonContent, IonHeader, IonIcon, IonPage, IonSearchbar, IonTitle, IonToolbar, IonButton } from '@ionic/react';
+import { alertCircleOutline, filterOutline, locationOutline } from 'ionicons/icons';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import FilterModal from '../../components/filter-modal';
@@ -8,8 +8,21 @@ import { usePropertyViewLogic } from '../../hook/usePropertyViewLogic';
 import { Property } from '../../models';
 import './index.css';
 
+const defaultFilters = {
+  bedrooms: 0,
+  bathrooms: 0,
+  squareMeters: 0,
+  lowerPriceRange: 0,
+  upperPriceRange: 0,
+  type: '',
+  transaction: '',
+  parkingSpaces: 0,
+  storageRoom: undefined,
+};
+
 const PropertyViewMap: React.FC = () => {
   const [coordinates, setCoordinates] = useState<Property.Coordinate[]>([]);
+
   const {
     properties,
     isModalOpen,
@@ -31,10 +44,17 @@ const PropertyViewMap: React.FC = () => {
     history.push('/');
   };
 
+  const handleResetFilters = () => {
+    setSearchText('');
+    setFilters(defaultFilters as any);
+    setSortOrder('newest');
+    applyFilters(defaultFilters as any);
+  };
+
   useEffect(() => {
     const savedData = localStorage.getItem('properties');
-    const properties: Property.Property[] = savedData ? JSON.parse(savedData) : [];
-    setProperties(properties);
+    const loadedProperties: Property.Property[] = savedData ? JSON.parse(savedData) : [];
+    setProperties(loadedProperties);
   }, []);
 
   useEffect(() => {
@@ -46,7 +66,7 @@ const PropertyViewMap: React.FC = () => {
       return `${money || ''} ${amount}`.trim();
     };
 
-    const coordinates = properties
+    const coords = properties
       .map((property) => {
         const latRaw = property?.coordinate?.lat ?? (property as any)?.lat;
         const lngRaw = property?.coordinate?.lng ?? (property as any)?.lng;
@@ -62,7 +82,7 @@ const PropertyViewMap: React.FC = () => {
       })
       .filter((coordinate) => Number.isFinite(coordinate.lat) && Number.isFinite(coordinate.lng));
 
-    setCoordinates(coordinates as Property.Coordinate[]);
+    setCoordinates(coords as Property.Coordinate[]);
   }, [properties]);
 
   return (
@@ -86,8 +106,24 @@ const PropertyViewMap: React.FC = () => {
           </div>
         </IonToolbar>
       </IonHeader>
+
       <IonContent fullscreen>
-        {coordinates.length !== 0 ? <Map coordinates={coordinates} /> : <p>No hay propiedades para mostrar</p>}
+        {coordinates.length > 0 ? (
+          <Map coordinates={coordinates} />
+        ) : (
+          <div className="map-empty-wrapper">
+            <div className="map-empty-state">
+              <IonIcon icon={alertCircleOutline} className="map-empty-state__icon" />
+              <h2>No encontramos propiedades</h2>
+              <p>Prueba cambiando la búsqueda o filtros para ver resultados en el mapa.</p>
+              <div className="map-empty-state__actions">
+                <IonButton onClick={handleResetFilters} color="primary">Limpiar filtros</IonButton>
+                <IonButton onClick={goToList} fill="outline">Ver todas en lista</IonButton>
+              </div>
+            </div>
+          </div>
+        )}
+
         <FilterModal
           isOpen={isModalOpen}
           onClose={handleCloseModal}

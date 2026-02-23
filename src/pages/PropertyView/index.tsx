@@ -1,7 +1,7 @@
 import { IonButton, IonContent, IonHeader, IonIcon, IonPage, IonSearchbar, IonSkeletonText, IonTitle, IonToolbar } from '@ionic/react';
 import axios, { AxiosError } from 'axios';
-import { filterOutline, locationOutline } from 'ionicons/icons';
-import { useEffect, useState } from 'react';
+import { alertCircleOutline, filterOutline, locationOutline } from 'ionicons/icons';
+import { useEffect, useMemo, useState } from 'react';
 import { useHistory } from 'react-router';
 import jsonDataMOK from '../../../data/data_property.json';
 import FilterModal from '../../components/filter-modal';
@@ -29,6 +29,7 @@ const PropertyView: React.FC = () => {
 
   const history = useHistory();
   const [isLoading, setIsLoading] = useState(true);
+  const [allPropertiesCache, setAllPropertiesCache] = useState<Property.Property[]>([]);
 
   const goToMap = () => {
     history.push('/mapa');
@@ -42,7 +43,9 @@ const PropertyView: React.FC = () => {
         if (!versionCheck.hasUpdate) {
           const cachedProperties = localStorage.getItem('properties');
           if (cachedProperties) {
-            setProperties(JSON.parse(cachedProperties) as Property.Property[]);
+            const parsed = JSON.parse(cachedProperties) as Property.Property[];
+            setAllPropertiesCache(parsed);
+            setProperties(parsed);
             return;
           }
         }
@@ -57,6 +60,7 @@ const PropertyView: React.FC = () => {
         });
 
         const data = await response.data;
+        setAllPropertiesCache(data);
         setProperties(data);
         localStorage.setItem('properties', JSON.stringify(data));
 
@@ -75,7 +79,9 @@ const PropertyView: React.FC = () => {
         if (error instanceof AxiosError) {
           console.log(`Error fetching data: ${error.status} - ${error.message}`);
         }
-        setProperties(jsonDataMOK as unknown as Property.Property[]);
+        const fallback = jsonDataMOK as unknown as Property.Property[];
+        setAllPropertiesCache(fallback);
+        setProperties(fallback);
         localStorage.setItem('properties', JSON.stringify(jsonDataMOK));
       } finally {
         setIsLoading(false);
@@ -84,6 +90,11 @@ const PropertyView: React.FC = () => {
 
     fetchData();
   }, []);
+
+  const similarProperties = useMemo(() => {
+    const visibleIds = new Set(properties.map((p) => p.id));
+    return allPropertiesCache.filter((p) => !visibleIds.has(p.id)).slice(0, 3);
+  }, [allPropertiesCache, properties]);
 
   return (
     <IonPage>
@@ -118,8 +129,26 @@ const PropertyView: React.FC = () => {
               </div>
             ))}
           </div>
-        ) : (
+        ) : properties.length > 0 ? (
           properties.map((property, i) => <PropertyComponent key={i} property={property} />)
+        ) : (
+          <div className="list-empty-wrapper">
+            <div className="list-empty-state">
+              <IonIcon icon={alertCircleOutline} className="list-empty-state__icon" />
+              <h2>No encontramos propiedades</h2>
+              <p>Prueba cambiando la búsqueda o limpiando filtros para ver más resultados.</p>
+            </div>
+
+            {similarProperties.length > 0 && (
+              <section className="list-similar-section">
+                <h3>Propiedades similares</h3>
+                <p>Estas podrían interesarte mientras ajustas tu búsqueda.</p>
+                {similarProperties.map((property) => (
+                  <PropertyComponent key={property.id} property={property} />
+                ))}
+              </section>
+            )}
+          </div>
         )}
 
         <FilterModal

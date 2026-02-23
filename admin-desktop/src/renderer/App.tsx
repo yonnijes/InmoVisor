@@ -176,34 +176,36 @@ const App: React.FC = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col overflow-hidden">
+      <main className="flex-1 flex flex-col overflow-hidden min-w-0">
         {/* Header */}
-        <header className="min-h-16 bg-white border-b border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between px-4 md:px-8 py-3 gap-3">
-          <h2 className="text-xl font-semibold text-gray-800 uppercase tracking-wider text-sm">
-            {activeTab === 'list' ? 'Gestión de Inventario' : (editingProperty ? `Editando: ${editingProperty.id}` : 'Nueva Propiedad')}
-          </h2>
-          
-          <div className="flex items-center gap-3 w-full md:w-auto">
-            <div className="relative flex-1 md:flex-none">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
-              <input 
-                type="text" 
-                placeholder="Buscar propiedades..." 
-                className="pl-10 pr-4 py-2 bg-gray-100 border-transparent rounded-full text-sm focus:bg-white focus:ring-2 focus:ring-emerald-500 transition-all outline-none w-full md:w-64"
-              />
+        <header className="bg-white border-b border-gray-200">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between px-4 md:px-6 lg:px-8 py-3 gap-3">
+            <h2 className="text-sm font-semibold text-gray-800 uppercase tracking-wider">
+              {activeTab === 'list' ? 'Gestión de Inventario' : (editingProperty ? `Editando: ${editingProperty.id}` : 'Nueva Propiedad')}
+            </h2>
+
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto lg:min-w-[520px]">
+              <div className="relative w-full sm:flex-1 lg:min-w-[280px]">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+                <input
+                  type="text"
+                  placeholder="Buscar propiedades..."
+                  className="pl-10 pr-4 py-2 bg-gray-100 border-transparent rounded-full text-sm focus:bg-white focus:ring-2 focus:ring-emerald-500 transition-all outline-none w-full"
+                />
+              </div>
+              <button
+                onClick={handleGitSync}
+                disabled={isSyncingGit}
+                className="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-emerald-100 transition-colors disabled:opacity-60 w-full sm:w-auto whitespace-nowrap"
+              >
+                {isSyncingGit ? 'Sincronizando...' : 'Sincronizar Git'}
+              </button>
             </div>
-            <button
-              onClick={handleGitSync}
-              disabled={isSyncingGit}
-              className="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-emerald-100 transition-colors disabled:opacity-60"
-            >
-              {isSyncingGit ? 'Sincronizando...' : 'Sincronizar Git'}
-            </button>
           </div>
         </header>
 
         {/* Content Area */}
-        <div className="flex-1 overflow-y-auto p-4 md:p-8">
+        <div className="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8">
           {activeTab === 'list' ? (
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
               <div className="overflow-x-auto">
