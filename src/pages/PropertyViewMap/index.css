@@ -51,28 +51,3 @@
   color: var(--ion-color-medium-shade);
   line-height: 1.45;
 }
-
-.map-empty-state__actions {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 14px;
-  flex-wrap: wrap;
-}
-
-.map-similar-section {
-  margin-top: 20px;
-}
-
-.map-similar-section h3 {
-  margin: 0;
-  font-size: 1.05rem;
-  font-weight: 800;
-  padding: 0 4px;
-}
-
-.map-similar-section p {
-  margin: 6px 0 10px;
-  color: var(--ion-color-medium-shade);
-  padding: 0 4px;
-}

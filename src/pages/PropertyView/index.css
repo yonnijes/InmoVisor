@@ -21,3 +21,50 @@
   --padding-bottom: 8px;
   min-height: 42px;
 }
+
+.list-empty-wrapper {
+  padding: 12px 12px 24px;
+}
+
+.list-empty-state {
+  background: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.04);
+  border: 1px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.08);
+  border-radius: 16px;
+  padding: 18px 14px;
+  text-align: center;
+}
+
+.list-empty-state__icon {
+  font-size: 28px;
+  color: var(--ion-color-primary);
+  margin-bottom: 8px;
+}
+
+.list-empty-state h2 {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.list-empty-state p {
+  margin: 0;
+  color: var(--ion-color-medium-shade);
+  line-height: 1.45;
+}
+
+.list-similar-section {
+  margin-top: 20px;
+}
+
+.list-similar-section h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  padding: 0 4px;
+}
+
+.list-similar-section p {
+  margin: 6px 0 10px;
+  color: var(--ion-color-medium-shade);
+  padding: 0 4px;
+}
