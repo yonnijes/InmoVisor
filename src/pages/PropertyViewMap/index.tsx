@@ -8,6 +8,18 @@ import { usePropertyViewLogic } from '../../hook/usePropertyViewLogic';
 import { Property } from '../../models';
 import './index.css';
 
+const defaultFilters = {
+  bedrooms: 0,
+  bathrooms: 0,
+  squareMeters: 0,
+  lowerPriceRange: 0,
+  upperPriceRange: 0,
+  type: '',
+  transaction: '',
+  parkingSpaces: 0,
+  storageRoom: undefined,
+};
+
 const PropertyViewMap: React.FC = () => {
   const [coordinates, setCoordinates] = useState<Property.Coordinate[]>([]);
 
@@ -30,6 +42,13 @@ const PropertyViewMap: React.FC = () => {
 
   const goToList = () => {
     history.push('/');
+  };
+
+  const handleResetFilters = () => {
+    setSearchText('');
+    setFilters(defaultFilters as any);
+    setSortOrder('newest');
+    applyFilters(defaultFilters as any);
   };
 
   useEffect(() => {
@@ -97,6 +116,10 @@ const PropertyViewMap: React.FC = () => {
               <IonIcon icon={alertCircleOutline} className="map-empty-state__icon" />
               <h2>No encontramos propiedades</h2>
               <p>Prueba cambiando la búsqueda o filtros para ver resultados en el mapa.</p>
+              <div className="map-empty-state__actions">
+                <IonButton onClick={handleResetFilters} color="primary">Limpiar filtros</IonButton>
+                <IonButton onClick={goToList} fill="outline">Ver todas en lista</IonButton>
+              </div>
             </div>
           </div>
         )}
