@@ -5,14 +5,16 @@ import Filter from '../filter';
 import { Property } from '../../models';
 import './index.css';
 
+type SortOrder = 'price-asc' | 'price-desc' | 'newest' | 'sqm-desc' | 'sqm-asc';
+
 interface FilterModalProps {
   isOpen: boolean;
   onClose: () => void;
   applyFilters: (filters: any) => void;
   filters: any;
   setFilters: (filters: any) => void;
-  sortOrder: string;
-  setSortOrder: (order: string) => void;
+  sortOrder: SortOrder;
+  setSortOrder: (order: SortOrder) => void;
 }
 
 const FilterModal: React.FC<FilterModalProps> = ({ isOpen, onClose, applyFilters, filters, setFilters, sortOrder, setSortOrder }) => {

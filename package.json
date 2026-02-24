@@ -1,5 +1,6 @@
 {
   "name": "InmoVisor",
+  "author": "Yonni Aleman",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -9,6 +10,8 @@
   "scripts": {
     "dev": "vite",
     "dev:admin": "npm run dev -w admin-desktop",
+    "build:admin": "npm run build -w admin-desktop",
+    "build:admin:win": "npm run build:win -w admin-desktop",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test.e2e": "cypress run",
@@ -62,6 +65,7 @@
     "@vitejs/plugin-legacy": "^5.0.0",
     "@vitejs/plugin-react": "^4.0.1",
     "cypress": "^13.5.0",
+    "electron": "^29.1.1",
     "eslint": "^8.35.0",
     "eslint-plugin-react": "^7.32.2",
     "jsdom": "^22.1.0",

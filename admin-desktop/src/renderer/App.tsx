@@ -147,7 +147,7 @@ const App: React.FC = () => {
     <div className="flex h-screen w-full bg-gray-50 overflow-hidden flex-col md:flex-row">
       {/* Mobile Topbar */}
       <div className="md:hidden h-14 bg-slate-900 text-white flex items-center justify-between px-4">
-        <h1 className="font-bold">InmoVisor Admin</h1>
+        <h1 className="font-bold">Keytock</h1>
         <button onClick={() => setSidebarOpen(!sidebarOpen)}>
           {sidebarOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -157,19 +157,19 @@ const App: React.FC = () => {
       <aside className={`${sidebarOpen ? 'block' : 'hidden'} md:block w-full md:w-64 bg-slate-900 text-white flex flex-col`}>
         <div className="p-6">
           <h1 className="text-2xl font-bold flex items-center gap-2 text-emerald-400">
-            InmoVisor <span className="text-xs bg-emerald-900 px-2 py-0.5 rounded text-white">Admin</span>
+            Keytock <span className="text-xs bg-emerald-900 px-2 py-0.5 rounded text-white">Admin</span>
           </h1>
         </div>
-        
+
         <nav className="flex-1 px-4 space-y-2">
-          <button 
+          <button
             onClick={() => { setActiveTab('list'); setSidebarOpen(false) }}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${activeTab === 'list' ? 'bg-emerald-600 text-white' : 'hover:bg-slate-800 text-slate-400'}`}
           >
             <LayoutDashboard size={20} />
             Propiedades
           </button>
-          <button 
+          <button
             onClick={() => { handleAddNew(); setSidebarOpen(false) }}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${activeTab === 'create' && !editingProperty ? 'bg-emerald-600 text-white' : 'hover:bg-slate-800 text-slate-400'}`}
           >
@@ -179,7 +179,7 @@ const App: React.FC = () => {
         </nav>
 
         <div className="p-4 border-t border-slate-800 space-y-2">
-          <button 
+          <button
             onClick={() => setShowAuthSetup(true)}
             className="w-full flex items-center gap-3 px-4 py-2 text-sm text-slate-400 hover:text-white transition-colors"
           >
@@ -225,66 +225,66 @@ const App: React.FC = () => {
           {activeTab === 'list' ? (
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
               <div className="overflow-x-auto">
-              <table className="w-full text-left min-w-[760px]">
-                <thead className="bg-gray-50 border-b border-gray-200">
-                  <tr>
-                    <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">ID</th>
-                    <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Propiedad</th>
-                    <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Ubicación</th>
-                    <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Precio</th>
-                    <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Acciones</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200">
-                  {filteredProperties.length > 0 ? (
-                    filteredProperties.map((p) => (
-                    <tr key={p.id} className="hover:bg-gray-50 transition-colors">
-                      <td className="px-6 py-4 text-sm font-medium text-gray-900">{p.id}</td>
-                      <td className="px-6 py-4">
-                        <div className="text-sm font-bold text-gray-800">{p.type} en {p.transaction}</div>
-                        <div className="text-xs text-gray-500">{p.squareMeters}m² | {p.bedrooms} Hab</div>
-                      </td>
-                      <td className="px-6 py-4 text-sm text-gray-600">{p.address}</td>
-                      <td className="px-6 py-4">
-                        <span className="text-sm font-bold text-emerald-600">{p.money} {p.price.toLocaleString('es-CL')}</span>
-                      </td>
-                      <td className="px-6 py-4 text-sm">
-                        <button 
-                          onClick={() => handleEdit(p)}
-                          className="text-blue-600 hover:text-blue-800 font-medium mr-3"
-                        >
-                          Editar
-                        </button>
-                        <button 
-                          onClick={() => handleDelete(p.id)}
-                          className="text-red-600 hover:text-red-800 font-medium"
-                        >
-                          Eliminar
-                        </button>
-                      </td>
-                    </tr>
-                  ))
-                  ) : (
+                <table className="w-full text-left min-w-[760px]">
+                  <thead className="bg-gray-50 border-b border-gray-200">
                     <tr>
-                      <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
-                        <Search className="mx-auto mb-3 opacity-40" size={32} />
-                        <p className="font-medium">No se encontraron propiedades</p>
-                        <p className="text-sm mt-1">Intenta con otro término de búsqueda</p>
-                      </td>
+                      <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">ID</th>
+                      <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Propiedad</th>
+                      <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Ubicación</th>
+                      <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Precio</th>
+                      <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Acciones</th>
                     </tr>
-                  )}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    {filteredProperties.length > 0 ? (
+                      filteredProperties.map((p) => (
+                        <tr key={p.id} className="hover:bg-gray-50 transition-colors">
+                          <td className="px-6 py-4 text-sm font-medium text-gray-900">{p.id}</td>
+                          <td className="px-6 py-4">
+                            <div className="text-sm font-bold text-gray-800">{p.type} en {p.transaction}</div>
+                            <div className="text-xs text-gray-500">{p.squareMeters}m² | {p.bedrooms} Hab</div>
+                          </td>
+                          <td className="px-6 py-4 text-sm text-gray-600">{p.address}</td>
+                          <td className="px-6 py-4">
+                            <span className="text-sm font-bold text-emerald-600">{p.money} {p.price.toLocaleString('es-CL')}</span>
+                          </td>
+                          <td className="px-6 py-4 text-sm">
+                            <button
+                              onClick={() => handleEdit(p)}
+                              className="text-blue-600 hover:text-blue-800 font-medium mr-3"
+                            >
+                              Editar
+                            </button>
+                            <button
+                              onClick={() => handleDelete(p.id)}
+                              className="text-red-600 hover:text-red-800 font-medium"
+                            >
+                              Eliminar
+                            </button>
+                          </td>
+                        </tr>
+                      ))
+                    ) : (
+                      <tr>
+                        <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
+                          <Search className="mx-auto mb-3 opacity-40" size={32} />
+                          <p className="font-medium">No se encontraron propiedades</p>
+                          <p className="text-sm mt-1">Intenta con otro término de búsqueda</p>
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
               </div>
             </div>
           ) : (
             <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
-              <PropertyForm 
+              <PropertyForm
                 initialData={editingProperty}
                 onSuccess={() => {
                   setActiveTab('list')
                   loadProperties()
-                }} 
+                }}
               />
             </div>
           )}
