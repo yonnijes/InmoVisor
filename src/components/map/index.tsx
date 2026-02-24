@@ -134,7 +134,7 @@ const PropertyMap: React.FC<MapProps> = ({ coordinates }) => {
 
   return (
     <>
-      <div ref={mapRef} style={{ width: '100%', height: '95%' }} />
+      <div ref={mapRef} className="map-container" />
       <IonModal className="viewMapProperty" isOpen={showModal} initialBreakpoint={1} breakpoints={[0, 1]} onDidDismiss={() => setShowModal(false)}>
         {selectedProperty && <PropertyComponent property={selectedProperty} />}
       </IonModal>
