@@ -46,7 +46,7 @@ const GithubTokenSetup: React.FC<GithubTokenSetupProps> = ({ onSetupComplete, on
     try {
       // Guardar el token
       await window.electronAPI.saveGithubToken(token);
-      
+
       // Validar inmediatamente
       setIsValidating(true);
       const result = await window.electronAPI.validateGithubToken();
@@ -108,11 +108,10 @@ const GithubTokenSetup: React.FC<GithubTokenSetupProps> = ({ onSetupComplete, on
 
         {/* Estado actual del token */}
         {tokenStatus && tokenStatus.hasToken && (
-          <div className={`mb-6 p-4 rounded-xl border ${
-            tokenStatus.isValidated 
-              ? 'bg-emerald-50 border-emerald-200' 
+          <div className={`mb-6 p-4 rounded-xl border ${tokenStatus.isValidated
+              ? 'bg-emerald-50 border-emerald-200'
               : 'bg-amber-50 border-amber-200'
-          }`}>
+            }`}>
             <div className="flex items-start gap-3">
               {tokenStatus.isValidated ? (
                 <CheckCircle className="text-emerald-600 mt-0.5" size={20} />
@@ -120,20 +119,18 @@ const GithubTokenSetup: React.FC<GithubTokenSetupProps> = ({ onSetupComplete, on
                 <AlertTriangle className="text-amber-600 mt-0.5" size={20} />
               )}
               <div className="flex-1">
-                <p className={`font-semibold ${
-                  tokenStatus.isValidated 
-                    ? 'text-emerald-800' 
+                <p className={`font-semibold ${tokenStatus.isValidated
+                    ? 'text-emerald-800'
                     : 'text-amber-800'
-                }`}>
-                  {tokenStatus.isValidated 
-                    ? 'Token configurado y validado' 
+                  }`}>
+                  {tokenStatus.isValidated
+                    ? 'Token configurado y validado'
                     : 'Token configurado pero no validado'}
                 </p>
-                <p className={`text-sm mt-1 ${
-                  tokenStatus.isValidated 
-                    ? 'text-emerald-600' 
+                <p className={`text-sm mt-1 ${tokenStatus.isValidated
+                    ? 'text-emerald-600'
                     : 'text-amber-600'
-                }`}>
+                  }`}>
                   Última validación: {formatLastValidatedAt(tokenStatus.lastValidatedAt)}
                 </p>
               </div>
@@ -168,11 +165,10 @@ const GithubTokenSetup: React.FC<GithubTokenSetupProps> = ({ onSetupComplete, on
 
           {/* Resultado de validación */}
           {validationResult && (
-            <div className={`p-4 rounded-xl border ${
-              validationResult.isValid 
-                ? 'bg-emerald-50 border-emerald-200' 
+            <div className={`p-4 rounded-xl border ${validationResult.isValid
+                ? 'bg-emerald-50 border-emerald-200'
                 : 'bg-red-50 border-red-200'
-            }`}>
+              }`}>
               <div className="flex items-start gap-3">
                 {validationResult.isValid ? (
                   <CheckCircle className="text-emerald-600 mt-0.5" size={20} />
@@ -180,13 +176,12 @@ const GithubTokenSetup: React.FC<GithubTokenSetupProps> = ({ onSetupComplete, on
                   <XCircle className="text-red-600 mt-0.5" size={20} />
                 )}
                 <div className="flex-1">
-                  <p className={`font-semibold ${
-                    validationResult.isValid 
-                      ? 'text-emerald-800' 
+                  <p className={`font-semibold ${validationResult.isValid
+                      ? 'text-emerald-800'
                       : 'text-red-800'
-                  }`}>
-                    {validationResult.isValid 
-                      ? `¡Token válido! Bienvenido, ${validationResult.username}` 
+                    }`}>
+                    {validationResult.isValid
+                      ? `¡Token válido! Bienvenido, ${validationResult.username}`
                       : 'Token inválido'}
                   </p>
                   {validationResult.error && (
@@ -215,22 +210,22 @@ const GithubTokenSetup: React.FC<GithubTokenSetupProps> = ({ onSetupComplete, on
               disabled={isSaving || isValidating || !token}
               className={`${allowCancel ? 'w-2/3' : 'w-full'} bg-emerald-600 hover:bg-emerald-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2`}
             >
-            {isSaving || isValidating ? (
-              <>
-                <Loader2 className="animate-spin" size={20} />
-                {isValidating ? 'Validando...' : 'Guardando...'}
-              </>
-            ) : (
-              <>
-                <CheckCircle size={20} />
-                Guardar y Validar Token
-              </>
-            )}
-          </button>
+              {isSaving || isValidating ? (
+                <>
+                  <Loader2 className="animate-spin" size={20} />
+                  {isValidating ? 'Validando...' : 'Guardando...'}
+                </>
+              ) : (
+                <>
+                  <CheckCircle size={20} />
+                  Guardar y Validar Token
+                </>
+              )}
+            </button>
           </div>
 
           {/* Instrucciones */}
-          <div className="mt-6 p-4 bg-gray-50 rounded-xl border border-gray-200">
+          {/*    <div className="mt-6 p-4 bg-gray-50 rounded-xl border border-gray-200">
             <h3 className="font-semibold text-gray-800 mb-2 text-sm">
               ¿Cómo obtener tu Personal Access Token?
             </h3>
@@ -256,7 +251,7 @@ const GithubTokenSetup: React.FC<GithubTokenSetupProps> = ({ onSetupComplete, on
                 Genera el token y cópialo (solo se muestra una vez)
               </li>
             </ol>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
