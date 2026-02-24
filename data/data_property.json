@@ -3888,5 +3888,32 @@
       "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-356378/1771941474381_descarga.webp",
       "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-356378/1771941474405_descarga (1).webp"
     ]
+  },
+  {
+    "id": "A-409240",
+    "type": "Departamento",
+    "transaction": "Venta",
+    "money": "USD",
+    "price": 343,
+    "squareMeters": 999,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "parkingSpaces": 2,
+    "constructionYear": 2026,
+    "condition": "Usado",
+    "phoneContact": "5867666555",
+    "address": "calle miranda",
+    "description": "",
+    "lat": "10.3532",
+    "lng": "-67.0410",
+    "amenities": [
+      "Estacionamiento Visitas",
+      "Bodega"
+    ],
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-409240/1771943447388_descarga (2).webp",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-409240/1771943447407_descarga.webp",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-409240/1771943447436_descarga (1).webp"
+    ]
   }
 ]

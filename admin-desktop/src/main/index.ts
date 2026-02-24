@@ -15,7 +15,7 @@ let win: BrowserWindow | null
 // Initialize Services
 // En desarrollo, __dirname está en admin-desktop/dist-electron
 // Queremos llegar a la raíz del repo (InmoVisor/)
-const repoPath = app.isPackaged 
+const repoPath = app.isPackaged
   ? path.join(process.resourcesPath, '..') // Ajustar para producción
   : path.resolve(__dirname, '../../')    // Ajustar para desarrollo (dist-electron -> root)
 
@@ -23,7 +23,9 @@ const dataJsonPath = path.join(repoPath, 'data/data_property.json')
 
 const repository = new PropertyRepository(dataJsonPath)
 const imageService = new SharpImageService()
-const gitService = new GitService(repoPath)
+const gitAuthConfig = authService.getGitAuthConfig()
+const repoUrl = 'https://github.com/yonnijes/inmovisor.git'
+const gitService = new GitService(repoPath, gitAuthConfig?.auth?.username, gitAuthConfig?.auth?.password, repoUrl)
 const versionService = new VersionService(path.join(repoPath, 'data/version.json'))
 const propertyService = new PropertyService(repository, imageService, gitService, versionService, path.join(repoPath, 'data'))
 
