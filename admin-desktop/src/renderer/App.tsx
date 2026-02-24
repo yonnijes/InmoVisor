@@ -29,6 +29,7 @@ const App: React.FC = () => {
   const [showAuthSetup, setShowAuthSetup] = useState(false)
   const [isSyncingGit, setIsSyncingGit] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [searchText, setSearchText] = useState('')
 
   useEffect(() => {
     checkAuthStatus()
@@ -67,6 +68,19 @@ const App: React.FC = () => {
     const data = await window.electronAPI.getProperties()
     setProperties(data)
   }
+
+  const filteredProperties = properties.filter((p) => {
+    const q = searchText.toLowerCase().trim()
+    if (!q) return true
+    return (
+      p.id?.toLowerCase().includes(q) ||
+      p.type?.toLowerCase().includes(q) ||
+      p.transaction?.toLowerCase().includes(q) ||
+      p.address?.toLowerCase().includes(q) ||
+      p.city?.toLowerCase().includes(q) ||
+      p.neighborhood?.toLowerCase().includes(q)
+    )
+  })
 
   const handleEdit = (property: any) => {
     setEditingProperty(property)
@@ -190,6 +204,8 @@ const App: React.FC = () => {
                 <input
                   type="text"
                   placeholder="Buscar propiedades..."
+                  value={searchText}
+                  onChange={(e) => setSearchText(e.target.value)}
                   className="pl-10 pr-4 py-2 bg-gray-100 border-transparent rounded-full text-sm focus:bg-white focus:ring-2 focus:ring-emerald-500 transition-all outline-none w-full"
                 />
               </div>
@@ -220,7 +236,8 @@ const App: React.FC = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
-                  {properties.map((p) => (
+                  {filteredProperties.length > 0 ? (
+                    filteredProperties.map((p) => (
                     <tr key={p.id} className="hover:bg-gray-50 transition-colors">
                       <td className="px-6 py-4 text-sm font-medium text-gray-900">{p.id}</td>
                       <td className="px-6 py-4">
@@ -246,7 +263,16 @@ const App: React.FC = () => {
                         </button>
                       </td>
                     </tr>
-                  ))}
+                  ))
+                  ) : (
+                    <tr>
+                      <td colSpan={5} className="px-6 py-12 text-center text-gray-500">
+                        <Search className="mx-auto mb-3 opacity-40" size={32} />
+                        <p className="font-medium">No se encontraron propiedades</p>
+                        <p className="text-sm mt-1">Intenta con otro término de búsqueda</p>
+                      </td>
+                    </tr>
+                  )}
                 </tbody>
               </table>
               </div>
