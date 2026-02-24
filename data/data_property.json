@@ -3857,5 +3857,36 @@
       "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img2_1Sf6TNMqoUt4QHRRPu402cou-uLjYtfkb.jpg",
       "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-2/img3_1HBbBdMfD1lUSgC7a1wyVHbAVmuin57m6.jpg"
     ]
+  },
+  {
+    "id": "A-356378",
+    "type": "Departamento",
+    "transaction": "Alquiler",
+    "money": "USD",
+    "price": 200,
+    "squareMeters": 120,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "parkingSpaces": 1,
+    "constructionYear": 2020,
+    "condition": "Usado",
+    "phoneContact": "5834435656",
+    "address": "calle miranda, Los Teques",
+    "description": "Lindo departamento en el centro de los teques, a pocos metro del liceo miranda",
+    "lat": "10.349212",
+    "lng": "-67.041128",
+    "amenities": [
+      "Piscina",
+      "Salon de fiesta",
+      "Seguridad 24/7",
+      "Jardín",
+      "Bodega",
+      "terraza"
+    ],
+    "image": [
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-356378/1771941474327_descarga (2).webp",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-356378/1771941474381_descarga.webp",
+      "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img/A-356378/1771941474405_descarga (1).webp"
+    ]
   }
 ]
