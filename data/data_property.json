@@ -112,5 +112,29 @@
       "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-4/img7_1jAUo4I--Oqdr0oOiPycfFoka5Zp66hB6.jpg",
       "https://raw.githubusercontent.com/yonnijes/InmoVisor/main/data/img//A-4/img8_1RJA6fem5igUPgNvSeRJVam_fbBfFqiIw.jpg"
     ]
+  },
+  {
+    "id": "A-172651",
+    "type": "Casa",
+    "transaction": "Venta",
+    "money": "USD",
+    "price": 300000,
+    "squareMeters": 394,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "parkingSpaces": 2,
+    "constructionYear": 2016,
+    "condition": "Usado",
+    "phoneContact": "5876879797",
+    "address": "calle miranda",
+    "description": "calle miranda ",
+    "lat": "10.3532",
+    "lng": "-67.0410",
+    "amenities": [
+      "Piscina",
+      "Estacionamiento Visitas",
+      "Bodega"
+    ],
+    "image": []
   }
 ]
