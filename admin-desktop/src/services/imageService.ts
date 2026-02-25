@@ -1,4 +1,4 @@
-const Jimp = require('jimp');
+const { Jimp } = require('jimp');
 import path from 'path';
 import fs from 'fs-extra';
 
