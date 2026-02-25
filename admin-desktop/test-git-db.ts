@@ -1,6 +1,6 @@
 import path from 'path';
 import { PropertyRepository } from './src/services/propertyRepository.ts';
-import { SharpImageService } from './src/services/imageService.ts';
+import { JimpImageService } from './src/services/imageService.ts';
 import { GitService } from './src/services/gitService.ts';
 import { PropertyService } from './src/services/propertyService.ts';
 
@@ -14,7 +14,7 @@ async function testSync() {
   console.log('Repo:', repoPath);
 
   const repository = new PropertyRepository(jsonPath);
-  const imageService = new SharpImageService();
+  const imageService = new JimpImageService();
   const gitService = new GitService(repoPath);
   const propertyService = new PropertyService(repository, imageService, gitService, dataRoot);
 
@@ -38,7 +38,7 @@ async function testSync() {
   try {
     console.log('Ejecutando orquestador (Procesar -> Guardar -> Push)...');
     const result = await propertyService.createNewProperty(testProperty, [dummyImg]);
-    
+
     if (result.success) {
       console.log('✅ ¡PRUEBA EXITOSA!');
       console.log('La propiedad y la imagen han sido procesadas y subidas a GitHub.');

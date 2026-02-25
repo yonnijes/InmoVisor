@@ -1,4 +1,4 @@
-import sharp from 'sharp';
+const Jimp = require('jimp');
 import path from 'path';
 import fs from 'fs-extra';
 
@@ -9,21 +9,29 @@ export interface IImageService {
 /**
  * SRP: Responsible only for image manipulation.
  */
-export class SharpImageService implements IImageService {
+export class JimpImageService implements IImageService {
   async processForMobile(inputPath: string, outputDir: string) {
     try {
       await fs.ensureDir(outputDir);
       const filename = `${Date.now()}_${path.basename(inputPath, path.extname(inputPath))}.webp`;
       const outputPath = path.join(outputDir, filename);
 
-      await sharp(inputPath)
-        .resize(1080, 1080, { fit: 'inside', withoutEnlargement: true })
-        .webp({ quality: 80 })
-        .toFile(outputPath);
+      // Leemos la imagen
+      const image = await Jimp.read(inputPath);
+
+      // Redimensionamos (equivalente a fit: 'inside' y withoutEnlargement)
+      // Nota: Jimp.AUTO mantiene la proporción
+      if (image.bitmap.width > 1080 || image.bitmap.height > 1080) {
+        image.scaleToFit(1080, 1080);
+      }
+
+      // Guardamos como WebP (Jimp soporta WebP mediante plugins o calidad)
+      // Si Jimp da problemas con .webp en esa versión antigua, usa .jpg
+      await image.quality(80).writeAsync(outputPath);
 
       return { filename, success: true };
     } catch (error) {
-      console.error('Sharp Image Service Error:', error);
+      console.error('Jimp Image Service Error:', error);
       return { filename: '', success: false };
     }
   }

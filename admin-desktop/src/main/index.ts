@@ -2,7 +2,7 @@ import { app, BrowserWindow, ipcMain } from 'electron'
 import path from 'node:path'
 import fs from 'node:fs'
 import { PropertyRepository } from '../services/propertyRepository'
-import { SharpImageService } from '../services/imageService'
+import { JimpImageService } from '../services/imageService'
 import { GitService } from '../services/gitService'
 import { PropertyService } from '../services/propertyService'
 import * as authService from '../services/authService'
@@ -29,7 +29,7 @@ const dataJsonPath = path.join(repoPath, 'data/data_property.json');
 
 // --- DECLARACIÓN DE SERVICIOS (Lazy Initialization) ---
 let repository: PropertyRepository;
-let imageService: SharpImageService;
+let imageService: JimpImageService;
 let gitService: GitService | null = null;
 let propertyService: PropertyService | null = null;
 let versionService: VersionService;
@@ -48,7 +48,7 @@ function initializeServices() {
   }
 
   repository = new PropertyRepository(dataJsonPath);
-  imageService = new SharpImageService();
+  imageService = new JimpImageService();
   versionService = new VersionService(path.join(repoPath, 'data/version.json'));
 
   const gitAuthConfig = authService.getGitAuthConfig();
