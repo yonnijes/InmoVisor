@@ -6,35 +6,35 @@
   "description": "Panel de administración para InmoVisor con Git as DB",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && electron-builder",
+    "build": "tsc && vite build",
     "preview": "vite preview",
     "electron:dev": "vite & electron .",
-    "build:win": "tsc && vite build &&  electron-builder --win --ia32"
+    "build:win": "tsc && vite build && electron-builder --win --ia32"
   },
   "dependencies": {
-    "electron-store": "^11.0.2",
+    "electron-store": "^8.1.0",
+    "jimp": "0.22.12",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.378.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.1",
-    "sharp": "^0.33.5",
     "simple-git": "^3.22.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
     "@vitejs/plugin-react": "^4.2.1",
     "7zip-bin": "^5.2.0",
+    "app-builder-bin": "^4.2.0",
     "autoprefixer": "^10.4.18",
     "electron": "22.3.27",
     "electron-builder": "^24.13.3",
-    "electron-rebuild": "^3.2.9",
     "fs-extra": "^11.3.3",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.2",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3",
+    "typescript": "^5.2.2",
     "vite": "^5.1.4",
     "vite-plugin-electron": "^0.28.2",
     "vite-plugin-electron-renderer": "^0.14.5"
@@ -42,19 +42,14 @@
   "build": {
     "appId": "com.inmovisor.app",
     "productName": "Keytock",
-    "asarUnpack": [
-      "**/node_modules/sharp/**/*",
-      "**/node_modules/@img/**/*"
-    ],
+    "directories": {
+      "output": "dist"
+    },
     "files": [
       "dist/**/*",
       "dist-electron/**/*",
-      "electron/**/*",
       "package.json"
     ],
-    "mac": {
-      "target": "dmg"
-    },
     "win": {
       "target": [
         {
@@ -64,6 +59,11 @@
           ]
         }
       ]
-    }
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "electronVersion": "22.3.27"
   }
 }
