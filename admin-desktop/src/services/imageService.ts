@@ -1,4 +1,4 @@
-const { Jimp } = require('jimp');
+const Jimp = require('jimp');
 import path from 'path';
 import fs from 'fs-extra';
 
@@ -21,15 +21,13 @@ export class JimpImageService implements IImageService {
 
       // Redimensionamos (equivalente a fit: 'inside' y withoutEnlargement)
       // Nota: Jimp.AUTO mantiene la proporción
-      if (image.getWidth() > 1080 || image.getHeight() > 1080) {
+      if (image.bitmap.width > 1080 || image.bitmap.height > 1080) {
         image.scaleToFit(1080, 1080);
       }
 
       // Guardamos como WebP (Jimp soporta WebP mediante plugins o calidad)
       // Si Jimp da problemas con .webp en esa versión antigua, usa .jpg
-      await image
-        .quality(80)
-        .writeAsync(outputPath);
+      await image.quality(80).writeAsync(outputPath);
 
       return { filename, success: true };
     } catch (error) {
